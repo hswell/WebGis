@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.AdCdBMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.AdCdB" >
+    <constructor >
+      <idArg column="ADCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LGTD" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LTTD" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="AREACD" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ADCD, ADNM, LGTD, LTTD, AREACD
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.AD_CD_B
+    where ADCD = #{ADCD,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from NHBZ.AD_CD_B
+    where ADCD = #{ADCD,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.AdCdB" >
+    insert into NHBZ.AD_CD_B (ADCD, ADNM, LGTD, 
+      LTTD, AREACD)
+    values (#{ADCD,jdbcType=VARCHAR}, #{ADNM,jdbcType=VARCHAR}, #{LGTD,jdbcType=DECIMAL}, 
+      #{LTTD,jdbcType=DECIMAL}, #{AREACD,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.AdCdB" >
+    insert into NHBZ.AD_CD_B
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ADCD != null" >
+        ADCD,
+      </if>
+      <if test="ADNM != null" >
+        ADNM,
+      </if>
+      <if test="LGTD != null" >
+        LGTD,
+      </if>
+      <if test="LTTD != null" >
+        LTTD,
+      </if>
+      <if test="AREACD != null" >
+        AREACD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ADCD != null" >
+        #{ADCD,jdbcType=VARCHAR},
+      </if>
+      <if test="ADNM != null" >
+        #{ADNM,jdbcType=VARCHAR},
+      </if>
+      <if test="LGTD != null" >
+        #{LGTD,jdbcType=DECIMAL},
+      </if>
+      <if test="LTTD != null" >
+        #{LTTD,jdbcType=DECIMAL},
+      </if>
+      <if test="AREACD != null" >
+        #{AREACD,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.AdCdB" >
+    update NHBZ.AD_CD_B
+    <set >
+      <if test="ADNM != null" >
+        ADNM = #{ADNM,jdbcType=VARCHAR},
+      </if>
+      <if test="LGTD != null" >
+        LGTD = #{LGTD,jdbcType=DECIMAL},
+      </if>
+      <if test="LTTD != null" >
+        LTTD = #{LTTD,jdbcType=DECIMAL},
+      </if>
+      <if test="AREACD != null" >
+        AREACD = #{AREACD,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ADCD = #{ADCD,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.AdCdB" >
+    update NHBZ.AD_CD_B
+    set ADNM = #{ADNM,jdbcType=VARCHAR},
+      LGTD = #{LGTD,jdbcType=DECIMAL},
+      LTTD = #{LTTD,jdbcType=DECIMAL},
+      AREACD = #{AREACD,jdbcType=VARCHAR}
+    where ADCD = #{ADCD,jdbcType=VARCHAR}
+  </update>
+</mapper>

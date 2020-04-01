@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseBzPumbMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseBzPumb" >
+    <constructor >
+      <idArg column="ENNMCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="AIRCREWNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WATERPUMP_MODAL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="D_RUNOFF" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="D_RAISE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ANGLE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="WATERPUMP_SPEED" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ELEC_MODAL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="POWER" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ELEC_SPEED" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ELECTRICITY" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="FGMR" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FPATH" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BZLX" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DJLX" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DZEDDY" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DZEDDL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZZEDDY" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZZEDDL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ENNMCD, AIRCREWNM, WATERPUMP_MODAL, D_RUNOFF, D_RAISE, ANGLE, WATERPUMP_SPEED, ELEC_MODAL, 
+    POWER, ELEC_SPEED, ELECTRICITY, FGMR, FPATH, BZLX, DJLX, DZEDDY, DZEDDL, ZZEDDY, 
+    ZZEDDL
+  </sql>
+  <select id="querybykey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBzPumb" >
+    select *
+    from NHBZ.DSE_BZ_PUMB
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+  </select>
+  <select id="queryList" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBzPumb" >
+    select *
+    from NHBZ.DSE_BZ_PUMB
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBzPumbKey" >
+    select
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_BZ_PUMB
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.DseBzPumbKey" >
+    delete from NHBZ.DSE_BZ_PUMB
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseBzPumb" >
+    insert into NHBZ.DSE_BZ_PUMB (ENNMCD, AIRCREWNM, WATERPUMP_MODAL, 
+      D_RUNOFF, D_RAISE, ANGLE, 
+      WATERPUMP_SPEED, ELEC_MODAL, POWER, 
+      ELEC_SPEED, ELECTRICITY, FGMR, 
+      FPATH, BZLX, DJLX, 
+      DZEDDY, DZEDDL, ZZEDDY, 
+      ZZEDDL)
+    values (#{ENNMCD,jdbcType=VARCHAR}, #{AIRCREWNM,jdbcType=VARCHAR}, #{WATERPUMP_MODAL,jdbcType=VARCHAR}, 
+      #{d_RUNOFF,jdbcType=DECIMAL}, #{d_RAISE,jdbcType=DECIMAL}, #{ANGLE,jdbcType=DECIMAL}, 
+      #{WATERPUMP_SPEED,jdbcType=DECIMAL}, #{ELEC_MODAL,jdbcType=VARCHAR}, #{POWER,jdbcType=DECIMAL}, 
+      #{ELEC_SPEED,jdbcType=DECIMAL}, #{ELECTRICITY,jdbcType=DECIMAL}, #{FGMR,jdbcType=VARCHAR}, 
+      #{FPATH,jdbcType=VARCHAR}, #{BZLX,jdbcType=VARCHAR}, #{DJLX,jdbcType=VARCHAR}, 
+      #{DZEDDY,jdbcType=DECIMAL}, #{DZEDDL,jdbcType=DECIMAL}, #{ZZEDDY,jdbcType=DECIMAL}, 
+      #{ZZEDDL,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseBzPumb" >
+    insert into NHBZ.DSE_BZ_PUMB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        ENNMCD,
+      </if>
+      <if test="AIRCREWNM != null" >
+        AIRCREWNM,
+      </if>
+      <if test="WATERPUMP_MODAL != null" >
+        WATERPUMP_MODAL,
+      </if>
+      <if test="d_RUNOFF != null" >
+        D_RUNOFF,
+      </if>
+      <if test="d_RAISE != null" >
+        D_RAISE,
+      </if>
+      <if test="ANGLE != null" >
+        ANGLE,
+      </if>
+      <if test="WATERPUMP_SPEED != null" >
+        WATERPUMP_SPEED,
+      </if>
+      <if test="ELEC_MODAL != null" >
+        ELEC_MODAL,
+      </if>
+      <if test="POWER != null" >
+        POWER,
+      </if>
+      <if test="ELEC_SPEED != null" >
+        ELEC_SPEED,
+      </if>
+      <if test="ELECTRICITY != null" >
+        ELECTRICITY,
+      </if>
+      <if test="FGMR != null" >
+        FGMR,
+      </if>
+      <if test="FPATH != null" >
+        FPATH,
+      </if>
+      <if test="BZLX != null" >
+        BZLX,
+      </if>
+      <if test="DJLX != null" >
+        DJLX,
+      </if>
+      <if test="DZEDDY != null" >
+        DZEDDY,
+      </if>
+      <if test="DZEDDL != null" >
+        DZEDDL,
+      </if>
+      <if test="ZZEDDY != null" >
+        ZZEDDY,
+      </if>
+      <if test="ZZEDDL != null" >
+        ZZEDDL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        #{ENNMCD,jdbcType=VARCHAR},
+      </if>
+      <if test="AIRCREWNM != null" >
+        #{AIRCREWNM,jdbcType=VARCHAR},
+      </if>
+      <if test="WATERPUMP_MODAL != null" >
+        #{WATERPUMP_MODAL,jdbcType=VARCHAR},
+      </if>
+      <if test="d_RUNOFF != null" >
+        #{d_RUNOFF,jdbcType=DECIMAL},
+      </if>
+      <if test="d_RAISE != null" >
+        #{d_RAISE,jdbcType=DECIMAL},
+      </if>
+      <if test="ANGLE != null" >
+        #{ANGLE,jdbcType=DECIMAL},
+      </if>
+      <if test="WATERPUMP_SPEED != null" >
+        #{WATERPUMP_SPEED,jdbcType=DECIMAL},
+      </if>
+      <if test="ELEC_MODAL != null" >
+        #{ELEC_MODAL,jdbcType=VARCHAR},
+      </if>
+      <if test="POWER != null" >
+        #{POWER,jdbcType=DECIMAL},
+      </if>
+      <if test="ELEC_SPEED != null" >
+        #{ELEC_SPEED,jdbcType=DECIMAL},
+      </if>
+      <if test="ELECTRICITY != null" >
+        #{ELECTRICITY,jdbcType=DECIMAL},
+      </if>
+      <if test="FGMR != null" >
+        #{FGMR,jdbcType=VARCHAR},
+      </if>
+      <if test="FPATH != null" >
+        #{FPATH,jdbcType=VARCHAR},
+      </if>
+      <if test="BZLX != null" >
+        #{BZLX,jdbcType=VARCHAR},
+      </if>
+      <if test="DJLX != null" >
+        #{DJLX,jdbcType=VARCHAR},
+      </if>
+      <if test="DZEDDY != null" >
+        #{DZEDDY,jdbcType=DECIMAL},
+      </if>
+      <if test="DZEDDL != null" >
+        #{DZEDDL,jdbcType=DECIMAL},
+      </if>
+      <if test="ZZEDDY != null" >
+        #{ZZEDDY,jdbcType=DECIMAL},
+      </if>
+      <if test="ZZEDDL != null" >
+        #{ZZEDDL,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseBzPumb" >
+    update NHBZ.DSE_BZ_PUMB
+    <set >
+      <if test="WATERPUMP_MODAL != null" >
+        WATERPUMP_MODAL = #{WATERPUMP_MODAL,jdbcType=VARCHAR},
+      </if>
+      <if test="d_RUNOFF != null" >
+        D_RUNOFF = #{d_RUNOFF,jdbcType=DECIMAL},
+      </if>
+      <if test="d_RAISE != null" >
+        D_RAISE = #{d_RAISE,jdbcType=DECIMAL},
+      </if>
+      <if test="ANGLE != null" >
+        ANGLE = #{ANGLE,jdbcType=DECIMAL},
+      </if>
+      <if test="WATERPUMP_SPEED != null" >
+        WATERPUMP_SPEED = #{WATERPUMP_SPEED,jdbcType=DECIMAL},
+      </if>
+      <if test="ELEC_MODAL != null" >
+        ELEC_MODAL = #{ELEC_MODAL,jdbcType=VARCHAR},
+      </if>
+      <if test="POWER != null" >
+        POWER = #{POWER,jdbcType=DECIMAL},
+      </if>
+      <if test="ELEC_SPEED != null" >
+        ELEC_SPEED = #{ELEC_SPEED,jdbcType=DECIMAL},
+      </if>
+      <if test="ELECTRICITY != null" >
+        ELECTRICITY = #{ELECTRICITY,jdbcType=DECIMAL},
+      </if>
+      <if test="FGMR != null" >
+        FGMR = #{FGMR,jdbcType=VARCHAR},
+      </if>
+      <if test="FPATH != null" >
+        FPATH = #{FPATH,jdbcType=VARCHAR},
+      </if>
+      <if test="BZLX != null" >
+        BZLX = #{BZLX,jdbcType=VARCHAR},
+      </if>
+      <if test="DJLX != null" >
+        DJLX = #{DJLX,jdbcType=VARCHAR},
+      </if>
+      <if test="DZEDDY != null" >
+        DZEDDY = #{DZEDDY,jdbcType=DECIMAL},
+      </if>
+      <if test="DZEDDL != null" >
+        DZEDDL = #{DZEDDL,jdbcType=DECIMAL},
+      </if>
+      <if test="ZZEDDY != null" >
+        ZZEDDY = #{ZZEDDY,jdbcType=DECIMAL},
+      </if>
+      <if test="ZZEDDL != null" >
+        ZZEDDL = #{ZZEDDL,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseBzPumb" >
+    update NHBZ.DSE_BZ_PUMB
+    set WATERPUMP_MODAL = #{WATERPUMP_MODAL,jdbcType=VARCHAR},
+      D_RUNOFF = #{d_RUNOFF,jdbcType=DECIMAL},
+      D_RAISE = #{d_RAISE,jdbcType=DECIMAL},
+      ANGLE = #{ANGLE,jdbcType=DECIMAL},
+      WATERPUMP_SPEED = #{WATERPUMP_SPEED,jdbcType=DECIMAL},
+      ELEC_MODAL = #{ELEC_MODAL,jdbcType=VARCHAR},
+      POWER = #{POWER,jdbcType=DECIMAL},
+      ELEC_SPEED = #{ELEC_SPEED,jdbcType=DECIMAL},
+      ELECTRICITY = #{ELECTRICITY,jdbcType=DECIMAL},
+      FGMR = #{FGMR,jdbcType=VARCHAR},
+      FPATH = #{FPATH,jdbcType=VARCHAR},
+      BZLX = #{BZLX,jdbcType=VARCHAR},
+      DJLX = #{DJLX,jdbcType=VARCHAR},
+      DZEDDY = #{DZEDDY,jdbcType=DECIMAL},
+      DZEDDL = #{DZEDDL,jdbcType=DECIMAL},
+      ZZEDDY = #{ZZEDDY,jdbcType=DECIMAL},
+      ZZEDDL = #{ZZEDDL,jdbcType=DECIMAL}
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
+  </update>
+</mapper>
