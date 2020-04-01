@@ -2,19 +2,17 @@ package com.sen.design.entity;
 
 import java.util.Date;
 
-public class DseBzRunstateRKey {
+public class DseSzRunstateRKey {
     private String STCD;
-    //测站编号
 
     private Date TM;
-    //采集时间
 
-    public DseBzRunstateRKey(String STCD, Date TM) {
+    public DseSzRunstateRKey(String STCD, Date TM) {
         this.STCD = STCD;
         this.TM = TM;
     }
 
-    public DseBzRunstateRKey() {
+    public DseSzRunstateRKey() {
         super();
     }
 

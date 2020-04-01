@@ -1,13 +1,16 @@
 package com.sen.design.entity;
 
 public class DseBzszRemark {
-    //泵站水闸关联
+    //2.6泵站水闸关联
     private String BZSTCD;
+    //泵站编码(测站)
+
+
 
     private String SZSTCD;
-
+    //水闸编码(测站)
     private String NT;
-
+    //备注
     private String SZSTCD2;
 
     public DseBzszRemark(String BZSTCD, String SZSTCD, String NT, String SZSTCD2) {

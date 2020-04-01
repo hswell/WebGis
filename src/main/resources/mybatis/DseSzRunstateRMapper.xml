@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseSzRunstateRMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseSzRunstateR" >
+    <constructor >
+      <idArg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="TM" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="STATE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="IN_WATER" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="OUT_WATER" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STCD, TM, STATE, N1, N2, N3, N4, N5, N6, N7, N8, N9, IN_WATER, OUT_WATER
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseSzRunstateRKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_SZ_RUNSTATE_R
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.DseSzRunstateRKey" >
+    delete from NHBZ.DSE_SZ_RUNSTATE_R
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseSzRunstateR" >
+    insert into NHBZ.DSE_SZ_RUNSTATE_R (STCD, TM, STATE, 
+      N1, N2, N3, N4, 
+      N5, N6, N7, N8, 
+      N9, IN_WATER, OUT_WATER
+      )
+    values (#{STCD,jdbcType=VARCHAR}, #{TM,jdbcType=TIMESTAMP}, #{STATE,jdbcType=VARCHAR}, 
+      #{n1,jdbcType=VARCHAR}, #{n2,jdbcType=VARCHAR}, #{n3,jdbcType=VARCHAR}, #{n4,jdbcType=VARCHAR}, 
+      #{n5,jdbcType=VARCHAR}, #{n6,jdbcType=VARCHAR}, #{n7,jdbcType=VARCHAR}, #{n8,jdbcType=VARCHAR}, 
+      #{n9,jdbcType=VARCHAR}, #{IN_WATER,jdbcType=DECIMAL}, #{OUT_WATER,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseSzRunstateR" >
+    insert into NHBZ.DSE_SZ_RUNSTATE_R
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        STCD,
+      </if>
+      <if test="TM != null" >
+        TM,
+      </if>
+      <if test="STATE != null" >
+        STATE,
+      </if>
+      <if test="n1 != null" >
+        N1,
+      </if>
+      <if test="n2 != null" >
+        N2,
+      </if>
+      <if test="n3 != null" >
+        N3,
+      </if>
+      <if test="n4 != null" >
+        N4,
+      </if>
+      <if test="n5 != null" >
+        N5,
+      </if>
+      <if test="n6 != null" >
+        N6,
+      </if>
+      <if test="n7 != null" >
+        N7,
+      </if>
+      <if test="n8 != null" >
+        N8,
+      </if>
+      <if test="n9 != null" >
+        N9,
+      </if>
+      <if test="IN_WATER != null" >
+        IN_WATER,
+      </if>
+      <if test="OUT_WATER != null" >
+        OUT_WATER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        #{STCD,jdbcType=VARCHAR},
+      </if>
+      <if test="TM != null" >
+        #{TM,jdbcType=TIMESTAMP},
+      </if>
+      <if test="STATE != null" >
+        #{STATE,jdbcType=VARCHAR},
+      </if>
+      <if test="n1 != null" >
+        #{n1,jdbcType=VARCHAR},
+      </if>
+      <if test="n2 != null" >
+        #{n2,jdbcType=VARCHAR},
+      </if>
+      <if test="n3 != null" >
+        #{n3,jdbcType=VARCHAR},
+      </if>
+      <if test="n4 != null" >
+        #{n4,jdbcType=VARCHAR},
+      </if>
+      <if test="n5 != null" >
+        #{n5,jdbcType=VARCHAR},
+      </if>
+      <if test="n6 != null" >
+        #{n6,jdbcType=VARCHAR},
+      </if>
+      <if test="n7 != null" >
+        #{n7,jdbcType=VARCHAR},
+      </if>
+      <if test="n8 != null" >
+        #{n8,jdbcType=VARCHAR},
+      </if>
+      <if test="n9 != null" >
+        #{n9,jdbcType=VARCHAR},
+      </if>
+      <if test="IN_WATER != null" >
+        #{IN_WATER,jdbcType=DECIMAL},
+      </if>
+      <if test="OUT_WATER != null" >
+        #{OUT_WATER,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseSzRunstateR" >
+    update NHBZ.DSE_SZ_RUNSTATE_R
+    <set >
+      <if test="STATE != null" >
+        STATE = #{STATE,jdbcType=VARCHAR},
+      </if>
+      <if test="n1 != null" >
+        N1 = #{n1,jdbcType=VARCHAR},
+      </if>
+      <if test="n2 != null" >
+        N2 = #{n2,jdbcType=VARCHAR},
+      </if>
+      <if test="n3 != null" >
+        N3 = #{n3,jdbcType=VARCHAR},
+      </if>
+      <if test="n4 != null" >
+        N4 = #{n4,jdbcType=VARCHAR},
+      </if>
+      <if test="n5 != null" >
+        N5 = #{n5,jdbcType=VARCHAR},
+      </if>
+      <if test="n6 != null" >
+        N6 = #{n6,jdbcType=VARCHAR},
+      </if>
+      <if test="n7 != null" >
+        N7 = #{n7,jdbcType=VARCHAR},
+      </if>
+      <if test="n8 != null" >
+        N8 = #{n8,jdbcType=VARCHAR},
+      </if>
+      <if test="n9 != null" >
+        N9 = #{n9,jdbcType=VARCHAR},
+      </if>
+      <if test="IN_WATER != null" >
+        IN_WATER = #{IN_WATER,jdbcType=DECIMAL},
+      </if>
+      <if test="OUT_WATER != null" >
+        OUT_WATER = #{OUT_WATER,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseSzRunstateR" >
+    update NHBZ.DSE_SZ_RUNSTATE_R
+    set STATE = #{STATE,jdbcType=VARCHAR},
+      N1 = #{n1,jdbcType=VARCHAR},
+      N2 = #{n2,jdbcType=VARCHAR},
+      N3 = #{n3,jdbcType=VARCHAR},
+      N4 = #{n4,jdbcType=VARCHAR},
+      N5 = #{n5,jdbcType=VARCHAR},
+      N6 = #{n6,jdbcType=VARCHAR},
+      N7 = #{n7,jdbcType=VARCHAR},
+      N8 = #{n8,jdbcType=VARCHAR},
+      N9 = #{n9,jdbcType=VARCHAR},
+      IN_WATER = #{IN_WATER,jdbcType=DECIMAL},
+      OUT_WATER = #{OUT_WATER,jdbcType=DECIMAL}
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </update>
+</mapper>

@@ -6,7 +6,7 @@ import java.util.Date;
 public class DseBzRunstateR extends DseBzRunstateRKey {
     //2.5泵站开关机统计
     private BigDecimal FOREBAYZ;
-
+    //前池水位单位((米))
     private Short n1;
 
     private Short n2;
@@ -34,9 +34,12 @@ public class DseBzRunstateR extends DseBzRunstateRKey {
     private Short STATE;
 
     private BigDecimal NSW;
+    //泵站内江水位(米)
+
+
 
     private BigDecimal WSW;
-
+    //泵站外江水位(米)
     public DseBzRunstateR(String STCD, Date TM, BigDecimal FOREBAYZ, Short n1, Short n2, Short n3, Short n4, Short n5, Short n6, Short n7, Short n8, Short n9, Short n10, Short n11, Short n12, Short STATE, BigDecimal NSW, BigDecimal WSW) {
         super(STCD, TM);
         this.FOREBAYZ = FOREBAYZ;

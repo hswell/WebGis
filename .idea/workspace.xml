@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc7d88bb-8c21-4f04-82d1-8d9cabb40fe7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzRunstateRMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzszRemarkMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateR.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateRKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzszRemark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRunstateRMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzszRemarkMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzRuninfoRealMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRuninfoRMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRuninfoRealMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRunstateRMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRuninfoReal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRuninfoRealKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRuninfoR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRuninfoRKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRuninfoReal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRunstateR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRunstateRKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRuninfoRealMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRuninfoRMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRuninfoRealMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRunstateRMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBzPumbKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBzPumbKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateRKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateRKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzszRemark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzszRemark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +203,7 @@
       <workItem from="1585649135271" duration="593000" />
       <workItem from="1585720059639" duration="1725000" />
       <workItem from="1585721998348" duration="11902000" />
-      <workItem from="1585735712539" duration="4270000" />
+      <workItem from="1585735712539" duration="8253000" />
     </task>
     <task id="LOCAL-00001" summary="4月1日提交">
       <created>1585732789112</created>
@@ -208,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585739574644</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="4月1日提交 新增2个实体">
+      <created>1585740131503</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585740131503</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,10 +255,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="436" y="98" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585723561898" />
-    <state x="535" y="0" key="CommitChangelistDialog2" timestamp="1585739573679">
+    <state x="535" y="0" key="CommitChangelistDialog2" timestamp="1585740130611">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="535" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585739573679" />
+    <state x="535" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585740130611" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1585720591032">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -249,22 +267,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="641" y="151" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585732679732" />
-    <state width="1483" height="-15" key="GridCell.Tab.0.bottom" timestamp="1585739416002">
+    <state width="1483" height="-11" key="GridCell.Tab.0.bottom" timestamp="1585742865331">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="-15" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
-    <state width="1483" height="-15" key="GridCell.Tab.0.center" timestamp="1585739416002">
+    <state width="1483" height="-11" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585742865331" />
+    <state width="1483" height="-11" key="GridCell.Tab.0.center" timestamp="1585742865331">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="-15" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
-    <state width="1483" height="-15" key="GridCell.Tab.0.left" timestamp="1585739416002">
+    <state width="1483" height="-11" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585742865331" />
+    <state width="1483" height="-11" key="GridCell.Tab.0.left" timestamp="1585742865330">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="-15" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
-    <state width="1483" height="-15" key="GridCell.Tab.0.right" timestamp="1585739416002">
+    <state width="1483" height="-11" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585742865330" />
+    <state width="1483" height="-11" key="GridCell.Tab.0.right" timestamp="1585742865331">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="-15" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
+    <state width="1483" height="-11" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585742865331" />
     <state width="1483" height="-15" key="GridCell.Tab.1.bottom" timestamp="1585739416002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

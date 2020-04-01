@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseSzRuninfoRMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseSzRuninfoR" >
+    <constructor >
+      <idArg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="TM" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="OUT_WATER" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="IN_WATER" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="STATE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="N1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="KD1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="N2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="KD2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="N3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="KD3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="N4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="KD4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="N5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="KD5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="N6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="KD6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="N7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="KD7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="N8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="KD8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="N9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="KD9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="CONTP1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONTP2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONTP3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONTP4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONTP5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONTP6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONTP7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONTP8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONTP9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONST1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONST2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONST3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONST4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONST5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONST6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONST7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONST8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONST9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RUNST1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RUNST2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RUNST3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RUNST4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RUNST5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RUNST6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RUNST7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RUNST8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RUNST9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SETKD1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SETKD2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SETKD3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SETKD4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SETKD5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SETKD6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SETKD7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SETKD8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SETKD9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STCD, TM, OUT_WATER, IN_WATER, STATE, N1, KD1, LL1, N2, KD2, LL2, N3, KD3, LL3, N4, 
+    KD4, LL4, N5, KD5, LL5, N6, KD6, LL6, N7, KD7, LL7, N8, KD8, LL8, N9, KD9, LL9, LL, 
+    CONTP1, CONTP2, CONTP3, CONTP4, CONTP5, CONTP6, CONTP7, CONTP8, CONTP9, CONST1, CONST2, 
+    CONST3, CONST4, CONST5, CONST6, CONST7, CONST8, CONST9, RUNST1, RUNST2, RUNST3, RUNST4, 
+    RUNST5, RUNST6, RUNST7, RUNST8, RUNST9, SETKD1, SETKD2, SETKD3, SETKD4, SETKD5, SETKD6, 
+    SETKD7, SETKD8, SETKD9
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseSzRuninfoRKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_SZ_RUNINFO_R
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.DseSzRuninfoRKey" >
+    delete from NHBZ.DSE_SZ_RUNINFO_R
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseSzRuninfoR" >
+    insert into NHBZ.DSE_SZ_RUNINFO_R (STCD, TM, OUT_WATER, 
+      IN_WATER, STATE, N1, 
+      KD1, LL1, N2, KD2, 
+      LL2, N3, KD3, LL3, 
+      N4, KD4, LL4, N5, 
+      KD5, LL5, N6, KD6, 
+      LL6, N7, KD7, LL7, 
+      N8, KD8, LL8, N9, 
+      KD9, LL9, LL, CONTP1, 
+      CONTP2, CONTP3, CONTP4, 
+      CONTP5, CONTP6, CONTP7, 
+      CONTP8, CONTP9, CONST1, 
+      CONST2, CONST3, CONST4, 
+      CONST5, CONST6, CONST7, 
+      CONST8, CONST9, RUNST1, 
+      RUNST2, RUNST3, RUNST4, 
+      RUNST5, RUNST6, RUNST7, 
+      RUNST8, RUNST9, SETKD1, 
+      SETKD2, SETKD3, SETKD4, 
+      SETKD5, SETKD6, SETKD7, 
+      SETKD8, SETKD9)
+    values (#{STCD,jdbcType=VARCHAR}, #{TM,jdbcType=TIMESTAMP}, #{OUT_WATER,jdbcType=DECIMAL}, 
+      #{IN_WATER,jdbcType=DECIMAL}, #{STATE,jdbcType=VARCHAR}, #{n1,jdbcType=VARCHAR}, 
+      #{KD1,jdbcType=DECIMAL}, #{LL1,jdbcType=DECIMAL}, #{n2,jdbcType=VARCHAR}, #{KD2,jdbcType=DECIMAL}, 
+      #{LL2,jdbcType=DECIMAL}, #{n3,jdbcType=VARCHAR}, #{KD3,jdbcType=DECIMAL}, #{LL3,jdbcType=DECIMAL}, 
+      #{n4,jdbcType=VARCHAR}, #{KD4,jdbcType=DECIMAL}, #{LL4,jdbcType=DECIMAL}, #{n5,jdbcType=VARCHAR}, 
+      #{KD5,jdbcType=DECIMAL}, #{LL5,jdbcType=DECIMAL}, #{n6,jdbcType=VARCHAR}, #{KD6,jdbcType=DECIMAL}, 
+      #{LL6,jdbcType=DECIMAL}, #{n7,jdbcType=VARCHAR}, #{KD7,jdbcType=DECIMAL}, #{LL7,jdbcType=DECIMAL}, 
+      #{n8,jdbcType=VARCHAR}, #{KD8,jdbcType=DECIMAL}, #{LL8,jdbcType=DECIMAL}, #{n9,jdbcType=VARCHAR}, 
+      #{KD9,jdbcType=DECIMAL}, #{LL9,jdbcType=DECIMAL}, #{LL,jdbcType=DECIMAL}, #{CONTP1,jdbcType=VARCHAR}, 
+      #{CONTP2,jdbcType=VARCHAR}, #{CONTP3,jdbcType=VARCHAR}, #{CONTP4,jdbcType=VARCHAR}, 
+      #{CONTP5,jdbcType=VARCHAR}, #{CONTP6,jdbcType=VARCHAR}, #{CONTP7,jdbcType=VARCHAR}, 
+      #{CONTP8,jdbcType=VARCHAR}, #{CONTP9,jdbcType=VARCHAR}, #{CONST1,jdbcType=VARCHAR}, 
+      #{CONST2,jdbcType=VARCHAR}, #{CONST3,jdbcType=VARCHAR}, #{CONST4,jdbcType=VARCHAR}, 
+      #{CONST5,jdbcType=VARCHAR}, #{CONST6,jdbcType=VARCHAR}, #{CONST7,jdbcType=VARCHAR}, 
+      #{CONST8,jdbcType=VARCHAR}, #{CONST9,jdbcType=VARCHAR}, #{RUNST1,jdbcType=VARCHAR}, 
+      #{RUNST2,jdbcType=VARCHAR}, #{RUNST3,jdbcType=VARCHAR}, #{RUNST4,jdbcType=VARCHAR}, 
+      #{RUNST5,jdbcType=VARCHAR}, #{RUNST6,jdbcType=VARCHAR}, #{RUNST7,jdbcType=VARCHAR}, 
+      #{RUNST8,jdbcType=VARCHAR}, #{RUNST9,jdbcType=VARCHAR}, #{SETKD1,jdbcType=DECIMAL}, 
+      #{SETKD2,jdbcType=DECIMAL}, #{SETKD3,jdbcType=DECIMAL}, #{SETKD4,jdbcType=DECIMAL}, 
+      #{SETKD5,jdbcType=DECIMAL}, #{SETKD6,jdbcType=DECIMAL}, #{SETKD7,jdbcType=DECIMAL}, 
+      #{SETKD8,jdbcType=DECIMAL}, #{SETKD9,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseSzRuninfoR" >
+    insert into NHBZ.DSE_SZ_RUNINFO_R
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        STCD,
+      </if>
+      <if test="TM != null" >
+        TM,
+      </if>
+      <if test="OUT_WATER != null" >
+        OUT_WATER,
+      </if>
+      <if test="IN_WATER != null" >
+        IN_WATER,
+      </if>
+      <if test="STATE != null" >
+        STATE,
+      </if>
+      <if test="n1 != null" >
+        N1,
+      </if>
+      <if test="KD1 != null" >
+        KD1,
+      </if>
+      <if test="LL1 != null" >
+        LL1,
+      </if>
+      <if test="n2 != null" >
+        N2,
+      </if>
+      <if test="KD2 != null" >
+        KD2,
+      </if>
+      <if test="LL2 != null" >
+        LL2,
+      </if>
+      <if test="n3 != null" >
+        N3,
+      </if>
+      <if test="KD3 != null" >
+        KD3,
+      </if>
+      <if test="LL3 != null" >
+        LL3,
+      </if>
+      <if test="n4 != null" >
+        N4,
+      </if>
+      <if test="KD4 != null" >
+        KD4,
+      </if>
+      <if test="LL4 != null" >
+        LL4,
+      </if>
+      <if test="n5 != null" >
+        N5,
+      </if>
+      <if test="KD5 != null" >
+        KD5,
+      </if>
+      <if test="LL5 != null" >
+        LL5,
+      </if>
+      <if test="n6 != null" >
+        N6,
+      </if>
+      <if test="KD6 != null" >
+        KD6,
+      </if>
+      <if test="LL6 != null" >
+        LL6,
+      </if>
+      <if test="n7 != null" >
+        N7,
+      </if>
+      <if test="KD7 != null" >
+        KD7,
+      </if>
+      <if test="LL7 != null" >
+        LL7,
+      </if>
+      <if test="n8 != null" >
+        N8,
+      </if>
+      <if test="KD8 != null" >
+        KD8,
+      </if>
+      <if test="LL8 != null" >
+        LL8,
+      </if>
+      <if test="n9 != null" >
+        N9,
+      </if>
+      <if test="KD9 != null" >
+        KD9,
+      </if>
+      <if test="LL9 != null" >
+        LL9,
+      </if>
+      <if test="LL != null" >
+        LL,
+      </if>
+      <if test="CONTP1 != null" >
+        CONTP1,
+      </if>
+      <if test="CONTP2 != null" >
+        CONTP2,
+      </if>
+      <if test="CONTP3 != null" >
+        CONTP3,
+      </if>
+      <if test="CONTP4 != null" >
+        CONTP4,
+      </if>
+      <if test="CONTP5 != null" >
+        CONTP5,
+      </if>
+      <if test="CONTP6 != null" >
+        CONTP6,
+      </if>
+      <if test="CONTP7 != null" >
+        CONTP7,
+      </if>
+      <if test="CONTP8 != null" >
+        CONTP8,
+      </if>
+      <if test="CONTP9 != null" >
+        CONTP9,
+      </if>
+      <if test="CONST1 != null" >
+        CONST1,
+      </if>
+      <if test="CONST2 != null" >
+        CONST2,
+      </if>
+      <if test="CONST3 != null" >
+        CONST3,
+      </if>
+      <if test="CONST4 != null" >
+        CONST4,
+      </if>
+      <if test="CONST5 != null" >
+        CONST5,
+      </if>
+      <if test="CONST6 != null" >
+        CONST6,
+      </if>
+      <if test="CONST7 != null" >
+        CONST7,
+      </if>
+      <if test="CONST8 != null" >
+        CONST8,
+      </if>
+      <if test="CONST9 != null" >
+        CONST9,
+      </if>
+      <if test="RUNST1 != null" >
+        RUNST1,
+      </if>
+      <if test="RUNST2 != null" >
+        RUNST2,
+      </if>
+      <if test="RUNST3 != null" >
+        RUNST3,
+      </if>
+      <if test="RUNST4 != null" >
+        RUNST4,
+      </if>
+      <if test="RUNST5 != null" >
+        RUNST5,
+      </if>
+      <if test="RUNST6 != null" >
+        RUNST6,
+      </if>
+      <if test="RUNST7 != null" >
+        RUNST7,
+      </if>
+      <if test="RUNST8 != null" >
+        RUNST8,
+      </if>
+      <if test="RUNST9 != null" >
+        RUNST9,
+      </if>
+      <if test="SETKD1 != null" >
+        SETKD1,
+      </if>
+      <if test="SETKD2 != null" >
+        SETKD2,
+      </if>
+      <if test="SETKD3 != null" >
+        SETKD3,
+      </if>
+      <if test="SETKD4 != null" >
+        SETKD4,
+      </if>
+      <if test="SETKD5 != null" >
+        SETKD5,
+      </if>
+      <if test="SETKD6 != null" >
+        SETKD6,
+      </if>
+      <if test="SETKD7 != null" >
+        SETKD7,
+      </if>
+      <if test="SETKD8 != null" >
+        SETKD8,
+      </if>
+      <if test="SETKD9 != null" >
+        SETKD9,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        #{STCD,jdbcType=VARCHAR},
+      </if>
+      <if test="TM != null" >
+        #{TM,jdbcType=TIMESTAMP},
+      </if>
+      <if test="OUT_WATER != null" >
+        #{OUT_WATER,jdbcType=DECIMAL},
+      </if>
+      <if test="IN_WATER != null" >
+        #{IN_WATER,jdbcType=DECIMAL},
+      </if>
+      <if test="STATE != null" >
+        #{STATE,jdbcType=VARCHAR},
+      </if>
+      <if test="n1 != null" >
+        #{n1,jdbcType=VARCHAR},
+      </if>
+      <if test="KD1 != null" >
+        #{KD1,jdbcType=DECIMAL},
+      </if>
+      <if test="LL1 != null" >
+        #{LL1,jdbcType=DECIMAL},
+      </if>
+      <if test="n2 != null" >
+        #{n2,jdbcType=VARCHAR},
+      </if>
+      <if test="KD2 != null" >
+        #{KD2,jdbcType=DECIMAL},
+      </if>
+      <if test="LL2 != null" >
+        #{LL2,jdbcType=DECIMAL},
+      </if>
+      <if test="n3 != null" >
+        #{n3,jdbcType=VARCHAR},
+      </if>
+      <if test="KD3 != null" >
+        #{KD3,jdbcType=DECIMAL},
+      </if>
+      <if test="LL3 != null" >
+        #{LL3,jdbcType=DECIMAL},
+      </if>
+      <if test="n4 != null" >
+        #{n4,jdbcType=VARCHAR},
+      </if>
+      <if test="KD4 != null" >
+        #{KD4,jdbcType=DECIMAL},
+      </if>
+      <if test="LL4 != null" >
+        #{LL4,jdbcType=DECIMAL},
+      </if>
+      <if test="n5 != null" >
+        #{n5,jdbcType=VARCHAR},
+      </if>
+      <if test="KD5 != null" >
+        #{KD5,jdbcType=DECIMAL},
+      </if>
+      <if test="LL5 != null" >
+        #{LL5,jdbcType=DECIMAL},
+      </if>
+      <if test="n6 != null" >
+        #{n6,jdbcType=VARCHAR},
+      </if>
+      <if test="KD6 != null" >
+        #{KD6,jdbcType=DECIMAL},
+      </if>
+      <if test="LL6 != null" >
+        #{LL6,jdbcType=DECIMAL},
+      </if>
+      <if test="n7 != null" >
+        #{n7,jdbcType=VARCHAR},
+      </if>
+      <if test="KD7 != null" >
+        #{KD7,jdbcType=DECIMAL},
+      </if>
+      <if test="LL7 != null" >
+        #{LL7,jdbcType=DECIMAL},
+      </if>
+      <if test="n8 != null" >
+        #{n8,jdbcType=VARCHAR},
+      </if>
+      <if test="KD8 != null" >
+        #{KD8,jdbcType=DECIMAL},
+      </if>
+      <if test="LL8 != null" >
+        #{LL8,jdbcType=DECIMAL},
+      </if>
+      <if test="n9 != null" >
+        #{n9,jdbcType=VARCHAR},
+      </if>
+      <if test="KD9 != null" >
+        #{KD9,jdbcType=DECIMAL},
+      </if>
+      <if test="LL9 != null" >
+        #{LL9,jdbcType=DECIMAL},
+      </if>
+      <if test="LL != null" >
+        #{LL,jdbcType=DECIMAL},
+      </if>
+      <if test="CONTP1 != null" >
+        #{CONTP1,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP2 != null" >
+        #{CONTP2,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP3 != null" >
+        #{CONTP3,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP4 != null" >
+        #{CONTP4,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP5 != null" >
+        #{CONTP5,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP6 != null" >
+        #{CONTP6,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP7 != null" >
+        #{CONTP7,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP8 != null" >
+        #{CONTP8,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP9 != null" >
+        #{CONTP9,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST1 != null" >
+        #{CONST1,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST2 != null" >
+        #{CONST2,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST3 != null" >
+        #{CONST3,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST4 != null" >
+        #{CONST4,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST5 != null" >
+        #{CONST5,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST6 != null" >
+        #{CONST6,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST7 != null" >
+        #{CONST7,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST8 != null" >
+        #{CONST8,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST9 != null" >
+        #{CONST9,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST1 != null" >
+        #{RUNST1,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST2 != null" >
+        #{RUNST2,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST3 != null" >
+        #{RUNST3,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST4 != null" >
+        #{RUNST4,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST5 != null" >
+        #{RUNST5,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST6 != null" >
+        #{RUNST6,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST7 != null" >
+        #{RUNST7,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST8 != null" >
+        #{RUNST8,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST9 != null" >
+        #{RUNST9,jdbcType=VARCHAR},
+      </if>
+      <if test="SETKD1 != null" >
+        #{SETKD1,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD2 != null" >
+        #{SETKD2,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD3 != null" >
+        #{SETKD3,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD4 != null" >
+        #{SETKD4,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD5 != null" >
+        #{SETKD5,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD6 != null" >
+        #{SETKD6,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD7 != null" >
+        #{SETKD7,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD8 != null" >
+        #{SETKD8,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD9 != null" >
+        #{SETKD9,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseSzRuninfoR" >
+    update NHBZ.DSE_SZ_RUNINFO_R
+    <set >
+      <if test="OUT_WATER != null" >
+        OUT_WATER = #{OUT_WATER,jdbcType=DECIMAL},
+      </if>
+      <if test="IN_WATER != null" >
+        IN_WATER = #{IN_WATER,jdbcType=DECIMAL},
+      </if>
+      <if test="STATE != null" >
+        STATE = #{STATE,jdbcType=VARCHAR},
+      </if>
+      <if test="n1 != null" >
+        N1 = #{n1,jdbcType=VARCHAR},
+      </if>
+      <if test="KD1 != null" >
+        KD1 = #{KD1,jdbcType=DECIMAL},
+      </if>
+      <if test="LL1 != null" >
+        LL1 = #{LL1,jdbcType=DECIMAL},
+      </if>
+      <if test="n2 != null" >
+        N2 = #{n2,jdbcType=VARCHAR},
+      </if>
+      <if test="KD2 != null" >
+        KD2 = #{KD2,jdbcType=DECIMAL},
+      </if>
+      <if test="LL2 != null" >
+        LL2 = #{LL2,jdbcType=DECIMAL},
+      </if>
+      <if test="n3 != null" >
+        N3 = #{n3,jdbcType=VARCHAR},
+      </if>
+      <if test="KD3 != null" >
+        KD3 = #{KD3,jdbcType=DECIMAL},
+      </if>
+      <if test="LL3 != null" >
+        LL3 = #{LL3,jdbcType=DECIMAL},
+      </if>
+      <if test="n4 != null" >
+        N4 = #{n4,jdbcType=VARCHAR},
+      </if>
+      <if test="KD4 != null" >
+        KD4 = #{KD4,jdbcType=DECIMAL},
+      </if>
+      <if test="LL4 != null" >
+        LL4 = #{LL4,jdbcType=DECIMAL},
+      </if>
+      <if test="n5 != null" >
+        N5 = #{n5,jdbcType=VARCHAR},
+      </if>
+      <if test="KD5 != null" >
+        KD5 = #{KD5,jdbcType=DECIMAL},
+      </if>
+      <if test="LL5 != null" >
+        LL5 = #{LL5,jdbcType=DECIMAL},
+      </if>
+      <if test="n6 != null" >
+        N6 = #{n6,jdbcType=VARCHAR},
+      </if>
+      <if test="KD6 != null" >
+        KD6 = #{KD6,jdbcType=DECIMAL},
+      </if>
+      <if test="LL6 != null" >
+        LL6 = #{LL6,jdbcType=DECIMAL},
+      </if>
+      <if test="n7 != null" >
+        N7 = #{n7,jdbcType=VARCHAR},
+      </if>
+      <if test="KD7 != null" >
+        KD7 = #{KD7,jdbcType=DECIMAL},
+      </if>
+      <if test="LL7 != null" >
+        LL7 = #{LL7,jdbcType=DECIMAL},
+      </if>
+      <if test="n8 != null" >
+        N8 = #{n8,jdbcType=VARCHAR},
+      </if>
+      <if test="KD8 != null" >
+        KD8 = #{KD8,jdbcType=DECIMAL},
+      </if>
+      <if test="LL8 != null" >
+        LL8 = #{LL8,jdbcType=DECIMAL},
+      </if>
+      <if test="n9 != null" >
+        N9 = #{n9,jdbcType=VARCHAR},
+      </if>
+      <if test="KD9 != null" >
+        KD9 = #{KD9,jdbcType=DECIMAL},
+      </if>
+      <if test="LL9 != null" >
+        LL9 = #{LL9,jdbcType=DECIMAL},
+      </if>
+      <if test="LL != null" >
+        LL = #{LL,jdbcType=DECIMAL},
+      </if>
+      <if test="CONTP1 != null" >
+        CONTP1 = #{CONTP1,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP2 != null" >
+        CONTP2 = #{CONTP2,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP3 != null" >
+        CONTP3 = #{CONTP3,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP4 != null" >
+        CONTP4 = #{CONTP4,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP5 != null" >
+        CONTP5 = #{CONTP5,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP6 != null" >
+        CONTP6 = #{CONTP6,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP7 != null" >
+        CONTP7 = #{CONTP7,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP8 != null" >
+        CONTP8 = #{CONTP8,jdbcType=VARCHAR},
+      </if>
+      <if test="CONTP9 != null" >
+        CONTP9 = #{CONTP9,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST1 != null" >
+        CONST1 = #{CONST1,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST2 != null" >
+        CONST2 = #{CONST2,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST3 != null" >
+        CONST3 = #{CONST3,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST4 != null" >
+        CONST4 = #{CONST4,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST5 != null" >
+        CONST5 = #{CONST5,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST6 != null" >
+        CONST6 = #{CONST6,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST7 != null" >
+        CONST7 = #{CONST7,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST8 != null" >
+        CONST8 = #{CONST8,jdbcType=VARCHAR},
+      </if>
+      <if test="CONST9 != null" >
+        CONST9 = #{CONST9,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST1 != null" >
+        RUNST1 = #{RUNST1,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST2 != null" >
+        RUNST2 = #{RUNST2,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST3 != null" >
+        RUNST3 = #{RUNST3,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST4 != null" >
+        RUNST4 = #{RUNST4,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST5 != null" >
+        RUNST5 = #{RUNST5,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST6 != null" >
+        RUNST6 = #{RUNST6,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST7 != null" >
+        RUNST7 = #{RUNST7,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST8 != null" >
+        RUNST8 = #{RUNST8,jdbcType=VARCHAR},
+      </if>
+      <if test="RUNST9 != null" >
+        RUNST9 = #{RUNST9,jdbcType=VARCHAR},
+      </if>
+      <if test="SETKD1 != null" >
+        SETKD1 = #{SETKD1,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD2 != null" >
+        SETKD2 = #{SETKD2,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD3 != null" >
+        SETKD3 = #{SETKD3,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD4 != null" >
+        SETKD4 = #{SETKD4,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD5 != null" >
+        SETKD5 = #{SETKD5,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD6 != null" >
+        SETKD6 = #{SETKD6,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD7 != null" >
+        SETKD7 = #{SETKD7,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD8 != null" >
+        SETKD8 = #{SETKD8,jdbcType=DECIMAL},
+      </if>
+      <if test="SETKD9 != null" >
+        SETKD9 = #{SETKD9,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseSzRuninfoR" >
+    update NHBZ.DSE_SZ_RUNINFO_R
+    set OUT_WATER = #{OUT_WATER,jdbcType=DECIMAL},
+      IN_WATER = #{IN_WATER,jdbcType=DECIMAL},
+      STATE = #{STATE,jdbcType=VARCHAR},
+      N1 = #{n1,jdbcType=VARCHAR},
+      KD1 = #{KD1,jdbcType=DECIMAL},
+      LL1 = #{LL1,jdbcType=DECIMAL},
+      N2 = #{n2,jdbcType=VARCHAR},
+      KD2 = #{KD2,jdbcType=DECIMAL},
+      LL2 = #{LL2,jdbcType=DECIMAL},
+      N3 = #{n3,jdbcType=VARCHAR},
+      KD3 = #{KD3,jdbcType=DECIMAL},
+      LL3 = #{LL3,jdbcType=DECIMAL},
+      N4 = #{n4,jdbcType=VARCHAR},
+      KD4 = #{KD4,jdbcType=DECIMAL},
+      LL4 = #{LL4,jdbcType=DECIMAL},
+      N5 = #{n5,jdbcType=VARCHAR},
+      KD5 = #{KD5,jdbcType=DECIMAL},
+      LL5 = #{LL5,jdbcType=DECIMAL},
+      N6 = #{n6,jdbcType=VARCHAR},
+      KD6 = #{KD6,jdbcType=DECIMAL},
+      LL6 = #{LL6,jdbcType=DECIMAL},
+      N7 = #{n7,jdbcType=VARCHAR},
+      KD7 = #{KD7,jdbcType=DECIMAL},
+      LL7 = #{LL7,jdbcType=DECIMAL},
+      N8 = #{n8,jdbcType=VARCHAR},
+      KD8 = #{KD8,jdbcType=DECIMAL},
+      LL8 = #{LL8,jdbcType=DECIMAL},
+      N9 = #{n9,jdbcType=VARCHAR},
+      KD9 = #{KD9,jdbcType=DECIMAL},
+      LL9 = #{LL9,jdbcType=DECIMAL},
+      LL = #{LL,jdbcType=DECIMAL},
+      CONTP1 = #{CONTP1,jdbcType=VARCHAR},
+      CONTP2 = #{CONTP2,jdbcType=VARCHAR},
+      CONTP3 = #{CONTP3,jdbcType=VARCHAR},
+      CONTP4 = #{CONTP4,jdbcType=VARCHAR},
+      CONTP5 = #{CONTP5,jdbcType=VARCHAR},
+      CONTP6 = #{CONTP6,jdbcType=VARCHAR},
+      CONTP7 = #{CONTP7,jdbcType=VARCHAR},
+      CONTP8 = #{CONTP8,jdbcType=VARCHAR},
+      CONTP9 = #{CONTP9,jdbcType=VARCHAR},
+      CONST1 = #{CONST1,jdbcType=VARCHAR},
+      CONST2 = #{CONST2,jdbcType=VARCHAR},
+      CONST3 = #{CONST3,jdbcType=VARCHAR},
+      CONST4 = #{CONST4,jdbcType=VARCHAR},
+      CONST5 = #{CONST5,jdbcType=VARCHAR},
+      CONST6 = #{CONST6,jdbcType=VARCHAR},
+      CONST7 = #{CONST7,jdbcType=VARCHAR},
+      CONST8 = #{CONST8,jdbcType=VARCHAR},
+      CONST9 = #{CONST9,jdbcType=VARCHAR},
+      RUNST1 = #{RUNST1,jdbcType=VARCHAR},
+      RUNST2 = #{RUNST2,jdbcType=VARCHAR},
+      RUNST3 = #{RUNST3,jdbcType=VARCHAR},
+      RUNST4 = #{RUNST4,jdbcType=VARCHAR},
+      RUNST5 = #{RUNST5,jdbcType=VARCHAR},
+      RUNST6 = #{RUNST6,jdbcType=VARCHAR},
+      RUNST7 = #{RUNST7,jdbcType=VARCHAR},
+      RUNST8 = #{RUNST8,jdbcType=VARCHAR},
+      RUNST9 = #{RUNST9,jdbcType=VARCHAR},
+      SETKD1 = #{SETKD1,jdbcType=DECIMAL},
+      SETKD2 = #{SETKD2,jdbcType=DECIMAL},
+      SETKD3 = #{SETKD3,jdbcType=DECIMAL},
+      SETKD4 = #{SETKD4,jdbcType=DECIMAL},
+      SETKD5 = #{SETKD5,jdbcType=DECIMAL},
+      SETKD6 = #{SETKD6,jdbcType=DECIMAL},
+      SETKD7 = #{SETKD7,jdbcType=DECIMAL},
+      SETKD8 = #{SETKD8,jdbcType=DECIMAL},
+      SETKD9 = #{SETKD9,jdbcType=DECIMAL}
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </update>
+</mapper>
