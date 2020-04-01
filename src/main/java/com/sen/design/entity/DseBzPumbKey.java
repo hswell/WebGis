@@ -11,6 +11,14 @@ public class DseBzPumbKey {
         this.AIRCREWNM = AIRCREWNM;
     }
 
+    @Override
+    public String toString() {
+        return "DseBzPumbKey{" +
+                "ENNMCD='" + ENNMCD + '\'' +
+                ", AIRCREWNM='" + AIRCREWNM + '\'' +
+                '}';
+    }
+
     public DseBzPumbKey() {
         super();
     }

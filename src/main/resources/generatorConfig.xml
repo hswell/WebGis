@@ -63,12 +63,12 @@
 
 
 
-      <table schema="NHBZ" tableName="AD_CD_B" enableCountByExample="false" enableSelectByExample="false"
+      <table schema="NHBZ" tableName="DSE_BZ_RUNSTATE_R" enableCountByExample="false" enableSelectByExample="false"
              enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
           <property name="useActualColumnNames" value="true"/>
           <!-- <property name="rootClass" value="com.sen.design.entity.Base"/>  -->
      </table>
-        <table schema="NHBZ" tableName="DSE_BZ_PUMB" enableCountByExample="false" enableSelectByExample="false"
+        <table schema="NHBZ" tableName="DSE_BZSZ_REMARK" enableCountByExample="false" enableSelectByExample="false"
                enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
             <property name="useActualColumnNames" value="true"/>
 

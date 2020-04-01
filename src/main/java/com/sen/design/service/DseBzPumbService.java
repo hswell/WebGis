@@ -22,6 +22,8 @@ public class DseBzPumbService {
     public List  queryByKey(String ENNMCD) {
         return  dseBzPumbMapper.querybykey(ENNMCD);
     }
-
+    public DseBzPumb select(DseBzPumbKey key){
+        return dseBzPumbMapper.selectByPrimaryKey(key);
+    }
 
 }

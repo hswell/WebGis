@@ -3,6 +3,7 @@ package com.sen.design.entity;
 import java.math.BigDecimal;
 
 public class DseBzPumb extends DseBzPumbKey {
+    //2.3电排站机组信息表
     private String WATERPUMP_MODAL;
 
     private BigDecimal d_RUNOFF;

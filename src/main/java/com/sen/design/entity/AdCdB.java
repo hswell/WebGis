@@ -3,6 +3,7 @@ package com.sen.design.entity;
 import java.math.BigDecimal;
 
 public class AdCdB {
+    //2.1行政区划代码
     private String ADCD;
 
     private String ADNM;

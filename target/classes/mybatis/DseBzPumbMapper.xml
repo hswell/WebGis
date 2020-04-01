@@ -38,13 +38,14 @@
     select *
     from NHBZ.DSE_BZ_PUMB
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBzPumbKey" >
-    select
-    <include refid="Base_Column_List" />
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBzPumb" >
+    select *
     from NHBZ.DSE_BZ_PUMB
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
       and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.DseBzPumbKey" >
     delete from NHBZ.DSE_BZ_PUMB
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}

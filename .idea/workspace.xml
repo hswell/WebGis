@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc7d88bb-8c21-4f04-82d1-8d9cabb40fe7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_35.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biyesheji.iml" beforeDir="false" afterPath="$PROJECT_DIR$/biyesheji.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/DseBzPumbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/DseBzPumbController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumbKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumbKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzPumbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzPumbService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzPumbMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzPumbMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/controller/DseBzPumbController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/controller/DseBzPumbController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/service/DseBzPumbService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/service/DseBzPumbService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/DseBzPumbMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/DseBzPumbMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +70,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="E:\biyesheji\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -75,6 +99,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -92,7 +117,7 @@
       <recent name="E:\biyesheji\src\main\resources\generator" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.GisdesignApplication">
+  <component name="RunManager" selected="Maven.generator">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sen.design.Test" />
       <module name="biyesheji" />
@@ -140,9 +165,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test" />
       <item itemvalue="Maven.generator" />
       <item itemvalue="Spring Boot.GisdesignApplication" />
-      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
@@ -173,6 +198,7 @@
       <workItem from="1585649135271" duration="593000" />
       <workItem from="1585720059639" duration="1725000" />
       <workItem from="1585721998348" duration="11902000" />
+      <workItem from="1585735712539" duration="3720000" />
     </task>
     <task id="LOCAL-00001" summary="4月1日提交">
       <created>1585732789112</created>
@@ -200,6 +226,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="90" y="0" width="1189" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585728385589" />
+    <state x="449" y="36" key="#com.intellij.ide.util.MemberChooser" timestamp="1585738784062">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="36" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585738784062" />
     <state x="436" y="98" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585723561898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -216,38 +246,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="641" y="151" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585732679732" />
-    <state width="1483" height="305" key="GridCell.Tab.0.bottom" timestamp="1585734848787">
+    <state width="1483" height="-15" key="GridCell.Tab.0.bottom" timestamp="1585739416002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="305" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585734848787" />
-    <state width="1483" height="305" key="GridCell.Tab.0.center" timestamp="1585734848787">
+    <state width="1483" height="-15" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
+    <state width="1483" height="-15" key="GridCell.Tab.0.center" timestamp="1585739416002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="305" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585734848787" />
-    <state width="1483" height="305" key="GridCell.Tab.0.left" timestamp="1585734848786">
+    <state width="1483" height="-15" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
+    <state width="1483" height="-15" key="GridCell.Tab.0.left" timestamp="1585739416002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="305" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585734848786" />
-    <state width="1483" height="305" key="GridCell.Tab.0.right" timestamp="1585734848787">
+    <state width="1483" height="-15" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
+    <state width="1483" height="-15" key="GridCell.Tab.0.right" timestamp="1585739416002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="305" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585734848787" />
-    <state width="1483" height="305" key="GridCell.Tab.1.bottom" timestamp="1585734848787">
+    <state width="1483" height="-15" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
+    <state width="1483" height="-15" key="GridCell.Tab.1.bottom" timestamp="1585739416002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="305" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585734848787" />
-    <state width="1483" height="305" key="GridCell.Tab.1.center" timestamp="1585734848787">
+    <state width="1483" height="-15" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
+    <state width="1483" height="-15" key="GridCell.Tab.1.center" timestamp="1585739416002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="305" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585734848787" />
-    <state width="1483" height="305" key="GridCell.Tab.1.left" timestamp="1585734848787">
+    <state width="1483" height="-15" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
+    <state width="1483" height="-15" key="GridCell.Tab.1.left" timestamp="1585739416002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="305" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585734848787" />
-    <state width="1483" height="305" key="GridCell.Tab.1.right" timestamp="1585734848787">
+    <state width="1483" height="-15" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
+    <state width="1483" height="-15" key="GridCell.Tab.1.right" timestamp="1585739416002">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="305" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585734848787" />
+    <state width="1483" height="-15" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585739416002" />
     <state x="98" y="0" key="SettingsEditor" timestamp="1585732633174">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -256,10 +286,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1585732107426" />
-    <state x="470" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1585721998881">
+    <state x="470" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1585735991294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="470" y="306" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585721998881" />
+    <state x="470" y="306" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585735991294" />
     <state x="262" y="13" width="1011" height="798" key="find.popup" timestamp="1585399685390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
