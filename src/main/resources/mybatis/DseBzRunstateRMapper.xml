@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseBzRunstateRMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseBzRunstateR" >
+    <constructor >
+      <idArg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="TM" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="FOREBAYZ" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="N1" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N2" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N3" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N4" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N5" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N6" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N7" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N8" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N9" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N10" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N11" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="N12" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="STATE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="NSW" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="WSW" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STCD, TM, FOREBAYZ, N1, N2, N3, N4, N5, N6, N7, N8, N9, N10, N11, N12, STATE, NSW, 
+    WSW
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBzRunstateRKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_BZ_RUNSTATE_R
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.DseBzRunstateRKey" >
+    delete from NHBZ.DSE_BZ_RUNSTATE_R
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseBzRunstateR" >
+    insert into NHBZ.DSE_BZ_RUNSTATE_R (STCD, TM, FOREBAYZ, 
+      N1, N2, N3, N4, 
+      N5, N6, N7, N8, 
+      N9, N10, N11, N12, 
+      STATE, NSW, WSW)
+    values (#{STCD,jdbcType=VARCHAR}, #{TM,jdbcType=TIMESTAMP}, #{FOREBAYZ,jdbcType=DECIMAL}, 
+      #{n1,jdbcType=DECIMAL}, #{n2,jdbcType=DECIMAL}, #{n3,jdbcType=DECIMAL}, #{n4,jdbcType=DECIMAL}, 
+      #{n5,jdbcType=DECIMAL}, #{n6,jdbcType=DECIMAL}, #{n7,jdbcType=DECIMAL}, #{n8,jdbcType=DECIMAL}, 
+      #{n9,jdbcType=DECIMAL}, #{n10,jdbcType=DECIMAL}, #{n11,jdbcType=DECIMAL}, #{n12,jdbcType=DECIMAL}, 
+      #{STATE,jdbcType=DECIMAL}, #{NSW,jdbcType=DECIMAL}, #{WSW,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseBzRunstateR" >
+    insert into NHBZ.DSE_BZ_RUNSTATE_R
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        STCD,
+      </if>
+      <if test="TM != null" >
+        TM,
+      </if>
+      <if test="FOREBAYZ != null" >
+        FOREBAYZ,
+      </if>
+      <if test="n1 != null" >
+        N1,
+      </if>
+      <if test="n2 != null" >
+        N2,
+      </if>
+      <if test="n3 != null" >
+        N3,
+      </if>
+      <if test="n4 != null" >
+        N4,
+      </if>
+      <if test="n5 != null" >
+        N5,
+      </if>
+      <if test="n6 != null" >
+        N6,
+      </if>
+      <if test="n7 != null" >
+        N7,
+      </if>
+      <if test="n8 != null" >
+        N8,
+      </if>
+      <if test="n9 != null" >
+        N9,
+      </if>
+      <if test="n10 != null" >
+        N10,
+      </if>
+      <if test="n11 != null" >
+        N11,
+      </if>
+      <if test="n12 != null" >
+        N12,
+      </if>
+      <if test="STATE != null" >
+        STATE,
+      </if>
+      <if test="NSW != null" >
+        NSW,
+      </if>
+      <if test="WSW != null" >
+        WSW,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        #{STCD,jdbcType=VARCHAR},
+      </if>
+      <if test="TM != null" >
+        #{TM,jdbcType=TIMESTAMP},
+      </if>
+      <if test="FOREBAYZ != null" >
+        #{FOREBAYZ,jdbcType=DECIMAL},
+      </if>
+      <if test="n1 != null" >
+        #{n1,jdbcType=DECIMAL},
+      </if>
+      <if test="n2 != null" >
+        #{n2,jdbcType=DECIMAL},
+      </if>
+      <if test="n3 != null" >
+        #{n3,jdbcType=DECIMAL},
+      </if>
+      <if test="n4 != null" >
+        #{n4,jdbcType=DECIMAL},
+      </if>
+      <if test="n5 != null" >
+        #{n5,jdbcType=DECIMAL},
+      </if>
+      <if test="n6 != null" >
+        #{n6,jdbcType=DECIMAL},
+      </if>
+      <if test="n7 != null" >
+        #{n7,jdbcType=DECIMAL},
+      </if>
+      <if test="n8 != null" >
+        #{n8,jdbcType=DECIMAL},
+      </if>
+      <if test="n9 != null" >
+        #{n9,jdbcType=DECIMAL},
+      </if>
+      <if test="n10 != null" >
+        #{n10,jdbcType=DECIMAL},
+      </if>
+      <if test="n11 != null" >
+        #{n11,jdbcType=DECIMAL},
+      </if>
+      <if test="n12 != null" >
+        #{n12,jdbcType=DECIMAL},
+      </if>
+      <if test="STATE != null" >
+        #{STATE,jdbcType=DECIMAL},
+      </if>
+      <if test="NSW != null" >
+        #{NSW,jdbcType=DECIMAL},
+      </if>
+      <if test="WSW != null" >
+        #{WSW,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseBzRunstateR" >
+    update NHBZ.DSE_BZ_RUNSTATE_R
+    <set >
+      <if test="FOREBAYZ != null" >
+        FOREBAYZ = #{FOREBAYZ,jdbcType=DECIMAL},
+      </if>
+      <if test="n1 != null" >
+        N1 = #{n1,jdbcType=DECIMAL},
+      </if>
+      <if test="n2 != null" >
+        N2 = #{n2,jdbcType=DECIMAL},
+      </if>
+      <if test="n3 != null" >
+        N3 = #{n3,jdbcType=DECIMAL},
+      </if>
+      <if test="n4 != null" >
+        N4 = #{n4,jdbcType=DECIMAL},
+      </if>
+      <if test="n5 != null" >
+        N5 = #{n5,jdbcType=DECIMAL},
+      </if>
+      <if test="n6 != null" >
+        N6 = #{n6,jdbcType=DECIMAL},
+      </if>
+      <if test="n7 != null" >
+        N7 = #{n7,jdbcType=DECIMAL},
+      </if>
+      <if test="n8 != null" >
+        N8 = #{n8,jdbcType=DECIMAL},
+      </if>
+      <if test="n9 != null" >
+        N9 = #{n9,jdbcType=DECIMAL},
+      </if>
+      <if test="n10 != null" >
+        N10 = #{n10,jdbcType=DECIMAL},
+      </if>
+      <if test="n11 != null" >
+        N11 = #{n11,jdbcType=DECIMAL},
+      </if>
+      <if test="n12 != null" >
+        N12 = #{n12,jdbcType=DECIMAL},
+      </if>
+      <if test="STATE != null" >
+        STATE = #{STATE,jdbcType=DECIMAL},
+      </if>
+      <if test="NSW != null" >
+        NSW = #{NSW,jdbcType=DECIMAL},
+      </if>
+      <if test="WSW != null" >
+        WSW = #{WSW,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseBzRunstateR" >
+    update NHBZ.DSE_BZ_RUNSTATE_R
+    set FOREBAYZ = #{FOREBAYZ,jdbcType=DECIMAL},
+      N1 = #{n1,jdbcType=DECIMAL},
+      N2 = #{n2,jdbcType=DECIMAL},
+      N3 = #{n3,jdbcType=DECIMAL},
+      N4 = #{n4,jdbcType=DECIMAL},
+      N5 = #{n5,jdbcType=DECIMAL},
+      N6 = #{n6,jdbcType=DECIMAL},
+      N7 = #{n7,jdbcType=DECIMAL},
+      N8 = #{n8,jdbcType=DECIMAL},
+      N9 = #{n9,jdbcType=DECIMAL},
+      N10 = #{n10,jdbcType=DECIMAL},
+      N11 = #{n11,jdbcType=DECIMAL},
+      N12 = #{n12,jdbcType=DECIMAL},
+      STATE = #{STATE,jdbcType=DECIMAL},
+      NSW = #{NSW,jdbcType=DECIMAL},
+      WSW = #{WSW,jdbcType=DECIMAL}
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+  </update>
+</mapper>

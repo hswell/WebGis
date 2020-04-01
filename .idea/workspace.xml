@@ -2,24 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc7d88bb-8c21-4f04-82d1-8d9cabb40fe7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_35.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzRunstateRMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzszRemarkMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateRKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzszRemark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRunstateRMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzszRemarkMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biyesheji.iml" beforeDir="false" afterPath="$PROJECT_DIR$/biyesheji.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/DseBzPumbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/DseBzPumbController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumbKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumbKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzPumbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzPumbService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzPumbMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzPumbMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/controller/DseBzPumbController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/controller/DseBzPumbController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/service/DseBzPumbService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/service/DseBzPumbService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/DseBzPumbMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/DseBzPumbMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBzPumbKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBzPumbKey.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +77,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1Z1sDrwyaOAmOZkcFfz1XryhnxP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="oracle" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -198,7 +192,7 @@
       <workItem from="1585649135271" duration="593000" />
       <workItem from="1585720059639" duration="1725000" />
       <workItem from="1585721998348" duration="11902000" />
-      <workItem from="1585735712539" duration="3720000" />
+      <workItem from="1585735712539" duration="4270000" />
     </task>
     <task id="LOCAL-00001" summary="4月1日提交">
       <created>1585732789112</created>
@@ -207,15 +201,24 @@
       <option name="project" value="LOCAL" />
       <updated>1585732789112</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="4月1日提交 新增2个实体">
+      <created>1585739574644</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585739574644</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="4月1日提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="4月1日提交" />
+    <MESSAGE value="4月1日提交 新增2个实体" />
+    <option name="LAST_COMMIT_MESSAGE" value="4月1日提交 新增2个实体" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="0" key="#Inspections" timestamp="1585720950842">
@@ -234,10 +237,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="436" y="98" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585723561898" />
-    <state x="535" y="0" key="CommitChangelistDialog2" timestamp="1585732788128">
+    <state x="535" y="0" key="CommitChangelistDialog2" timestamp="1585739573679">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="535" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585732788128" />
+    <state x="535" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585739573679" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1585720591032">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

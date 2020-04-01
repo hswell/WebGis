@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseBzszRemarkMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseBzszRemark" >
+    <constructor >
+      <idArg column="BZSTCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SZSTCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SZSTCD2" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    BZSTCD, SZSTCD, NT, SZSTCD2
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_BZSZ_REMARK
+    where BZSTCD = #{BZSTCD,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from NHBZ.DSE_BZSZ_REMARK
+    where BZSTCD = #{BZSTCD,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseBzszRemark" >
+    insert into NHBZ.DSE_BZSZ_REMARK (BZSTCD, SZSTCD, NT, 
+      SZSTCD2)
+    values (#{BZSTCD,jdbcType=VARCHAR}, #{SZSTCD,jdbcType=VARCHAR}, #{NT,jdbcType=VARCHAR}, 
+      #{SZSTCD2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseBzszRemark" >
+    insert into NHBZ.DSE_BZSZ_REMARK
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="BZSTCD != null" >
+        BZSTCD,
+      </if>
+      <if test="SZSTCD != null" >
+        SZSTCD,
+      </if>
+      <if test="NT != null" >
+        NT,
+      </if>
+      <if test="SZSTCD2 != null" >
+        SZSTCD2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="BZSTCD != null" >
+        #{BZSTCD,jdbcType=VARCHAR},
+      </if>
+      <if test="SZSTCD != null" >
+        #{SZSTCD,jdbcType=VARCHAR},
+      </if>
+      <if test="NT != null" >
+        #{NT,jdbcType=VARCHAR},
+      </if>
+      <if test="SZSTCD2 != null" >
+        #{SZSTCD2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseBzszRemark" >
+    update NHBZ.DSE_BZSZ_REMARK
+    <set >
+      <if test="SZSTCD != null" >
+        SZSTCD = #{SZSTCD,jdbcType=VARCHAR},
+      </if>
+      <if test="NT != null" >
+        NT = #{NT,jdbcType=VARCHAR},
+      </if>
+      <if test="SZSTCD2 != null" >
+        SZSTCD2 = #{SZSTCD2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where BZSTCD = #{BZSTCD,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseBzszRemark" >
+    update NHBZ.DSE_BZSZ_REMARK
+    set SZSTCD = #{SZSTCD,jdbcType=VARCHAR},
+      NT = #{NT,jdbcType=VARCHAR},
+      SZSTCD2 = #{SZSTCD2,jdbcType=VARCHAR}
+    where BZSTCD = #{BZSTCD,jdbcType=VARCHAR}
+  </update>
+</mapper>
