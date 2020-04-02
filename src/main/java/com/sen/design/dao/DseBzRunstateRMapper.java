@@ -2,7 +2,9 @@ package com.sen.design.dao;
 
 import com.sen.design.entity.DseBzRunstateR;
 import com.sen.design.entity.DseBzRunstateRKey;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface DseBzRunstateRMapper {
     int deleteByPrimaryKey(DseBzRunstateRKey key);
 

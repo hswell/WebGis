@@ -2,7 +2,9 @@ package com.sen.design.dao;
 
 import com.sen.design.entity.DseBzRuninfoReal;
 import com.sen.design.entity.DseBzRuninfoRealKey;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface DseBzRuninfoRealMapper {
     int deleteByPrimaryKey(DseBzRuninfoRealKey key);
 
