@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseBz.DseBzRuninfoRuleMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseBz.DseBzRuninfoRule" >
+    <constructor >
+      <idArg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NSW" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="WSW" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="FOREBAYZ" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NJYCYJZ" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STCD, NSW, WSW, FOREBAYZ, NJYCYJZ
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_BZ_RUNINFO_RULE
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from NHBZ.DSE_BZ_RUNINFO_RULE
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoRule" >
+    insert into NHBZ.DSE_BZ_RUNINFO_RULE (STCD, NSW, WSW, 
+      FOREBAYZ, NJYCYJZ)
+    values (#{STCD,jdbcType=VARCHAR}, #{NSW,jdbcType=DECIMAL}, #{WSW,jdbcType=DECIMAL}, 
+      #{FOREBAYZ,jdbcType=DECIMAL}, #{NJYCYJZ,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoRule" >
+    insert into NHBZ.DSE_BZ_RUNINFO_RULE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        STCD,
+      </if>
+      <if test="NSW != null" >
+        NSW,
+      </if>
+      <if test="WSW != null" >
+        WSW,
+      </if>
+      <if test="FOREBAYZ != null" >
+        FOREBAYZ,
+      </if>
+      <if test="NJYCYJZ != null" >
+        NJYCYJZ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        #{STCD,jdbcType=VARCHAR},
+      </if>
+      <if test="NSW != null" >
+        #{NSW,jdbcType=DECIMAL},
+      </if>
+      <if test="WSW != null" >
+        #{WSW,jdbcType=DECIMAL},
+      </if>
+      <if test="FOREBAYZ != null" >
+        #{FOREBAYZ,jdbcType=DECIMAL},
+      </if>
+      <if test="NJYCYJZ != null" >
+        #{NJYCYJZ,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoRule" >
+    update NHBZ.DSE_BZ_RUNINFO_RULE
+    <set >
+      <if test="NSW != null" >
+        NSW = #{NSW,jdbcType=DECIMAL},
+      </if>
+      <if test="WSW != null" >
+        WSW = #{WSW,jdbcType=DECIMAL},
+      </if>
+      <if test="FOREBAYZ != null" >
+        FOREBAYZ = #{FOREBAYZ,jdbcType=DECIMAL},
+      </if>
+      <if test="NJYCYJZ != null" >
+        NJYCYJZ = #{NJYCYJZ,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoRule" >
+    update NHBZ.DSE_BZ_RUNINFO_RULE
+    set NSW = #{NSW,jdbcType=DECIMAL},
+      WSW = #{WSW,jdbcType=DECIMAL},
+      FOREBAYZ = #{FOREBAYZ,jdbcType=DECIMAL},
+      NJYCYJZ = #{NJYCYJZ,jdbcType=DECIMAL}
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </update>
+</mapper>

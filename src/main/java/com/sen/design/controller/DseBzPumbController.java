@@ -1,7 +1,7 @@
 package com.sen.design.controller;
 
-import com.sen.design.entity.DseBzPumb;
-import com.sen.design.entity.DseBzPumbKey;
+import com.sen.design.entity.DseBz.DseBzPumb;
+import com.sen.design.entity.DseBz.DseBzPumbKey;
 import com.sen.design.service.DseBzPumbService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;

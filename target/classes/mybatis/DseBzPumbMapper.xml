@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sen.design.dao.DseBzPumbMapper" >
-  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseBzPumb" >
+<mapper namespace="com.sen.design.dao.DseBz.DseBzPumbMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseBz.DseBzPumb" >
     <constructor >
       <idArg column="ENNMCD" jdbcType="VARCHAR" javaType="java.lang.String" />
       <idArg column="AIRCREWNM" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -29,29 +29,29 @@
     POWER, ELEC_SPEED, ELECTRICITY, FGMR, FPATH, BZLX, DJLX, DZEDDY, DZEDDL, ZZEDDY, 
     ZZEDDL
   </sql>
-  <select id="querybykey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBzPumb" >
+  <select id="querybykey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
     select *
     from NHBZ.DSE_BZ_PUMB
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
   </select>
-  <select id="queryList" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBzPumb" >
+  <select id="queryList" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
     select *
     from NHBZ.DSE_BZ_PUMB
   </select>
 
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBzPumb" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
     select *
     from NHBZ.DSE_BZ_PUMB
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
       and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
   </select>
 
-  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.DseBzPumbKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.DseBz.DseBzPumbKey" >
     delete from NHBZ.DSE_BZ_PUMB
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
       and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.sen.design.entity.DseBzPumb" >
+  <insert id="insert" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
     insert into NHBZ.DSE_BZ_PUMB (ENNMCD, AIRCREWNM, WATERPUMP_MODAL, 
       D_RUNOFF, D_RAISE, ANGLE, 
       WATERPUMP_SPEED, ELEC_MODAL, POWER, 
@@ -67,7 +67,7 @@
       #{DZEDDY,jdbcType=DECIMAL}, #{DZEDDL,jdbcType=DECIMAL}, #{ZZEDDY,jdbcType=DECIMAL}, 
       #{ZZEDDL,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="com.sen.design.entity.DseBzPumb" >
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
     insert into NHBZ.DSE_BZ_PUMB
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="ENNMCD != null" >
@@ -188,7 +188,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseBzPumb" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
     update NHBZ.DSE_BZ_PUMB
     <set >
       <if test="WATERPUMP_MODAL != null" >
@@ -246,7 +246,7 @@
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
       and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseBzPumb" >
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
     update NHBZ.DSE_BZ_PUMB
     set WATERPUMP_MODAL = #{WATERPUMP_MODAL,jdbcType=VARCHAR},
       D_RUNOFF = #{d_RUNOFF,jdbcType=DECIMAL},

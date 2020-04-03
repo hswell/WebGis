@@ -1,10 +1,7 @@
 package com.sen.design.service;
 
-import com.sen.design.dao.DseBzRunstateRMapper;
-import com.sen.design.dao.DseBzszRemarkMapper;
-import com.sen.design.entity.DseBzRunstateR;
-import com.sen.design.entity.DseBzRunstateRKey;
-import com.sen.design.entity.DseBzszRemark;
+import com.sen.design.dao.DseBz.DseBzszRemarkMapper;
+import com.sen.design.entity.DseBz.DseBzszRemark;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

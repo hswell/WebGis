@@ -2,17 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc7d88bb-8c21-4f04-82d1-8d9cabb40fe7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzRuninfoRealService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzRunstateRService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzszRemarkService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseSzRService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBz/DseBzRuninfoRuleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBzRuninfoRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRuninfoRuleMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzRuninfoRealMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzRuninfoRealMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzRunstateRMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzRunstateRMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzszRemarkMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzszRemarkMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRuninfoRMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRuninfoRMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRuninfoRealMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRuninfoRealMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRunstateRMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRunstateRMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/DseBzPumbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/DseBzPumbController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzPumbMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBz/DseBzPumbMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzRuninfoRealMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBz/DseBzRuninfoRealMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzRunstateRMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBz/DseBzRunstateRMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBzszRemarkMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBz/DseBzszRemarkMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRuninfoRMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSz/DseSzRuninfoRMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRuninfoRealMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSz/DseSzRuninfoRealMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSzRunstateRMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSz/DseSzRunstateRMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBzPumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzPumbKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBzPumbKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRuninfoReal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBzRuninfoReal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRuninfoRealKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBzRuninfoRealKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBzRunstateR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzRunstateRKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBzRunstateRKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBzszRemark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBzszRemark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRuninfoR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSz/DseSzRuninfoR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRuninfoRKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSz/DseSzRuninfoRKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRuninfoReal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSz/DseSzRuninfoReal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRunstateR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSz/DseSzRunstateR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSzRunstateRKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSz/DseSzRunstateRKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzPumbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzPumbService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzRuninfoRealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzRuninfoRealService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzRunstateRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzRunstateRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzszRemarkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseBzszRemarkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseSzRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/DseSzRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzPumbMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzPumbMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRuninfoRealMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRuninfoRealMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRunstateRMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRunstateRMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzszRemarkMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzszRemarkMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRuninfoRMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRuninfoRMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRuninfoRealMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRuninfoRealMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRunstateRMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRunstateRMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/controller/DseBzPumbController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/controller/DseBzPumbController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/DseBzPumbMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/entity/AdCdB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/entity/AdCdB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBzPumb.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBzPumbKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/service/DseBzPumbService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/service/DseBzPumbService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/DseBzPumbMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/DseBzPumbMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +230,9 @@
       <workItem from="1585720059639" duration="1725000" />
       <workItem from="1585721998348" duration="11902000" />
       <workItem from="1585735712539" duration="9099000" />
-      <workItem from="1585820216325" duration="3076000" />
+      <workItem from="1585820216325" duration="4247000" />
+      <workItem from="1585892937666" duration="655000" />
+      <workItem from="1585894110674" duration="2379000" />
     </task>
     <task id="LOCAL-00001" summary="4月1日提交">
       <created>1585732789112</created>
@@ -218,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585740131503</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="4月2日提交 新增BZ 和Sz的查询方法">
+      <created>1585827922321</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585827922321</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +272,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="4月1日提交" />
     <MESSAGE value="4月1日提交 新增2个实体" />
-    <option name="LAST_COMMIT_MESSAGE" value="4月1日提交 新增2个实体" />
+    <MESSAGE value="4月2日提交 新增BZ 和Sz的查询方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="4月2日提交 新增BZ 和Sz的查询方法" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="0" key="#Inspections" timestamp="1585720950842">
@@ -247,10 +292,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="436" y="98" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585723561898" />
-    <state x="535" y="0" key="CommitChangelistDialog2" timestamp="1585740130611">
+    <state x="535" y="0" key="CommitChangelistDialog2" timestamp="1585827921189">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="535" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585740130611" />
+    <state x="535" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585827921189" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1585720591032">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -259,6 +304,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="641" y="151" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585732679732" />
+    <state width="1483" height="-15" key="GridCell.Tab.0.bottom" timestamp="1585895605395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="-15" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585895605395" />
+    <state width="1483" height="-15" key="GridCell.Tab.0.center" timestamp="1585895605395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="-15" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585895605395" />
+    <state width="1483" height="-15" key="GridCell.Tab.0.left" timestamp="1585895605394">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="-15" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585895605394" />
+    <state width="1483" height="-15" key="GridCell.Tab.0.right" timestamp="1585895605395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="-15" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585895605395" />
+    <state width="1483" height="-15" key="GridCell.Tab.1.bottom" timestamp="1585895605395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="-15" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585895605395" />
+    <state width="1483" height="-15" key="GridCell.Tab.1.center" timestamp="1585895605395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="-15" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585895605395" />
+    <state width="1483" height="-15" key="GridCell.Tab.1.left" timestamp="1585895605395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="-15" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585895605395" />
+    <state width="1483" height="-15" key="GridCell.Tab.1.right" timestamp="1585895605395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="-15" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585895605395" />
     <state x="98" y="0" key="SettingsEditor" timestamp="1585732633174">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -267,10 +344,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1585732107426" />
-    <state x="470" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1585824084030">
+    <state x="470" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1585894124789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="470" y="306" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585824084030" />
+    <state x="470" y="306" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585894124789" />
     <state x="262" y="13" width="1011" height="798" key="find.popup" timestamp="1585399685390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
