@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.TB.Tb1502Meidsbi044Mapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.TB.Tb1502Meidsbi044" >
+    <constructor >
+      <idArg column="ENNMCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="INFNDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="DSINCP" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ACINCP" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="UNNB" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="PMTP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DDFWLV" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DDPWLV" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="PMPNMTEL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DSDRFL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="AVDRFL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ACDRAR" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="IDDFWLV" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="IDDPWLV" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DSIRDRFL" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="AXIRDRFL" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="DSIRAR" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="ACIRAR" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="RM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ATID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SDFL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RMA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDPS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="JSCSIZE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CSCSIZE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="QCSIZE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MAXYC" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ENNMCD, INFNDT, DSINCP, ACINCP, UNNB, PMTP, DDFWLV, DDPWLV, PMPNMTEL, DSDRFL, AVDRFL, 
+    ACDRAR, IDDFWLV, IDDPWLV, DSIRDRFL, AXIRDRFL, DSIRAR, ACIRAR, RM, ATID, SDFL, RMA, 
+    MDPS, MDDT, JSCSIZE, CSCSIZE, QCSIZE, MAXYC
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.TB.Tb1502Meidsbi044Key" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.TB1502_MEIDSBI_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.TB.Tb1502Meidsbi044Key" >
+    delete from NHBZ.TB1502_MEIDSBI_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.TB.Tb1502Meidsbi044" >
+    insert into NHBZ.TB1502_MEIDSBI_044 (ENNMCD, INFNDT, DSINCP, 
+      ACINCP, UNNB, PMTP, 
+      DDFWLV, DDPWLV, PMPNMTEL, 
+      DSDRFL, AVDRFL, ACDRAR, 
+      IDDFWLV, IDDPWLV, DSIRDRFL, 
+      AXIRDRFL, DSIRAR, ACIRAR, 
+      RM, ATID, SDFL, RMA, 
+      MDPS, MDDT, JSCSIZE, 
+      CSCSIZE, QCSIZE, MAXYC
+      )
+    values (#{ENNMCD,jdbcType=VARCHAR}, #{INFNDT,jdbcType=TIMESTAMP}, #{DSINCP,jdbcType=DECIMAL}, 
+      #{ACINCP,jdbcType=DECIMAL}, #{UNNB,jdbcType=DECIMAL}, #{PMTP,jdbcType=VARCHAR}, 
+      #{DDFWLV,jdbcType=DECIMAL}, #{DDPWLV,jdbcType=DECIMAL}, #{PMPNMTEL,jdbcType=DECIMAL}, 
+      #{DSDRFL,jdbcType=DECIMAL}, #{AVDRFL,jdbcType=DECIMAL}, #{ACDRAR,jdbcType=DECIMAL}, 
+      #{IDDFWLV,jdbcType=DECIMAL}, #{IDDPWLV,jdbcType=DECIMAL}, #{DSIRDRFL,jdbcType=DECIMAL}, 
+      #{AXIRDRFL,jdbcType=DECIMAL}, #{DSIRAR,jdbcType=DECIMAL}, #{ACIRAR,jdbcType=DECIMAL}, 
+      #{RM,jdbcType=VARCHAR}, #{ATID,jdbcType=VARCHAR}, #{SDFL,jdbcType=VARCHAR}, #{RMA,jdbcType=VARCHAR}, 
+      #{MDPS,jdbcType=VARCHAR}, #{MDDT,jdbcType=TIMESTAMP}, #{JSCSIZE,jdbcType=VARCHAR}, 
+      #{CSCSIZE,jdbcType=VARCHAR}, #{QCSIZE,jdbcType=VARCHAR}, #{MAXYC,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.TB.Tb1502Meidsbi044" >
+    insert into NHBZ.TB1502_MEIDSBI_044
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        ENNMCD,
+      </if>
+      <if test="INFNDT != null" >
+        INFNDT,
+      </if>
+      <if test="DSINCP != null" >
+        DSINCP,
+      </if>
+      <if test="ACINCP != null" >
+        ACINCP,
+      </if>
+      <if test="UNNB != null" >
+        UNNB,
+      </if>
+      <if test="PMTP != null" >
+        PMTP,
+      </if>
+      <if test="DDFWLV != null" >
+        DDFWLV,
+      </if>
+      <if test="DDPWLV != null" >
+        DDPWLV,
+      </if>
+      <if test="PMPNMTEL != null" >
+        PMPNMTEL,
+      </if>
+      <if test="DSDRFL != null" >
+        DSDRFL,
+      </if>
+      <if test="AVDRFL != null" >
+        AVDRFL,
+      </if>
+      <if test="ACDRAR != null" >
+        ACDRAR,
+      </if>
+      <if test="IDDFWLV != null" >
+        IDDFWLV,
+      </if>
+      <if test="IDDPWLV != null" >
+        IDDPWLV,
+      </if>
+      <if test="DSIRDRFL != null" >
+        DSIRDRFL,
+      </if>
+      <if test="AXIRDRFL != null" >
+        AXIRDRFL,
+      </if>
+      <if test="DSIRAR != null" >
+        DSIRAR,
+      </if>
+      <if test="ACIRAR != null" >
+        ACIRAR,
+      </if>
+      <if test="RM != null" >
+        RM,
+      </if>
+      <if test="ATID != null" >
+        ATID,
+      </if>
+      <if test="SDFL != null" >
+        SDFL,
+      </if>
+      <if test="RMA != null" >
+        RMA,
+      </if>
+      <if test="MDPS != null" >
+        MDPS,
+      </if>
+      <if test="MDDT != null" >
+        MDDT,
+      </if>
+      <if test="JSCSIZE != null" >
+        JSCSIZE,
+      </if>
+      <if test="CSCSIZE != null" >
+        CSCSIZE,
+      </if>
+      <if test="QCSIZE != null" >
+        QCSIZE,
+      </if>
+      <if test="MAXYC != null" >
+        MAXYC,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        #{ENNMCD,jdbcType=VARCHAR},
+      </if>
+      <if test="INFNDT != null" >
+        #{INFNDT,jdbcType=TIMESTAMP},
+      </if>
+      <if test="DSINCP != null" >
+        #{DSINCP,jdbcType=DECIMAL},
+      </if>
+      <if test="ACINCP != null" >
+        #{ACINCP,jdbcType=DECIMAL},
+      </if>
+      <if test="UNNB != null" >
+        #{UNNB,jdbcType=DECIMAL},
+      </if>
+      <if test="PMTP != null" >
+        #{PMTP,jdbcType=VARCHAR},
+      </if>
+      <if test="DDFWLV != null" >
+        #{DDFWLV,jdbcType=DECIMAL},
+      </if>
+      <if test="DDPWLV != null" >
+        #{DDPWLV,jdbcType=DECIMAL},
+      </if>
+      <if test="PMPNMTEL != null" >
+        #{PMPNMTEL,jdbcType=DECIMAL},
+      </if>
+      <if test="DSDRFL != null" >
+        #{DSDRFL,jdbcType=DECIMAL},
+      </if>
+      <if test="AVDRFL != null" >
+        #{AVDRFL,jdbcType=DECIMAL},
+      </if>
+      <if test="ACDRAR != null" >
+        #{ACDRAR,jdbcType=DECIMAL},
+      </if>
+      <if test="IDDFWLV != null" >
+        #{IDDFWLV,jdbcType=DECIMAL},
+      </if>
+      <if test="IDDPWLV != null" >
+        #{IDDPWLV,jdbcType=DECIMAL},
+      </if>
+      <if test="DSIRDRFL != null" >
+        #{DSIRDRFL,jdbcType=DECIMAL},
+      </if>
+      <if test="AXIRDRFL != null" >
+        #{AXIRDRFL,jdbcType=DECIMAL},
+      </if>
+      <if test="DSIRAR != null" >
+        #{DSIRAR,jdbcType=DECIMAL},
+      </if>
+      <if test="ACIRAR != null" >
+        #{ACIRAR,jdbcType=DECIMAL},
+      </if>
+      <if test="RM != null" >
+        #{RM,jdbcType=VARCHAR},
+      </if>
+      <if test="ATID != null" >
+        #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+      <if test="JSCSIZE != null" >
+        #{JSCSIZE,jdbcType=VARCHAR},
+      </if>
+      <if test="CSCSIZE != null" >
+        #{CSCSIZE,jdbcType=VARCHAR},
+      </if>
+      <if test="QCSIZE != null" >
+        #{QCSIZE,jdbcType=VARCHAR},
+      </if>
+      <if test="MAXYC != null" >
+        #{MAXYC,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.TB.Tb1502Meidsbi044" >
+    update NHBZ.TB1502_MEIDSBI_044
+    <set >
+      <if test="DSINCP != null" >
+        DSINCP = #{DSINCP,jdbcType=DECIMAL},
+      </if>
+      <if test="ACINCP != null" >
+        ACINCP = #{ACINCP,jdbcType=DECIMAL},
+      </if>
+      <if test="UNNB != null" >
+        UNNB = #{UNNB,jdbcType=DECIMAL},
+      </if>
+      <if test="PMTP != null" >
+        PMTP = #{PMTP,jdbcType=VARCHAR},
+      </if>
+      <if test="DDFWLV != null" >
+        DDFWLV = #{DDFWLV,jdbcType=DECIMAL},
+      </if>
+      <if test="DDPWLV != null" >
+        DDPWLV = #{DDPWLV,jdbcType=DECIMAL},
+      </if>
+      <if test="PMPNMTEL != null" >
+        PMPNMTEL = #{PMPNMTEL,jdbcType=DECIMAL},
+      </if>
+      <if test="DSDRFL != null" >
+        DSDRFL = #{DSDRFL,jdbcType=DECIMAL},
+      </if>
+      <if test="AVDRFL != null" >
+        AVDRFL = #{AVDRFL,jdbcType=DECIMAL},
+      </if>
+      <if test="ACDRAR != null" >
+        ACDRAR = #{ACDRAR,jdbcType=DECIMAL},
+      </if>
+      <if test="IDDFWLV != null" >
+        IDDFWLV = #{IDDFWLV,jdbcType=DECIMAL},
+      </if>
+      <if test="IDDPWLV != null" >
+        IDDPWLV = #{IDDPWLV,jdbcType=DECIMAL},
+      </if>
+      <if test="DSIRDRFL != null" >
+        DSIRDRFL = #{DSIRDRFL,jdbcType=DECIMAL},
+      </if>
+      <if test="AXIRDRFL != null" >
+        AXIRDRFL = #{AXIRDRFL,jdbcType=DECIMAL},
+      </if>
+      <if test="DSIRAR != null" >
+        DSIRAR = #{DSIRAR,jdbcType=DECIMAL},
+      </if>
+      <if test="ACIRAR != null" >
+        ACIRAR = #{ACIRAR,jdbcType=DECIMAL},
+      </if>
+      <if test="RM != null" >
+        RM = #{RM,jdbcType=VARCHAR},
+      </if>
+      <if test="ATID != null" >
+        ATID = #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        SDFL = #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        RMA = #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        MDPS = #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        MDDT = #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+      <if test="JSCSIZE != null" >
+        JSCSIZE = #{JSCSIZE,jdbcType=VARCHAR},
+      </if>
+      <if test="CSCSIZE != null" >
+        CSCSIZE = #{CSCSIZE,jdbcType=VARCHAR},
+      </if>
+      <if test="QCSIZE != null" >
+        QCSIZE = #{QCSIZE,jdbcType=VARCHAR},
+      </if>
+      <if test="MAXYC != null" >
+        MAXYC = #{MAXYC,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.TB.Tb1502Meidsbi044" >
+    update NHBZ.TB1502_MEIDSBI_044
+    set DSINCP = #{DSINCP,jdbcType=DECIMAL},
+      ACINCP = #{ACINCP,jdbcType=DECIMAL},
+      UNNB = #{UNNB,jdbcType=DECIMAL},
+      PMTP = #{PMTP,jdbcType=VARCHAR},
+      DDFWLV = #{DDFWLV,jdbcType=DECIMAL},
+      DDPWLV = #{DDPWLV,jdbcType=DECIMAL},
+      PMPNMTEL = #{PMPNMTEL,jdbcType=DECIMAL},
+      DSDRFL = #{DSDRFL,jdbcType=DECIMAL},
+      AVDRFL = #{AVDRFL,jdbcType=DECIMAL},
+      ACDRAR = #{ACDRAR,jdbcType=DECIMAL},
+      IDDFWLV = #{IDDFWLV,jdbcType=DECIMAL},
+      IDDPWLV = #{IDDPWLV,jdbcType=DECIMAL},
+      DSIRDRFL = #{DSIRDRFL,jdbcType=DECIMAL},
+      AXIRDRFL = #{AXIRDRFL,jdbcType=DECIMAL},
+      DSIRAR = #{DSIRAR,jdbcType=DECIMAL},
+      ACIRAR = #{ACIRAR,jdbcType=DECIMAL},
+      RM = #{RM,jdbcType=VARCHAR},
+      ATID = #{ATID,jdbcType=VARCHAR},
+      SDFL = #{SDFL,jdbcType=VARCHAR},
+      RMA = #{RMA,jdbcType=VARCHAR},
+      MDPS = #{MDPS,jdbcType=VARCHAR},
+      MDDT = #{MDDT,jdbcType=TIMESTAMP},
+      JSCSIZE = #{JSCSIZE,jdbcType=VARCHAR},
+      CSCSIZE = #{CSCSIZE,jdbcType=VARCHAR},
+      QCSIZE = #{QCSIZE,jdbcType=VARCHAR},
+      MAXYC = #{MAXYC,jdbcType=DECIMAL}
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </update>
+</mapper>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.TB.Tb0909Sligvl044Mapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.TB.Tb0909Sligvl044" >
+    <constructor >
+      <idArg column="ENNMCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="GTORNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="INFNDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="GTORSZ" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="GTORHG" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="GTMTEL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="GTBDSTTP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="GTORNB" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ENDSTP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="GTTPEL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="GTTP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="GTNB" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="HDGRTP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HDGRNB" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="STLFPW" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="PWSPCN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EXQS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ATID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SDFL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RMA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDPS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ENNMCD, GTORNM, INFNDT, GTORSZ, GTORHG, GTMTEL, GTBDSTTP, GTORNB, ENDSTP, GTTPEL, 
+    GTTP, GTNB, HDGRTP, HDGRNB, STLFPW, PWSPCN, EXQS, ATID, SDFL, RMA, MDPS, MDDT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.TB.Tb0909Sligvl044Key" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.TB0909_SLIGVL_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and GTORNM = #{GTORNM,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.TB.Tb0909Sligvl044Key" >
+    delete from NHBZ.TB0909_SLIGVL_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and GTORNM = #{GTORNM,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.TB.Tb0909Sligvl044" >
+    insert into NHBZ.TB0909_SLIGVL_044 (ENNMCD, GTORNM, INFNDT, 
+      GTORSZ, GTORHG, GTMTEL, 
+      GTBDSTTP, GTORNB, ENDSTP, 
+      GTTPEL, GTTP, GTNB, 
+      HDGRTP, HDGRNB, STLFPW, 
+      PWSPCN, EXQS, ATID, 
+      SDFL, RMA, MDPS, MDDT
+      )
+    values (#{ENNMCD,jdbcType=VARCHAR}, #{GTORNM,jdbcType=VARCHAR}, #{INFNDT,jdbcType=TIMESTAMP}, 
+      #{GTORSZ,jdbcType=DECIMAL}, #{GTORHG,jdbcType=DECIMAL}, #{GTMTEL,jdbcType=DECIMAL}, 
+      #{GTBDSTTP,jdbcType=VARCHAR}, #{GTORNB,jdbcType=DECIMAL}, #{ENDSTP,jdbcType=VARCHAR}, 
+      #{GTTPEL,jdbcType=DECIMAL}, #{GTTP,jdbcType=VARCHAR}, #{GTNB,jdbcType=DECIMAL}, 
+      #{HDGRTP,jdbcType=VARCHAR}, #{HDGRNB,jdbcType=DECIMAL}, #{STLFPW,jdbcType=DECIMAL}, 
+      #{PWSPCN,jdbcType=VARCHAR}, #{EXQS,jdbcType=VARCHAR}, #{ATID,jdbcType=VARCHAR}, 
+      #{SDFL,jdbcType=VARCHAR}, #{RMA,jdbcType=VARCHAR}, #{MDPS,jdbcType=VARCHAR}, #{MDDT,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.TB.Tb0909Sligvl044" >
+    insert into NHBZ.TB0909_SLIGVL_044
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        ENNMCD,
+      </if>
+      <if test="GTORNM != null" >
+        GTORNM,
+      </if>
+      <if test="INFNDT != null" >
+        INFNDT,
+      </if>
+      <if test="GTORSZ != null" >
+        GTORSZ,
+      </if>
+      <if test="GTORHG != null" >
+        GTORHG,
+      </if>
+      <if test="GTMTEL != null" >
+        GTMTEL,
+      </if>
+      <if test="GTBDSTTP != null" >
+        GTBDSTTP,
+      </if>
+      <if test="GTORNB != null" >
+        GTORNB,
+      </if>
+      <if test="ENDSTP != null" >
+        ENDSTP,
+      </if>
+      <if test="GTTPEL != null" >
+        GTTPEL,
+      </if>
+      <if test="GTTP != null" >
+        GTTP,
+      </if>
+      <if test="GTNB != null" >
+        GTNB,
+      </if>
+      <if test="HDGRTP != null" >
+        HDGRTP,
+      </if>
+      <if test="HDGRNB != null" >
+        HDGRNB,
+      </if>
+      <if test="STLFPW != null" >
+        STLFPW,
+      </if>
+      <if test="PWSPCN != null" >
+        PWSPCN,
+      </if>
+      <if test="EXQS != null" >
+        EXQS,
+      </if>
+      <if test="ATID != null" >
+        ATID,
+      </if>
+      <if test="SDFL != null" >
+        SDFL,
+      </if>
+      <if test="RMA != null" >
+        RMA,
+      </if>
+      <if test="MDPS != null" >
+        MDPS,
+      </if>
+      <if test="MDDT != null" >
+        MDDT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        #{ENNMCD,jdbcType=VARCHAR},
+      </if>
+      <if test="GTORNM != null" >
+        #{GTORNM,jdbcType=VARCHAR},
+      </if>
+      <if test="INFNDT != null" >
+        #{INFNDT,jdbcType=TIMESTAMP},
+      </if>
+      <if test="GTORSZ != null" >
+        #{GTORSZ,jdbcType=DECIMAL},
+      </if>
+      <if test="GTORHG != null" >
+        #{GTORHG,jdbcType=DECIMAL},
+      </if>
+      <if test="GTMTEL != null" >
+        #{GTMTEL,jdbcType=DECIMAL},
+      </if>
+      <if test="GTBDSTTP != null" >
+        #{GTBDSTTP,jdbcType=VARCHAR},
+      </if>
+      <if test="GTORNB != null" >
+        #{GTORNB,jdbcType=DECIMAL},
+      </if>
+      <if test="ENDSTP != null" >
+        #{ENDSTP,jdbcType=VARCHAR},
+      </if>
+      <if test="GTTPEL != null" >
+        #{GTTPEL,jdbcType=DECIMAL},
+      </if>
+      <if test="GTTP != null" >
+        #{GTTP,jdbcType=VARCHAR},
+      </if>
+      <if test="GTNB != null" >
+        #{GTNB,jdbcType=DECIMAL},
+      </if>
+      <if test="HDGRTP != null" >
+        #{HDGRTP,jdbcType=VARCHAR},
+      </if>
+      <if test="HDGRNB != null" >
+        #{HDGRNB,jdbcType=DECIMAL},
+      </if>
+      <if test="STLFPW != null" >
+        #{STLFPW,jdbcType=DECIMAL},
+      </if>
+      <if test="PWSPCN != null" >
+        #{PWSPCN,jdbcType=VARCHAR},
+      </if>
+      <if test="EXQS != null" >
+        #{EXQS,jdbcType=VARCHAR},
+      </if>
+      <if test="ATID != null" >
+        #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.TB.Tb0909Sligvl044" >
+    update NHBZ.TB0909_SLIGVL_044
+    <set >
+      <if test="GTORSZ != null" >
+        GTORSZ = #{GTORSZ,jdbcType=DECIMAL},
+      </if>
+      <if test="GTORHG != null" >
+        GTORHG = #{GTORHG,jdbcType=DECIMAL},
+      </if>
+      <if test="GTMTEL != null" >
+        GTMTEL = #{GTMTEL,jdbcType=DECIMAL},
+      </if>
+      <if test="GTBDSTTP != null" >
+        GTBDSTTP = #{GTBDSTTP,jdbcType=VARCHAR},
+      </if>
+      <if test="GTORNB != null" >
+        GTORNB = #{GTORNB,jdbcType=DECIMAL},
+      </if>
+      <if test="ENDSTP != null" >
+        ENDSTP = #{ENDSTP,jdbcType=VARCHAR},
+      </if>
+      <if test="GTTPEL != null" >
+        GTTPEL = #{GTTPEL,jdbcType=DECIMAL},
+      </if>
+      <if test="GTTP != null" >
+        GTTP = #{GTTP,jdbcType=VARCHAR},
+      </if>
+      <if test="GTNB != null" >
+        GTNB = #{GTNB,jdbcType=DECIMAL},
+      </if>
+      <if test="HDGRTP != null" >
+        HDGRTP = #{HDGRTP,jdbcType=VARCHAR},
+      </if>
+      <if test="HDGRNB != null" >
+        HDGRNB = #{HDGRNB,jdbcType=DECIMAL},
+      </if>
+      <if test="STLFPW != null" >
+        STLFPW = #{STLFPW,jdbcType=DECIMAL},
+      </if>
+      <if test="PWSPCN != null" >
+        PWSPCN = #{PWSPCN,jdbcType=VARCHAR},
+      </if>
+      <if test="EXQS != null" >
+        EXQS = #{EXQS,jdbcType=VARCHAR},
+      </if>
+      <if test="ATID != null" >
+        ATID = #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        SDFL = #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        RMA = #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        MDPS = #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        MDDT = #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and GTORNM = #{GTORNM,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.TB.Tb0909Sligvl044" >
+    update NHBZ.TB0909_SLIGVL_044
+    set GTORSZ = #{GTORSZ,jdbcType=DECIMAL},
+      GTORHG = #{GTORHG,jdbcType=DECIMAL},
+      GTMTEL = #{GTMTEL,jdbcType=DECIMAL},
+      GTBDSTTP = #{GTBDSTTP,jdbcType=VARCHAR},
+      GTORNB = #{GTORNB,jdbcType=DECIMAL},
+      ENDSTP = #{ENDSTP,jdbcType=VARCHAR},
+      GTTPEL = #{GTTPEL,jdbcType=DECIMAL},
+      GTTP = #{GTTP,jdbcType=VARCHAR},
+      GTNB = #{GTNB,jdbcType=DECIMAL},
+      HDGRTP = #{HDGRTP,jdbcType=VARCHAR},
+      HDGRNB = #{HDGRNB,jdbcType=DECIMAL},
+      STLFPW = #{STLFPW,jdbcType=DECIMAL},
+      PWSPCN = #{PWSPCN,jdbcType=VARCHAR},
+      EXQS = #{EXQS,jdbcType=VARCHAR},
+      ATID = #{ATID,jdbcType=VARCHAR},
+      SDFL = #{SDFL,jdbcType=VARCHAR},
+      RMA = #{RMA,jdbcType=VARCHAR},
+      MDPS = #{MDPS,jdbcType=VARCHAR},
+      MDDT = #{MDDT,jdbcType=TIMESTAMP}
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and GTORNM = #{GTORNM,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </update>
+</mapper>

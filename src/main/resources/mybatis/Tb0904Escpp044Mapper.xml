@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.TB.Tb0904Escpp044Mapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.TB.Tb0904Escpp044" >
+    <constructor >
+      <idArg column="ENNMCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="INPRDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <idArg column="GTUPWTLV" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <idArg column="GTDWWTLV" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DSTTFL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ATID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SDFL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RMA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDPS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ENNMCD, INPRDT, GTUPWTLV, GTDWWTLV, DSTTFL, ATID, SDFL, RMA, MDPS, MDDT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.TB.Tb0904Escpp044Key" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.TB0904_ESCPP_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INPRDT = #{INPRDT,jdbcType=TIMESTAMP}
+      and GTUPWTLV = #{GTUPWTLV,jdbcType=DECIMAL}
+      and GTDWWTLV = #{GTDWWTLV,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.TB.Tb0904Escpp044Key" >
+    delete from NHBZ.TB0904_ESCPP_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INPRDT = #{INPRDT,jdbcType=TIMESTAMP}
+      and GTUPWTLV = #{GTUPWTLV,jdbcType=DECIMAL}
+      and GTDWWTLV = #{GTDWWTLV,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.TB.Tb0904Escpp044" >
+    insert into NHBZ.TB0904_ESCPP_044 (ENNMCD, INPRDT, GTUPWTLV, 
+      GTDWWTLV, DSTTFL, ATID, 
+      SDFL, RMA, MDPS, MDDT
+      )
+    values (#{ENNMCD,jdbcType=VARCHAR}, #{INPRDT,jdbcType=TIMESTAMP}, #{GTUPWTLV,jdbcType=DECIMAL}, 
+      #{GTDWWTLV,jdbcType=DECIMAL}, #{DSTTFL,jdbcType=DECIMAL}, #{ATID,jdbcType=VARCHAR}, 
+      #{SDFL,jdbcType=VARCHAR}, #{RMA,jdbcType=VARCHAR}, #{MDPS,jdbcType=VARCHAR}, #{MDDT,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.TB.Tb0904Escpp044" >
+    insert into NHBZ.TB0904_ESCPP_044
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        ENNMCD,
+      </if>
+      <if test="INPRDT != null" >
+        INPRDT,
+      </if>
+      <if test="GTUPWTLV != null" >
+        GTUPWTLV,
+      </if>
+      <if test="GTDWWTLV != null" >
+        GTDWWTLV,
+      </if>
+      <if test="DSTTFL != null" >
+        DSTTFL,
+      </if>
+      <if test="ATID != null" >
+        ATID,
+      </if>
+      <if test="SDFL != null" >
+        SDFL,
+      </if>
+      <if test="RMA != null" >
+        RMA,
+      </if>
+      <if test="MDPS != null" >
+        MDPS,
+      </if>
+      <if test="MDDT != null" >
+        MDDT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        #{ENNMCD,jdbcType=VARCHAR},
+      </if>
+      <if test="INPRDT != null" >
+        #{INPRDT,jdbcType=TIMESTAMP},
+      </if>
+      <if test="GTUPWTLV != null" >
+        #{GTUPWTLV,jdbcType=DECIMAL},
+      </if>
+      <if test="GTDWWTLV != null" >
+        #{GTDWWTLV,jdbcType=DECIMAL},
+      </if>
+      <if test="DSTTFL != null" >
+        #{DSTTFL,jdbcType=DECIMAL},
+      </if>
+      <if test="ATID != null" >
+        #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.TB.Tb0904Escpp044" >
+    update NHBZ.TB0904_ESCPP_044
+    <set >
+      <if test="DSTTFL != null" >
+        DSTTFL = #{DSTTFL,jdbcType=DECIMAL},
+      </if>
+      <if test="ATID != null" >
+        ATID = #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        SDFL = #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        RMA = #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        MDPS = #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        MDDT = #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INPRDT = #{INPRDT,jdbcType=TIMESTAMP}
+      and GTUPWTLV = #{GTUPWTLV,jdbcType=DECIMAL}
+      and GTDWWTLV = #{GTDWWTLV,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.TB.Tb0904Escpp044" >
+    update NHBZ.TB0904_ESCPP_044
+    set DSTTFL = #{DSTTFL,jdbcType=DECIMAL},
+      ATID = #{ATID,jdbcType=VARCHAR},
+      SDFL = #{SDFL,jdbcType=VARCHAR},
+      RMA = #{RMA,jdbcType=VARCHAR},
+      MDPS = #{MDPS,jdbcType=VARCHAR},
+      MDDT = #{MDDT,jdbcType=TIMESTAMP}
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INPRDT = #{INPRDT,jdbcType=TIMESTAMP}
+      and GTUPWTLV = #{GTUPWTLV,jdbcType=DECIMAL}
+      and GTDWWTLV = #{GTDWWTLV,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.TB.Tb0902Slcnstrl044Mapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.TB.Tb0902Slcnstrl044" >
+    <constructor >
+      <idArg column="ENNMCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="INFNDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="GTCNSTCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="GDCSCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ATID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SDFL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RMA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDPS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ENNMCD, INFNDT, GTCNSTCD, GDCSCD, RM, ATID, SDFL, RMA, MDPS, MDDT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.TB.Tb0902Slcnstrl044Key" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.TB0902_SLCNSTRL_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.TB.Tb0902Slcnstrl044Key" >
+    delete from NHBZ.TB0902_SLCNSTRL_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.TB.Tb0902Slcnstrl044" >
+    insert into NHBZ.TB0902_SLCNSTRL_044 (ENNMCD, INFNDT, GTCNSTCD, 
+      GDCSCD, RM, ATID, SDFL, 
+      RMA, MDPS, MDDT)
+    values (#{ENNMCD,jdbcType=VARCHAR}, #{INFNDT,jdbcType=TIMESTAMP}, #{GTCNSTCD,jdbcType=VARCHAR}, 
+      #{GDCSCD,jdbcType=VARCHAR}, #{RM,jdbcType=VARCHAR}, #{ATID,jdbcType=VARCHAR}, #{SDFL,jdbcType=VARCHAR}, 
+      #{RMA,jdbcType=VARCHAR}, #{MDPS,jdbcType=VARCHAR}, #{MDDT,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.TB.Tb0902Slcnstrl044" >
+    insert into NHBZ.TB0902_SLCNSTRL_044
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        ENNMCD,
+      </if>
+      <if test="INFNDT != null" >
+        INFNDT,
+      </if>
+      <if test="GTCNSTCD != null" >
+        GTCNSTCD,
+      </if>
+      <if test="GDCSCD != null" >
+        GDCSCD,
+      </if>
+      <if test="RM != null" >
+        RM,
+      </if>
+      <if test="ATID != null" >
+        ATID,
+      </if>
+      <if test="SDFL != null" >
+        SDFL,
+      </if>
+      <if test="RMA != null" >
+        RMA,
+      </if>
+      <if test="MDPS != null" >
+        MDPS,
+      </if>
+      <if test="MDDT != null" >
+        MDDT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        #{ENNMCD,jdbcType=VARCHAR},
+      </if>
+      <if test="INFNDT != null" >
+        #{INFNDT,jdbcType=TIMESTAMP},
+      </if>
+      <if test="GTCNSTCD != null" >
+        #{GTCNSTCD,jdbcType=VARCHAR},
+      </if>
+      <if test="GDCSCD != null" >
+        #{GDCSCD,jdbcType=VARCHAR},
+      </if>
+      <if test="RM != null" >
+        #{RM,jdbcType=VARCHAR},
+      </if>
+      <if test="ATID != null" >
+        #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.TB.Tb0902Slcnstrl044" >
+    update NHBZ.TB0902_SLCNSTRL_044
+    <set >
+      <if test="GTCNSTCD != null" >
+        GTCNSTCD = #{GTCNSTCD,jdbcType=VARCHAR},
+      </if>
+      <if test="GDCSCD != null" >
+        GDCSCD = #{GDCSCD,jdbcType=VARCHAR},
+      </if>
+      <if test="RM != null" >
+        RM = #{RM,jdbcType=VARCHAR},
+      </if>
+      <if test="ATID != null" >
+        ATID = #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        SDFL = #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        RMA = #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        MDPS = #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        MDDT = #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.TB.Tb0902Slcnstrl044" >
+    update NHBZ.TB0902_SLCNSTRL_044
+    set GTCNSTCD = #{GTCNSTCD,jdbcType=VARCHAR},
+      GDCSCD = #{GDCSCD,jdbcType=VARCHAR},
+      RM = #{RM,jdbcType=VARCHAR},
+      ATID = #{ATID,jdbcType=VARCHAR},
+      SDFL = #{SDFL,jdbcType=VARCHAR},
+      RMA = #{RMA,jdbcType=VARCHAR},
+      MDPS = #{MDPS,jdbcType=VARCHAR},
+      MDDT = #{MDDT,jdbcType=TIMESTAMP}
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+      and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
+  </update>
+</mapper>
