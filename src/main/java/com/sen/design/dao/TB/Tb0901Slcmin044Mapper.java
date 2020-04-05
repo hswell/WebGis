@@ -2,7 +2,9 @@ package com.sen.design.dao.TB;
 
 import com.sen.design.entity.TB.Tb0901Slcmin044;
 import com.sen.design.entity.TB.Tb0901Slcmin044Key;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface Tb0901Slcmin044Mapper {
     int deleteByPrimaryKey(Tb0901Slcmin044Key key);
 
