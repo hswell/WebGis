@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.SYS.SysUserMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.SYS.SysUser" >
+    <constructor >
+      <idArg column="USERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="LOGINID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PWD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DFORGID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="DFTEL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SEX" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="VALID" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="MODIFIER" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="MODTIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="ISSYS" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="UTYPE" jdbcType="CHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    USERID, LOGINID, UNAME, PWD, DFORGID, DFTEL, SEX, VALID, MODIFIER, MODTIME, ISSYS, 
+    UTYPE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.SYS_USER
+    where USERID = #{USERID,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from NHBZ.SYS_USER
+    where USERID = #{USERID,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.SYS.SysUser" >
+    insert into NHBZ.SYS_USER (USERID, LOGINID, UNAME, 
+      PWD, DFORGID, DFTEL, 
+      SEX, VALID, MODIFIER, MODTIME, 
+      ISSYS, UTYPE)
+    values (#{USERID,jdbcType=DECIMAL}, #{LOGINID,jdbcType=VARCHAR}, #{UNAME,jdbcType=VARCHAR}, 
+      #{PWD,jdbcType=VARCHAR}, #{DFORGID,jdbcType=DECIMAL}, #{DFTEL,jdbcType=VARCHAR}, 
+      #{SEX,jdbcType=CHAR}, #{VALID,jdbcType=CHAR}, #{MODIFIER,jdbcType=DECIMAL}, #{MODTIME,jdbcType=TIMESTAMP}, 
+      #{ISSYS,jdbcType=CHAR}, #{UTYPE,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.SYS.SysUser" >
+    insert into NHBZ.SYS_USER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="USERID != null" >
+        USERID,
+      </if>
+      <if test="LOGINID != null" >
+        LOGINID,
+      </if>
+      <if test="UNAME != null" >
+        UNAME,
+      </if>
+      <if test="PWD != null" >
+        PWD,
+      </if>
+      <if test="DFORGID != null" >
+        DFORGID,
+      </if>
+      <if test="DFTEL != null" >
+        DFTEL,
+      </if>
+      <if test="SEX != null" >
+        SEX,
+      </if>
+      <if test="VALID != null" >
+        VALID,
+      </if>
+      <if test="MODIFIER != null" >
+        MODIFIER,
+      </if>
+      <if test="MODTIME != null" >
+        MODTIME,
+      </if>
+      <if test="ISSYS != null" >
+        ISSYS,
+      </if>
+      <if test="UTYPE != null" >
+        UTYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="USERID != null" >
+        #{USERID,jdbcType=DECIMAL},
+      </if>
+      <if test="LOGINID != null" >
+        #{LOGINID,jdbcType=VARCHAR},
+      </if>
+      <if test="UNAME != null" >
+        #{UNAME,jdbcType=VARCHAR},
+      </if>
+      <if test="PWD != null" >
+        #{PWD,jdbcType=VARCHAR},
+      </if>
+      <if test="DFORGID != null" >
+        #{DFORGID,jdbcType=DECIMAL},
+      </if>
+      <if test="DFTEL != null" >
+        #{DFTEL,jdbcType=VARCHAR},
+      </if>
+      <if test="SEX != null" >
+        #{SEX,jdbcType=CHAR},
+      </if>
+      <if test="VALID != null" >
+        #{VALID,jdbcType=CHAR},
+      </if>
+      <if test="MODIFIER != null" >
+        #{MODIFIER,jdbcType=DECIMAL},
+      </if>
+      <if test="MODTIME != null" >
+        #{MODTIME,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ISSYS != null" >
+        #{ISSYS,jdbcType=CHAR},
+      </if>
+      <if test="UTYPE != null" >
+        #{UTYPE,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.SYS.SysUser" >
+    update NHBZ.SYS_USER
+    <set >
+      <if test="LOGINID != null" >
+        LOGINID = #{LOGINID,jdbcType=VARCHAR},
+      </if>
+      <if test="UNAME != null" >
+        UNAME = #{UNAME,jdbcType=VARCHAR},
+      </if>
+      <if test="PWD != null" >
+        PWD = #{PWD,jdbcType=VARCHAR},
+      </if>
+      <if test="DFORGID != null" >
+        DFORGID = #{DFORGID,jdbcType=DECIMAL},
+      </if>
+      <if test="DFTEL != null" >
+        DFTEL = #{DFTEL,jdbcType=VARCHAR},
+      </if>
+      <if test="SEX != null" >
+        SEX = #{SEX,jdbcType=CHAR},
+      </if>
+      <if test="VALID != null" >
+        VALID = #{VALID,jdbcType=CHAR},
+      </if>
+      <if test="MODIFIER != null" >
+        MODIFIER = #{MODIFIER,jdbcType=DECIMAL},
+      </if>
+      <if test="MODTIME != null" >
+        MODTIME = #{MODTIME,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ISSYS != null" >
+        ISSYS = #{ISSYS,jdbcType=CHAR},
+      </if>
+      <if test="UTYPE != null" >
+        UTYPE = #{UTYPE,jdbcType=CHAR},
+      </if>
+    </set>
+    where USERID = #{USERID,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.SYS.SysUser" >
+    update NHBZ.SYS_USER
+    set LOGINID = #{LOGINID,jdbcType=VARCHAR},
+      UNAME = #{UNAME,jdbcType=VARCHAR},
+      PWD = #{PWD,jdbcType=VARCHAR},
+      DFORGID = #{DFORGID,jdbcType=DECIMAL},
+      DFTEL = #{DFTEL,jdbcType=VARCHAR},
+      SEX = #{SEX,jdbcType=CHAR},
+      VALID = #{VALID,jdbcType=CHAR},
+      MODIFIER = #{MODIFIER,jdbcType=DECIMAL},
+      MODTIME = #{MODTIME,jdbcType=TIMESTAMP},
+      ISSYS = #{ISSYS,jdbcType=CHAR},
+      UTYPE = #{UTYPE,jdbcType=CHAR}
+    where USERID = #{USERID,jdbcType=DECIMAL}
+  </update>
+</mapper>
