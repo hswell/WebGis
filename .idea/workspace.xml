@@ -2,31 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc7d88bb-8c21-4f04-82d1-8d9cabb40fe7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_2_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/SYS/SysUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/SYS/SysUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/SysUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/TB/TBAllNameQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/TB/DseTb0001RemarkBMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/TB/Tb0001Prnmsr044Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/TB/DseTb0001RemarkB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/TB/Tb0001Prnmsr044.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/TBRelationQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseTb0001RemarkBMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/Tb0001Prnmsr044Mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biyesheji.iml" beforeDir="false" afterPath="$PROJECT_DIR$/biyesheji.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0901Slcmin044Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0901Slcmin044Mapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0902Slcnstrl044Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0902Slcnstrl044Mapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0903Slhypr044Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0903Slhypr044Mapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0904Escpp044Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0904Escpp044Mapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0909Sligvl044Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0909Sligvl044Mapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb1502Meidsbi044Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb1502Meidsbi044Mapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBz/DseBzPumb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBz/DseBzPumb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBz/DseBzRuninfoReal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBz/DseBzRuninfoReal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBz/DseBzRuninfoRealKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/entity/DseBz/DseBzRuninfoRealKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +56,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -129,7 +115,7 @@
       <recent name="E:\biyesheji\src\main\resources\generator" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.generator">
+  <component name="RunManager" selected="Spring Boot.GisdesignApplication">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sen.design.Test" />
       <module name="biyesheji" />
@@ -214,7 +200,8 @@
       <workItem from="1585820216325" duration="4247000" />
       <workItem from="1585892937666" duration="655000" />
       <workItem from="1585894110674" duration="2379000" />
-      <workItem from="1586087995534" duration="3718000" />
+      <workItem from="1586087995534" duration="4359000" />
+      <workItem from="1586414718631" duration="7496000" />
     </task>
     <task id="LOCAL-00001" summary="4月1日提交">
       <created>1585732789112</created>
@@ -251,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586088753216</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="4月5日提交 登陆页面（未完成）">
+      <created>1586092734164</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586092734164</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +257,8 @@
     <MESSAGE value="4月1日提交 新增2个实体" />
     <MESSAGE value="4月2日提交 新增BZ 和Sz的查询方法" />
     <MESSAGE value="4月5日提交 不晓得改错了啥 回滚再重写" />
-    <option name="LAST_COMMIT_MESSAGE" value="4月5日提交 不晓得改错了啥 回滚再重写" />
+    <MESSAGE value="4月5日提交 登陆页面（未完成）" />
+    <option name="LAST_COMMIT_MESSAGE" value="4月5日提交 登陆页面（未完成）" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="0" key="#Inspections" timestamp="1585720950842">
@@ -294,38 +289,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="641" y="151" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585732679732" />
-    <state width="1483" height="79" key="GridCell.Tab.0.bottom" timestamp="1586090574185">
+    <state width="1483" height="157" key="GridCell.Tab.0.bottom" timestamp="1586418946134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="79" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586090574185" />
-    <state width="1483" height="79" key="GridCell.Tab.0.center" timestamp="1586090574185">
+    <state width="1483" height="157" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586418946134" />
+    <state width="1483" height="157" key="GridCell.Tab.0.center" timestamp="1586418946134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="79" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586090574185" />
-    <state width="1483" height="79" key="GridCell.Tab.0.left" timestamp="1586090574185">
+    <state width="1483" height="157" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586418946134" />
+    <state width="1483" height="157" key="GridCell.Tab.0.left" timestamp="1586418946134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="79" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586090574185" />
-    <state width="1483" height="79" key="GridCell.Tab.0.right" timestamp="1586090574185">
+    <state width="1483" height="157" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586418946134" />
+    <state width="1483" height="157" key="GridCell.Tab.0.right" timestamp="1586418946134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="79" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586090574185" />
-    <state width="1483" height="79" key="GridCell.Tab.1.bottom" timestamp="1586090574186">
+    <state width="1483" height="157" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586418946134" />
+    <state width="1483" height="157" key="GridCell.Tab.1.bottom" timestamp="1586418946135">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="79" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586090574186" />
-    <state width="1483" height="79" key="GridCell.Tab.1.center" timestamp="1586090574186">
+    <state width="1483" height="157" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586418946135" />
+    <state width="1483" height="157" key="GridCell.Tab.1.center" timestamp="1586418946134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="79" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586090574186" />
-    <state width="1483" height="79" key="GridCell.Tab.1.left" timestamp="1586090574186">
+    <state width="1483" height="157" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586418946134" />
+    <state width="1483" height="157" key="GridCell.Tab.1.left" timestamp="1586418946134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="79" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586090574186" />
-    <state width="1483" height="79" key="GridCell.Tab.1.right" timestamp="1586090574186">
+    <state width="1483" height="157" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586418946134" />
+    <state width="1483" height="157" key="GridCell.Tab.1.right" timestamp="1586418946134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="79" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586090574186" />
+    <state width="1483" height="157" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586418946134" />
     <state x="98" y="0" key="SettingsEditor" timestamp="1585732633174">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -334,10 +329,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1586088060458" />
-    <state x="470" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1586087999995">
+    <state x="470" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1586414997031">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="470" y="306" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586087999995" />
+    <state x="470" y="306" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586414997031" />
     <state x="262" y="13" width="1011" height="798" key="find.popup" timestamp="1585399685390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.TB.DseTb0001RemarkBMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.TB.DseTb0001RemarkB" >
+    <constructor >
+      <arg column="ENNMCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.sen.design.entity.TB.DseTb0001RemarkB" >
+    insert into NHBZ.DSE_TB0001_REMARK_B (ENNMCD, STCD)
+    values (#{ENNMCD,jdbcType=VARCHAR}, #{STCD,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectByENNMCD" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select *
+    from NHBZ.DSE_TB0001_REMARK_B
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+  </select>
+  <select id="queryList" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
+    select *
+    from NHBZ.DSE_TB0001_REMARK_B
+  </select>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.TB.DseTb0001RemarkB" >
+    insert into NHBZ.DSE_TB0001_REMARK_B
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        ENNMCD,
+      </if>
+      <if test="STCD != null" >
+        STCD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ENNMCD != null" >
+        #{ENNMCD,jdbcType=VARCHAR},
+      </if>
+      <if test="STCD != null" >
+        #{STCD,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

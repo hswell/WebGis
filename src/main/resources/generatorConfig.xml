@@ -26,7 +26,7 @@
 
 
         <!-- 指定实体类生成 -->
-        <javaModelGenerator targetPackage="com.sen.design.entity.SYS" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.sen.design.entity.TB" targetProject="src/main/java">
             <!-- 是否对model添加 构造函数 -->
             <property name="constructorBased" value="true"/>
 
@@ -53,7 +53,7 @@
           type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
           type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
   -->
-        <javaClientGenerator targetPackage="com.sen.design.dao.SYS" targetProject="src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.sen.design.dao.TB" targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
 
 
@@ -63,7 +63,7 @@
 
 
 
-      <table schema="NHBZ" tableName="SYS_USER" enableCountByExample="false" enableSelectByExample="false"
+      <table schema="NHBZ" tableName="" enableCountByExample="false" enableSelectByExample="false"
                     enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
         <property name="useActualColumnNames" value="true"/>
         <!-- <property name="rootClass" value="com.sen.design.entity.Base"/>  -->
