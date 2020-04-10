@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseBz.DseBzRuninfoRMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseBz.DseBzRuninfoR" >
+    <constructor >
+      <idArg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="TM" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <idArg column="AIRCREWNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="PIPENM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="VOLTAGEA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="VOLTAGEB" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="VOLTAGEC" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ECA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ECB" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ECC" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="POWERACTIVE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="POWERREACTIVE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDACTIVE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDREACTIVE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="POWERFACTOR" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPBUSHING" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DOWNBUSHING" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="POWERBUSHING" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATORTEMPERATURE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="AIRCREWSTATE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="INSTANTANEOUSQ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="COUNTQ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FOREBAYZ" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DISTANCE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NSW" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="WSW" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STCD, TM, AIRCREWNM, PIPENM, VOLTAGEA, VOLTAGEB, VOLTAGEC, ECA, ECB, ECC, POWERACTIVE, 
+    POWERREACTIVE, EDACTIVE, EDREACTIVE, POWERFACTOR, UPBUSHING, DOWNBUSHING, POWERBUSHING, 
+    STATORTEMPERATURE, AIRCREWSTATE, INSTANTANEOUSQ, COUNTQ, FOREBAYZ, DISTANCE, NSW, 
+    WSW
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoRKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_BZ_RUNINFO_R
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+      and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
+      and PIPENM = #{PIPENM,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoRKey" >
+    delete from NHBZ.DSE_BZ_RUNINFO_R
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+      and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
+      and PIPENM = #{PIPENM,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoR" >
+    insert into NHBZ.DSE_BZ_RUNINFO_R (STCD, TM, AIRCREWNM, 
+      PIPENM, VOLTAGEA, VOLTAGEB, 
+      VOLTAGEC, ECA, ECB, 
+      ECC, POWERACTIVE, POWERREACTIVE, 
+      EDACTIVE, EDREACTIVE, POWERFACTOR, 
+      UPBUSHING, DOWNBUSHING, POWERBUSHING, 
+      STATORTEMPERATURE, AIRCREWSTATE, INSTANTANEOUSQ, 
+      COUNTQ, FOREBAYZ, DISTANCE, 
+      NSW, WSW)
+    values (#{STCD,jdbcType=VARCHAR}, #{TM,jdbcType=TIMESTAMP}, #{AIRCREWNM,jdbcType=VARCHAR}, 
+      #{PIPENM,jdbcType=VARCHAR}, #{VOLTAGEA,jdbcType=VARCHAR}, #{VOLTAGEB,jdbcType=VARCHAR}, 
+      #{VOLTAGEC,jdbcType=VARCHAR}, #{ECA,jdbcType=VARCHAR}, #{ECB,jdbcType=VARCHAR}, 
+      #{ECC,jdbcType=VARCHAR}, #{POWERACTIVE,jdbcType=VARCHAR}, #{POWERREACTIVE,jdbcType=VARCHAR}, 
+      #{EDACTIVE,jdbcType=VARCHAR}, #{EDREACTIVE,jdbcType=VARCHAR}, #{POWERFACTOR,jdbcType=VARCHAR}, 
+      #{UPBUSHING,jdbcType=VARCHAR}, #{DOWNBUSHING,jdbcType=VARCHAR}, #{POWERBUSHING,jdbcType=VARCHAR}, 
+      #{STATORTEMPERATURE,jdbcType=VARCHAR}, #{AIRCREWSTATE,jdbcType=VARCHAR}, #{INSTANTANEOUSQ,jdbcType=VARCHAR}, 
+      #{COUNTQ,jdbcType=VARCHAR}, #{FOREBAYZ,jdbcType=DECIMAL}, #{DISTANCE,jdbcType=VARCHAR}, 
+      #{NSW,jdbcType=DECIMAL}, #{WSW,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoR" >
+    insert into NHBZ.DSE_BZ_RUNINFO_R
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        STCD,
+      </if>
+      <if test="TM != null" >
+        TM,
+      </if>
+      <if test="AIRCREWNM != null" >
+        AIRCREWNM,
+      </if>
+      <if test="PIPENM != null" >
+        PIPENM,
+      </if>
+      <if test="VOLTAGEA != null" >
+        VOLTAGEA,
+      </if>
+      <if test="VOLTAGEB != null" >
+        VOLTAGEB,
+      </if>
+      <if test="VOLTAGEC != null" >
+        VOLTAGEC,
+      </if>
+      <if test="ECA != null" >
+        ECA,
+      </if>
+      <if test="ECB != null" >
+        ECB,
+      </if>
+      <if test="ECC != null" >
+        ECC,
+      </if>
+      <if test="POWERACTIVE != null" >
+        POWERACTIVE,
+      </if>
+      <if test="POWERREACTIVE != null" >
+        POWERREACTIVE,
+      </if>
+      <if test="EDACTIVE != null" >
+        EDACTIVE,
+      </if>
+      <if test="EDREACTIVE != null" >
+        EDREACTIVE,
+      </if>
+      <if test="POWERFACTOR != null" >
+        POWERFACTOR,
+      </if>
+      <if test="UPBUSHING != null" >
+        UPBUSHING,
+      </if>
+      <if test="DOWNBUSHING != null" >
+        DOWNBUSHING,
+      </if>
+      <if test="POWERBUSHING != null" >
+        POWERBUSHING,
+      </if>
+      <if test="STATORTEMPERATURE != null" >
+        STATORTEMPERATURE,
+      </if>
+      <if test="AIRCREWSTATE != null" >
+        AIRCREWSTATE,
+      </if>
+      <if test="INSTANTANEOUSQ != null" >
+        INSTANTANEOUSQ,
+      </if>
+      <if test="COUNTQ != null" >
+        COUNTQ,
+      </if>
+      <if test="FOREBAYZ != null" >
+        FOREBAYZ,
+      </if>
+      <if test="DISTANCE != null" >
+        DISTANCE,
+      </if>
+      <if test="NSW != null" >
+        NSW,
+      </if>
+      <if test="WSW != null" >
+        WSW,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        #{STCD,jdbcType=VARCHAR},
+      </if>
+      <if test="TM != null" >
+        #{TM,jdbcType=TIMESTAMP},
+      </if>
+      <if test="AIRCREWNM != null" >
+        #{AIRCREWNM,jdbcType=VARCHAR},
+      </if>
+      <if test="PIPENM != null" >
+        #{PIPENM,jdbcType=VARCHAR},
+      </if>
+      <if test="VOLTAGEA != null" >
+        #{VOLTAGEA,jdbcType=VARCHAR},
+      </if>
+      <if test="VOLTAGEB != null" >
+        #{VOLTAGEB,jdbcType=VARCHAR},
+      </if>
+      <if test="VOLTAGEC != null" >
+        #{VOLTAGEC,jdbcType=VARCHAR},
+      </if>
+      <if test="ECA != null" >
+        #{ECA,jdbcType=VARCHAR},
+      </if>
+      <if test="ECB != null" >
+        #{ECB,jdbcType=VARCHAR},
+      </if>
+      <if test="ECC != null" >
+        #{ECC,jdbcType=VARCHAR},
+      </if>
+      <if test="POWERACTIVE != null" >
+        #{POWERACTIVE,jdbcType=VARCHAR},
+      </if>
+      <if test="POWERREACTIVE != null" >
+        #{POWERREACTIVE,jdbcType=VARCHAR},
+      </if>
+      <if test="EDACTIVE != null" >
+        #{EDACTIVE,jdbcType=VARCHAR},
+      </if>
+      <if test="EDREACTIVE != null" >
+        #{EDREACTIVE,jdbcType=VARCHAR},
+      </if>
+      <if test="POWERFACTOR != null" >
+        #{POWERFACTOR,jdbcType=VARCHAR},
+      </if>
+      <if test="UPBUSHING != null" >
+        #{UPBUSHING,jdbcType=VARCHAR},
+      </if>
+      <if test="DOWNBUSHING != null" >
+        #{DOWNBUSHING,jdbcType=VARCHAR},
+      </if>
+      <if test="POWERBUSHING != null" >
+        #{POWERBUSHING,jdbcType=VARCHAR},
+      </if>
+      <if test="STATORTEMPERATURE != null" >
+        #{STATORTEMPERATURE,jdbcType=VARCHAR},
+      </if>
+      <if test="AIRCREWSTATE != null" >
+        #{AIRCREWSTATE,jdbcType=VARCHAR},
+      </if>
+      <if test="INSTANTANEOUSQ != null" >
+        #{INSTANTANEOUSQ,jdbcType=VARCHAR},
+      </if>
+      <if test="COUNTQ != null" >
+        #{COUNTQ,jdbcType=VARCHAR},
+      </if>
+      <if test="FOREBAYZ != null" >
+        #{FOREBAYZ,jdbcType=DECIMAL},
+      </if>
+      <if test="DISTANCE != null" >
+        #{DISTANCE,jdbcType=VARCHAR},
+      </if>
+      <if test="NSW != null" >
+        #{NSW,jdbcType=DECIMAL},
+      </if>
+      <if test="WSW != null" >
+        #{WSW,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoR" >
+    update NHBZ.DSE_BZ_RUNINFO_R
+    <set >
+      <if test="VOLTAGEA != null" >
+        VOLTAGEA = #{VOLTAGEA,jdbcType=VARCHAR},
+      </if>
+      <if test="VOLTAGEB != null" >
+        VOLTAGEB = #{VOLTAGEB,jdbcType=VARCHAR},
+      </if>
+      <if test="VOLTAGEC != null" >
+        VOLTAGEC = #{VOLTAGEC,jdbcType=VARCHAR},
+      </if>
+      <if test="ECA != null" >
+        ECA = #{ECA,jdbcType=VARCHAR},
+      </if>
+      <if test="ECB != null" >
+        ECB = #{ECB,jdbcType=VARCHAR},
+      </if>
+      <if test="ECC != null" >
+        ECC = #{ECC,jdbcType=VARCHAR},
+      </if>
+      <if test="POWERACTIVE != null" >
+        POWERACTIVE = #{POWERACTIVE,jdbcType=VARCHAR},
+      </if>
+      <if test="POWERREACTIVE != null" >
+        POWERREACTIVE = #{POWERREACTIVE,jdbcType=VARCHAR},
+      </if>
+      <if test="EDACTIVE != null" >
+        EDACTIVE = #{EDACTIVE,jdbcType=VARCHAR},
+      </if>
+      <if test="EDREACTIVE != null" >
+        EDREACTIVE = #{EDREACTIVE,jdbcType=VARCHAR},
+      </if>
+      <if test="POWERFACTOR != null" >
+        POWERFACTOR = #{POWERFACTOR,jdbcType=VARCHAR},
+      </if>
+      <if test="UPBUSHING != null" >
+        UPBUSHING = #{UPBUSHING,jdbcType=VARCHAR},
+      </if>
+      <if test="DOWNBUSHING != null" >
+        DOWNBUSHING = #{DOWNBUSHING,jdbcType=VARCHAR},
+      </if>
+      <if test="POWERBUSHING != null" >
+        POWERBUSHING = #{POWERBUSHING,jdbcType=VARCHAR},
+      </if>
+      <if test="STATORTEMPERATURE != null" >
+        STATORTEMPERATURE = #{STATORTEMPERATURE,jdbcType=VARCHAR},
+      </if>
+      <if test="AIRCREWSTATE != null" >
+        AIRCREWSTATE = #{AIRCREWSTATE,jdbcType=VARCHAR},
+      </if>
+      <if test="INSTANTANEOUSQ != null" >
+        INSTANTANEOUSQ = #{INSTANTANEOUSQ,jdbcType=VARCHAR},
+      </if>
+      <if test="COUNTQ != null" >
+        COUNTQ = #{COUNTQ,jdbcType=VARCHAR},
+      </if>
+      <if test="FOREBAYZ != null" >
+        FOREBAYZ = #{FOREBAYZ,jdbcType=DECIMAL},
+      </if>
+      <if test="DISTANCE != null" >
+        DISTANCE = #{DISTANCE,jdbcType=VARCHAR},
+      </if>
+      <if test="NSW != null" >
+        NSW = #{NSW,jdbcType=DECIMAL},
+      </if>
+      <if test="WSW != null" >
+        WSW = #{WSW,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+      and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
+      and PIPENM = #{PIPENM,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseBz.DseBzRuninfoR" >
+    update NHBZ.DSE_BZ_RUNINFO_R
+    set VOLTAGEA = #{VOLTAGEA,jdbcType=VARCHAR},
+      VOLTAGEB = #{VOLTAGEB,jdbcType=VARCHAR},
+      VOLTAGEC = #{VOLTAGEC,jdbcType=VARCHAR},
+      ECA = #{ECA,jdbcType=VARCHAR},
+      ECB = #{ECB,jdbcType=VARCHAR},
+      ECC = #{ECC,jdbcType=VARCHAR},
+      POWERACTIVE = #{POWERACTIVE,jdbcType=VARCHAR},
+      POWERREACTIVE = #{POWERREACTIVE,jdbcType=VARCHAR},
+      EDACTIVE = #{EDACTIVE,jdbcType=VARCHAR},
+      EDREACTIVE = #{EDREACTIVE,jdbcType=VARCHAR},
+      POWERFACTOR = #{POWERFACTOR,jdbcType=VARCHAR},
+      UPBUSHING = #{UPBUSHING,jdbcType=VARCHAR},
+      DOWNBUSHING = #{DOWNBUSHING,jdbcType=VARCHAR},
+      POWERBUSHING = #{POWERBUSHING,jdbcType=VARCHAR},
+      STATORTEMPERATURE = #{STATORTEMPERATURE,jdbcType=VARCHAR},
+      AIRCREWSTATE = #{AIRCREWSTATE,jdbcType=VARCHAR},
+      INSTANTANEOUSQ = #{INSTANTANEOUSQ,jdbcType=VARCHAR},
+      COUNTQ = #{COUNTQ,jdbcType=VARCHAR},
+      FOREBAYZ = #{FOREBAYZ,jdbcType=DECIMAL},
+      DISTANCE = #{DISTANCE,jdbcType=VARCHAR},
+      NSW = #{NSW,jdbcType=DECIMAL},
+      WSW = #{WSW,jdbcType=DECIMAL}
+    where STCD = #{STCD,jdbcType=VARCHAR}
+      and TM = #{TM,jdbcType=TIMESTAMP}
+      and AIRCREWNM = #{AIRCREWNM,jdbcType=VARCHAR}
+      and PIPENM = #{PIPENM,jdbcType=VARCHAR}
+  </update>
+</mapper>
