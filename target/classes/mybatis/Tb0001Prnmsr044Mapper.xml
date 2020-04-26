@@ -19,10 +19,21 @@
     ENNMCD, ENNM, OGID, ENTYCED, VLFL, ATID, SDFL, RMA, MDPS, MDDT
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from NHBZ.TB0001_PRNMSR_044
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+  </select>
+  <select id="getEnnm" resultType="java.lang.String" parameterType="java.lang.String" >
+    select ENNM
+    from NHBZ.TB0001_PRNMSR_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByENNM" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from NHBZ.TB0001_PRNMSR_044
+    where ENNM = #{ENNM,jdbcType=VARCHAR}
   </select>
   <select id="queryList" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
     select *

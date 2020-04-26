@@ -9,6 +9,8 @@ import java.util.List;
 public interface DseTb0001RemarkBMapper {
     int insert(DseTb0001RemarkB record);
     List<DseTb0001RemarkB> queryList();
+    String getEnnmcd(String STCD);
+    String getStcd(String ENNMCD);
     DseTb0001RemarkB selectByENNMCD(String ENNMCD);
     int insertSelective(DseTb0001RemarkB record);
 }

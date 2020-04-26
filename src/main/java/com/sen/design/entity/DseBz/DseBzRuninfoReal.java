@@ -1,10 +1,13 @@
 package com.sen.design.entity.DseBz;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
 public class DseBzRuninfoReal extends DseBzRuninfoRealKey {
-    //3.2泵站运行信息实时表
+    //3.
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date TM;
 
     //采集时间

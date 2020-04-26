@@ -88,6 +88,18 @@
     from NHBZ.DSE_SZ_RUNINFO_REAL
     where STCD = #{STCD,jdbcType=VARCHAR}
   </select>
+  <select id="getAllSTCD" resultType="String" parameterType="java.lang.String" >
+    SELECT  DISTINCT(STCD)
+    FROM NHBZ.DSE_SZ_RUNINFO_REAL
+  </select>
+  <select id="selectByStcdTime" resultMap="BaseResultMap">
+    SELECT   <include refid="Base_Column_List" />
+    FROM NHBZ.DSE_SZ_RUNINFO_REAL
+    where STCD = #{STCD,jdbcType=VARCHAR}
+    <if test="startTM != null and endTM != null">
+      and TM &gt;= #{startTM,jdbcType=TIMESTAMP} and TM &lt;= #{endTM,jdbcType=TIMESTAMP}
+    </if>
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from NHBZ.DSE_SZ_RUNINFO_REAL
     where STCD = #{STCD,jdbcType=VARCHAR}

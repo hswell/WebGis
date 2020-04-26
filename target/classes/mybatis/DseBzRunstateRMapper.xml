@@ -34,6 +34,22 @@
     where STCD = #{STCD,jdbcType=VARCHAR}
       and TM = #{TM,jdbcType=TIMESTAMP}
   </select>
+  <select id="selectByStcdTime" resultMap="BaseResultMap">
+    SELECT   <include refid="Base_Column_List" />
+    FROM NHBZ.DSE_BZ_RUNSTATE_R
+    where STCD = #{STCD,jdbcType=VARCHAR}
+    <if test="startTM != null and endTM != null">
+      and TM &gt;= #{startTM,jdbcType=TIMESTAMP} and TM &lt;= #{endTM,jdbcType=TIMESTAMP}
+    </if>
+  </select>
+  <select id="selectLatestM" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from
+    (SELECT *
+    FROM NHBZ.DSE_BZ_RUNSTATE_R
+    WHERE STCD = #{STCD,jdbcType=VARCHAR}
+    order by TM desc)
+    where rownum = 1
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.DseBz.DseBzRunstateRKey" >
     delete from NHBZ.DSE_BZ_RUNSTATE_R
     where STCD = #{STCD,jdbcType=VARCHAR}

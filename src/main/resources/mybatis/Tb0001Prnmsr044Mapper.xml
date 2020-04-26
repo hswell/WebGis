@@ -24,6 +24,11 @@
     from NHBZ.TB0001_PRNMSR_044
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
   </select>
+  <select id="getEnnm" resultType="java.lang.String" parameterType="java.lang.String" >
+    select ENNM
+    from NHBZ.TB0001_PRNMSR_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+  </select>
   <select id="selectByENNM" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select
     <include refid="Base_Column_List" />

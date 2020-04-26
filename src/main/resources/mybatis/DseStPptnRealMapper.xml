@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseST.DseStPptnRealMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseST.DseStPptnReal" >
+    <constructor >
+      <idArg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TM" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="DRP" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="INTV" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="PDR" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DYP" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="WTH" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DRP1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DRP3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DRP6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DRP12" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DRP24" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DRPDAY" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STCD, TM, DRP, INTV, PDR, DYP, WTH, DRP1, DRP3, DRP6, DRP12, DRP24, DRPDAY
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_ST_PPTN_REAL
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByStcdTime" resultMap="BaseResultMap">
+    SELECT   <include refid="Base_Column_List" />
+    FROM NHBZ.DSE_ST_PPTN_REAL
+    where STCD = #{STCD,jdbcType=VARCHAR}
+    <if test="startTM != null and endTM != null">
+      and TM &gt;= #{startTM,jdbcType=TIMESTAMP} and TM &lt;= #{endTM,jdbcType=TIMESTAMP}
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from NHBZ.DSE_ST_PPTN_REAL
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseST.DseStPptnReal" >
+    insert into NHBZ.DSE_ST_PPTN_REAL (STCD, TM, DRP, 
+      INTV, PDR, DYP, WTH, 
+      DRP1, DRP3, DRP6, DRP12, 
+      DRP24, DRPDAY)
+    values (#{STCD,jdbcType=VARCHAR}, #{TM,jdbcType=TIMESTAMP}, #{DRP,jdbcType=DECIMAL}, 
+      #{INTV,jdbcType=DECIMAL}, #{PDR,jdbcType=DECIMAL}, #{DYP,jdbcType=DECIMAL}, #{WTH,jdbcType=VARCHAR}, 
+      #{DRP1,jdbcType=DECIMAL}, #{DRP3,jdbcType=DECIMAL}, #{DRP6,jdbcType=DECIMAL}, #{DRP12,jdbcType=DECIMAL}, 
+      #{DRP24,jdbcType=DECIMAL}, #{DRPDAY,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseST.DseStPptnReal" >
+    insert into NHBZ.DSE_ST_PPTN_REAL
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        STCD,
+      </if>
+      <if test="TM != null" >
+        TM,
+      </if>
+      <if test="DRP != null" >
+        DRP,
+      </if>
+      <if test="INTV != null" >
+        INTV,
+      </if>
+      <if test="PDR != null" >
+        PDR,
+      </if>
+      <if test="DYP != null" >
+        DYP,
+      </if>
+      <if test="WTH != null" >
+        WTH,
+      </if>
+      <if test="DRP1 != null" >
+        DRP1,
+      </if>
+      <if test="DRP3 != null" >
+        DRP3,
+      </if>
+      <if test="DRP6 != null" >
+        DRP6,
+      </if>
+      <if test="DRP12 != null" >
+        DRP12,
+      </if>
+      <if test="DRP24 != null" >
+        DRP24,
+      </if>
+      <if test="DRPDAY != null" >
+        DRPDAY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        #{STCD,jdbcType=VARCHAR},
+      </if>
+      <if test="TM != null" >
+        #{TM,jdbcType=TIMESTAMP},
+      </if>
+      <if test="DRP != null" >
+        #{DRP,jdbcType=DECIMAL},
+      </if>
+      <if test="INTV != null" >
+        #{INTV,jdbcType=DECIMAL},
+      </if>
+      <if test="PDR != null" >
+        #{PDR,jdbcType=DECIMAL},
+      </if>
+      <if test="DYP != null" >
+        #{DYP,jdbcType=DECIMAL},
+      </if>
+      <if test="WTH != null" >
+        #{WTH,jdbcType=VARCHAR},
+      </if>
+      <if test="DRP1 != null" >
+        #{DRP1,jdbcType=DECIMAL},
+      </if>
+      <if test="DRP3 != null" >
+        #{DRP3,jdbcType=DECIMAL},
+      </if>
+      <if test="DRP6 != null" >
+        #{DRP6,jdbcType=DECIMAL},
+      </if>
+      <if test="DRP12 != null" >
+        #{DRP12,jdbcType=DECIMAL},
+      </if>
+      <if test="DRP24 != null" >
+        #{DRP24,jdbcType=DECIMAL},
+      </if>
+      <if test="DRPDAY != null" >
+        #{DRPDAY,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseST.DseStPptnReal" >
+    update NHBZ.DSE_ST_PPTN_REAL
+    <set >
+      <if test="TM != null" >
+        TM = #{TM,jdbcType=TIMESTAMP},
+      </if>
+      <if test="DRP != null" >
+        DRP = #{DRP,jdbcType=DECIMAL},
+      </if>
+      <if test="INTV != null" >
+        INTV = #{INTV,jdbcType=DECIMAL},
+      </if>
+      <if test="PDR != null" >
+        PDR = #{PDR,jdbcType=DECIMAL},
+      </if>
+      <if test="DYP != null" >
+        DYP = #{DYP,jdbcType=DECIMAL},
+      </if>
+      <if test="WTH != null" >
+        WTH = #{WTH,jdbcType=VARCHAR},
+      </if>
+      <if test="DRP1 != null" >
+        DRP1 = #{DRP1,jdbcType=DECIMAL},
+      </if>
+      <if test="DRP3 != null" >
+        DRP3 = #{DRP3,jdbcType=DECIMAL},
+      </if>
+      <if test="DRP6 != null" >
+        DRP6 = #{DRP6,jdbcType=DECIMAL},
+      </if>
+      <if test="DRP12 != null" >
+        DRP12 = #{DRP12,jdbcType=DECIMAL},
+      </if>
+      <if test="DRP24 != null" >
+        DRP24 = #{DRP24,jdbcType=DECIMAL},
+      </if>
+      <if test="DRPDAY != null" >
+        DRPDAY = #{DRPDAY,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseST.DseStPptnReal" >
+    update NHBZ.DSE_ST_PPTN_REAL
+    set TM = #{TM,jdbcType=TIMESTAMP},
+      DRP = #{DRP,jdbcType=DECIMAL},
+      INTV = #{INTV,jdbcType=DECIMAL},
+      PDR = #{PDR,jdbcType=DECIMAL},
+      DYP = #{DYP,jdbcType=DECIMAL},
+      WTH = #{WTH,jdbcType=VARCHAR},
+      DRP1 = #{DRP1,jdbcType=DECIMAL},
+      DRP3 = #{DRP3,jdbcType=DECIMAL},
+      DRP6 = #{DRP6,jdbcType=DECIMAL},
+      DRP12 = #{DRP12,jdbcType=DECIMAL},
+      DRP24 = #{DRP24,jdbcType=DECIMAL},
+      DRPDAY = #{DRPDAY,jdbcType=DECIMAL}
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </update>
+</mapper>

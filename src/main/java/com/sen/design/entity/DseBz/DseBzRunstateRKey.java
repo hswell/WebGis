@@ -1,11 +1,13 @@
 package com.sen.design.entity.DseBz;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class DseBzRunstateRKey {
     private String STCD;
     //测站编号
-
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date TM;
     //采集时间
 

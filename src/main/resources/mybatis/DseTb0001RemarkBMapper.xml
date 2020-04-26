@@ -16,6 +16,16 @@
     from NHBZ.DSE_TB0001_REMARK_B
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
   </select>
+  <select id="getEnnmcd" resultType="java.lang.String" parameterType="java.lang.String" >
+    select ENNMCD
+    from NHBZ.DSE_TB0001_REMARK_B
+    where STCD = #{ENNMCD,jdbcType=VARCHAR}
+  </select>
+  <select id="getStcd" resultType="java.lang.String" parameterType="java.lang.String" >
+    select STCD
+    from NHBZ.DSE_TB0001_REMARK_B
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+  </select>
   <select id="queryList" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
     select *
     from NHBZ.DSE_TB0001_REMARK_B

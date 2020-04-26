@@ -1,6 +1,7 @@
 package com.sen.design.entity.DseBz;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class DseBzRuninfoR extends DseBzRuninfoRKey {
     private String VOLTAGEA;
