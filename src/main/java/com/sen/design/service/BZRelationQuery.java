@@ -35,7 +35,6 @@ public class BZRelationQuery {
         return dseTb0001RemarkBMapper.queryList();
     }
     public List<String> getBZName(){
-        //根据站名字時間段查询水閘相關信
         List<String> allSTCD = dseBzRuninfoRMapper.getAllSTCD();
         //根据STCD对应ENNMCD查询
         List<String> allEnnmcd=new ArrayList<>();

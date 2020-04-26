@@ -27,6 +27,14 @@
     from NHBZ.SYS_USER
     where USERID = #{USERID,jdbcType=DECIMAL}
   </select>
+
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from NHBZ.SYS_USER
+    where UNAME = #{UNAME,jdbcType=DECIMAL}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from NHBZ.SYS_USER
     where USERID = #{USERID,jdbcType=DECIMAL}
