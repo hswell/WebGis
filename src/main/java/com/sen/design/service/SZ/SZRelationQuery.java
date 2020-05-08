@@ -1,10 +1,12 @@
-package com.sen.design.service;
+package com.sen.design.service.SZ;
 
+import com.sen.design.dao.DseST.StStbprpBMapper;
 import com.sen.design.dao.DseSz.DseSzRuninfoRMapper;
 import com.sen.design.dao.DseSz.DseSzRuninfoRealMapper;
 import com.sen.design.dao.DseSz.DseSzRunstateRMapper;
 import com.sen.design.dao.TB.DseTb0001RemarkBMapper;
 import com.sen.design.dao.TB.Tb0001Prnmsr044Mapper;
+import com.sen.design.entity.DseST.StStbprpB;
 import com.sen.design.entity.DseSz.*;
 import com.sen.design.entity.TB.DseTb0001RemarkB;
 import com.sen.design.entity.TB.Tb0001Prnmsr044;
@@ -28,21 +30,22 @@ public class SZRelationQuery {
     DseSzRuninfoRMapper dseSzRuninfoRMapper;
     @Autowired
     DseSzRunstateRMapper dseSzRunstateRMapper;
-
+    @Autowired
+    StStbprpBMapper stStbprpBMapper;
     public String stcdQuery(String ENNM){
         //根据站名字查询对应STCD
-        String ENNMCD = null;
-        Tb0001Prnmsr044 tb0001Prnmsr044=tb0001Prnmsr044Mapper.selectByENNM(ENNM);
-        if (tb0001Prnmsr044!=null){
-            ENNMCD=tb0001Prnmsr044.getENNMCD();
-        }
-        DseTb0001RemarkB Dse=dseTb0001RemarkBMapper.selectByENNMCD(ENNMCD);
-        if (Dse!=null){
-            return Dse.getSTCD();
+        String STCD = stStbprpBMapper.getSTCD(ENNM);
+        if (STCD != null) {
+            return STCD;
         }
         return null;
     }
-
+    public String getSzNameByBz(String name){
+        String STCD=stcdQuery(name);
+        String ennmcd=dseTb0001RemarkBMapper.getEnnmcd(STCD);
+        String ennm=tb0001Prnmsr044Mapper.getEnnm(ennmcd);
+        return ennm;
+    }
     public List<String> getSzName(){
 
         List<String> allSTCD = dseSzRuninfoRealMapper.getAllSTCD();
@@ -89,8 +92,10 @@ public class SZRelationQuery {
                 sz.add(stata);
             }
 
+        }if (sz!=null){
+            return sz;
         }
-        return sz;
+        return null;
     }
 
 

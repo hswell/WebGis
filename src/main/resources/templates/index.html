@@ -1,39 +1,63 @@
 <!doctype html>
-    <html lang="en">
+     <html lang="en">
       <head>
         <link href="css/ol.css" rel="stylesheet" type="text/css" />
+          <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/ol.js" charset="utf-8"></script>
-        <style>
-          .map {
-            height: 400px;
-            width: 100%;
-          }
-        </style>
-        <title>OpenLayers example</title>
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+          <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+          <title>首页</title>
       </head>
-      <body>
-        <h2>蔡甸区西湖</h2>
-        <div id="map" class="map"></div>
-        <script type="text/javascript">
-          // 高德地图层
-          var gaodeMapLayer = new ol.layer.Tile({
-              source: new ol.source.XYZ({
-                  url:'http://webst0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=7&x={x}&y={y}&z={z}'
-              })
+      <script>
+        $.ajax({
+          type: "Get",
+          url: "http://localhost:8080/BZ/getUsername",
+          success: function(data){
+            $("#name").text(data);
+          }
+        })
+      </script>
+
+      <script type="text/javascript">
+
+        var map;
+        function init(){
+          // Create the map using the specified DOM element
+          map =new ol.Map({
+            target: 'map',
+            view: new ol.View({
+              center: ol.proj.fromLonLat([113.9586446100,30.5473917400]),
+              zoom: 16,
+              minZoom:10,
+              maxZoom:20
+            })
           });
 
-          var map = new ol.Map({
-            target: 'map',
-            layers: [
-            gaodeMapLayer
-            ],
-            view: new ol.View({
-            center: ol.proj.fromLonLat([113.9586446100,30.5473917400]),
-            zoom: 16,
-            minZoom:10,
-            maxZoom:20
-          })
+          // Add a WMS layer
+          var gaodeMapLayer = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+              url:'http://webst0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=7&x={x}&y={y}&z={z}'
+            })
           });
-        </script>
+          map.addLayer(gaodeMapLayer);}
+      </script>
+      <body onload="init()">
+      <h2>蔡甸区西湖</h2>
+      <div id="name">欢迎你</div>
+      <a href="/logout">注销</a>
+      <h3></h3>
+      <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-default">地图服务</button>
+          <button type="button" class="btn btn-default">雨情信息</button>
+          <button type="button" class="btn btn-default">水情信息</button>
+          <button type="button" class="btn btn-default">泵站水位</button>
+          <button type="button" class="btn btn-default">泵站运行状态</button>
+          <button type="button" class="btn btn-default">泵站运行历史</button>
+          <button type="button" class="btn btn-default">机组开关机</button>
+          <button type="button" class="btn btn-default">水闸开关机</button>
+      </div>
+      <div id="map" style="width: 100%; height: 500px;"></div>
       </body>
     </html>

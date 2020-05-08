@@ -14,7 +14,7 @@ public interface DseStPptnRealMapper {
     int insert(DseStPptnReal record);
 
     int insertSelective(DseStPptnReal record);
-
+    List<DseStPptnReal> selectAll();
     DseStPptnReal selectByPrimaryKey(String STCD);
     List<DseStPptnReal> selectByStcdTime(@Param("STCD")String STCD, @Param("startTM") Date startTM, @Param("endTM") Date endTM);
     int updateByPrimaryKeySelective(DseStPptnReal record);

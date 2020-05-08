@@ -7,8 +7,7 @@ import java.util.Date;
 
 public class DseBzRunState {
 
-    private BigDecimal FOREBAYZ;
-    //前池水位
+
     private Short STATE;
     //泵站状态1-开，0-关
     private BigDecimal NSW;
@@ -22,13 +21,7 @@ public class DseBzRunState {
     private Date TM;
     //采集时间
 
-    public BigDecimal getFOREBAYZ() {
-        return FOREBAYZ;
-    }
 
-    public void setFOREBAYZ(BigDecimal FOREBAYZ) {
-        this.FOREBAYZ = FOREBAYZ;
-    }
 
     public Short getSTATE() {
         return STATE;

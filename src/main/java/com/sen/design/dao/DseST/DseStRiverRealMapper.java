@@ -17,7 +17,6 @@ public interface DseStRiverRealMapper {
     int insertSelective(DseStRiverReal record);
     List<DseStRiverReal> selectByStcdTime(@Param("STCD")String STCD, @Param("startTM") Date startTM, @Param("endTM") Date endTM);
     DseStRiverReal selectByPrimaryKey(String STCD);
-
     int updateByPrimaryKeySelective(DseStRiverReal record);
 
     int updateByPrimaryKey(DseStRiverReal record);

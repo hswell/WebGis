@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseST.StStbprpBMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseST.StStbprpB" >
+    <constructor >
+      <idArg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RVNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HNNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BSNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LGTD" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LTTD" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="STLC" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADDVCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DTMNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DTMEL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DTPR" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="STTP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FRGRD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ESSTYM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BGFRYM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ATCUNIT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADMAUTH" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LOCALITY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STBK" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STAZT" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="DSTRVM" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DRNA" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="PHCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="USFL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="COMMENTS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MODITIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="MDBZ" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MDPR" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DFRTMS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="FRITM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDFRYM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="REM_GD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="OGID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="VLFL" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ATID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SDFL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RMA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDPS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="STINDEX" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="STAREA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STLEVEL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STPQ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STZG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STXZQ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STHDAY" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="STLEV" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="CZLEV" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="CACD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="AREACD" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.sen.design.entity.DseST.StStbprpB" >
+    <constructor >
+      <idArg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RVNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HNNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BSNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LGTD" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LTTD" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="STLC" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADDVCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DTMNM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DTMEL" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DTPR" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="STTP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FRGRD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ESSTYM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BGFRYM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ATCUNIT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADMAUTH" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LOCALITY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STBK" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STAZT" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="DSTRVM" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DRNA" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="PHCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="USFL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="COMMENTS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MODITIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="MDBZ" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MDPR" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DFRTMS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="FRITM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDFRYM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="REM_GD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="OGID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="VLFL" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ATID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SDFL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RMA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDPS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MDDT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="STINDEX" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="STAREA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STLEVEL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STPQ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STZG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STXZQ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STHDAY" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="STLEV" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="CZLEV" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="CACD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="AREACD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TIPS" jdbcType="CLOB" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STCD, STNM, RVNM, HNNM, BSNM, LGTD, LTTD, STLC, ADDVCD, DTMNM, DTMEL, DTPR, STTP,
+    FRGRD, ESSTYM, BGFRYM, ATCUNIT, ADMAUTH, LOCALITY, STBK, STAZT, DSTRVM, DRNA, PHCD, 
+    USFL, COMMENTS, MODITIME, MDBZ, MDPR, DFRTMS, FRITM, EDFRYM, REM_GD, OGID, VLFL, 
+    ATID, SDFL, RMA, MDPS, MDDT, STINDEX, STAREA, STLEVEL, CODE, STPQ, STZG, STXZQ, STHDAY, 
+    STLEV, CZLEV, CACD, AREACD
+  </sql>
+  <sql id="Blob_Column_List" >
+    TIPS
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from NHBZ.ST_STBPRP_B
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </select>
+  <select id="getAllName" resultType="String" parameterType="java.lang.String" >
+    SELECT  DISTINCT(STNM)
+    FROM NHBZ.ST_STBPRP_B
+  </select>
+  <select id="getAllSTCD" resultType="String" parameterType="java.lang.String" >
+    SELECT  DISTINCT(STCD)
+    FROM NHBZ.ST_STBPRP_B
+  </select>
+  <select id="getSTCD" resultType="String" parameterType="java.lang.String" >
+    SELECT  STCD
+    FROM NHBZ.ST_STBPRP_B
+    where STNM = #{STNM,jdbcType=VARCHAR}
+
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from NHBZ.ST_STBPRP_B
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseST.StStbprpB" >
+    insert into NHBZ.ST_STBPRP_B (STCD, STNM, RVNM, 
+      HNNM, BSNM, LGTD, LTTD, 
+      STLC, ADDVCD, DTMNM, 
+      DTMEL, DTPR, STTP, 
+      FRGRD, ESSTYM, BGFRYM, 
+      ATCUNIT, ADMAUTH, LOCALITY, 
+      STBK, STAZT, DSTRVM, 
+      DRNA, PHCD, USFL, COMMENTS, 
+      MODITIME, MDBZ, MDPR, 
+      DFRTMS, FRITM, EDFRYM, 
+      REM_GD, OGID, VLFL, 
+      ATID, SDFL, RMA, MDPS, 
+      MDDT, STINDEX, STAREA, 
+      STLEVEL, CODE, STPQ, 
+      STZG, STXZQ, STHDAY, 
+      STLEV, CZLEV, CACD, 
+      AREACD, TIPS)
+    values (#{STCD,jdbcType=VARCHAR}, #{STNM,jdbcType=VARCHAR}, #{RVNM,jdbcType=VARCHAR}, 
+      #{HNNM,jdbcType=VARCHAR}, #{BSNM,jdbcType=VARCHAR}, #{LGTD,jdbcType=DECIMAL}, #{LTTD,jdbcType=DECIMAL}, 
+      #{STLC,jdbcType=VARCHAR}, #{ADDVCD,jdbcType=VARCHAR}, #{DTMNM,jdbcType=VARCHAR}, 
+      #{DTMEL,jdbcType=DECIMAL}, #{DTPR,jdbcType=DECIMAL}, #{STTP,jdbcType=VARCHAR}, 
+      #{FRGRD,jdbcType=VARCHAR}, #{ESSTYM,jdbcType=VARCHAR}, #{BGFRYM,jdbcType=VARCHAR}, 
+      #{ATCUNIT,jdbcType=VARCHAR}, #{ADMAUTH,jdbcType=VARCHAR}, #{LOCALITY,jdbcType=VARCHAR}, 
+      #{STBK,jdbcType=VARCHAR}, #{STAZT,jdbcType=DECIMAL}, #{DSTRVM,jdbcType=DECIMAL}, 
+      #{DRNA,jdbcType=DECIMAL}, #{PHCD,jdbcType=VARCHAR}, #{USFL,jdbcType=VARCHAR}, #{COMMENTS,jdbcType=VARCHAR}, 
+      #{MODITIME,jdbcType=TIMESTAMP}, #{MDBZ,jdbcType=DECIMAL}, #{MDPR,jdbcType=DECIMAL}, 
+      #{DFRTMS,jdbcType=DECIMAL}, #{FRITM,jdbcType=VARCHAR}, #{EDFRYM,jdbcType=VARCHAR}, 
+      #{REM_GD,jdbcType=VARCHAR}, #{OGID,jdbcType=VARCHAR}, #{VLFL,jdbcType=DECIMAL}, 
+      #{ATID,jdbcType=VARCHAR}, #{SDFL,jdbcType=VARCHAR}, #{RMA,jdbcType=VARCHAR}, #{MDPS,jdbcType=VARCHAR}, 
+      #{MDDT,jdbcType=TIMESTAMP}, #{STINDEX,jdbcType=DECIMAL}, #{STAREA,jdbcType=VARCHAR}, 
+      #{STLEVEL,jdbcType=VARCHAR}, #{CODE,jdbcType=VARCHAR}, #{STPQ,jdbcType=VARCHAR}, 
+      #{STZG,jdbcType=VARCHAR}, #{STXZQ,jdbcType=VARCHAR}, #{STHDAY,jdbcType=DECIMAL}, 
+      #{STLEV,jdbcType=DECIMAL}, #{CZLEV,jdbcType=DECIMAL}, #{CACD,jdbcType=VARCHAR}, 
+      #{AREACD,jdbcType=VARCHAR}, #{TIPS,jdbcType=CLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseST.StStbprpB" >
+    insert into NHBZ.ST_STBPRP_B
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        STCD,
+      </if>
+      <if test="STNM != null" >
+        STNM,
+      </if>
+      <if test="RVNM != null" >
+        RVNM,
+      </if>
+      <if test="HNNM != null" >
+        HNNM,
+      </if>
+      <if test="BSNM != null" >
+        BSNM,
+      </if>
+      <if test="LGTD != null" >
+        LGTD,
+      </if>
+      <if test="LTTD != null" >
+        LTTD,
+      </if>
+      <if test="STLC != null" >
+        STLC,
+      </if>
+      <if test="ADDVCD != null" >
+        ADDVCD,
+      </if>
+      <if test="DTMNM != null" >
+        DTMNM,
+      </if>
+      <if test="DTMEL != null" >
+        DTMEL,
+      </if>
+      <if test="DTPR != null" >
+        DTPR,
+      </if>
+      <if test="STTP != null" >
+        STTP,
+      </if>
+      <if test="FRGRD != null" >
+        FRGRD,
+      </if>
+      <if test="ESSTYM != null" >
+        ESSTYM,
+      </if>
+      <if test="BGFRYM != null" >
+        BGFRYM,
+      </if>
+      <if test="ATCUNIT != null" >
+        ATCUNIT,
+      </if>
+      <if test="ADMAUTH != null" >
+        ADMAUTH,
+      </if>
+      <if test="LOCALITY != null" >
+        LOCALITY,
+      </if>
+      <if test="STBK != null" >
+        STBK,
+      </if>
+      <if test="STAZT != null" >
+        STAZT,
+      </if>
+      <if test="DSTRVM != null" >
+        DSTRVM,
+      </if>
+      <if test="DRNA != null" >
+        DRNA,
+      </if>
+      <if test="PHCD != null" >
+        PHCD,
+      </if>
+      <if test="USFL != null" >
+        USFL,
+      </if>
+      <if test="COMMENTS != null" >
+        COMMENTS,
+      </if>
+      <if test="MODITIME != null" >
+        MODITIME,
+      </if>
+      <if test="MDBZ != null" >
+        MDBZ,
+      </if>
+      <if test="MDPR != null" >
+        MDPR,
+      </if>
+      <if test="DFRTMS != null" >
+        DFRTMS,
+      </if>
+      <if test="FRITM != null" >
+        FRITM,
+      </if>
+      <if test="EDFRYM != null" >
+        EDFRYM,
+      </if>
+      <if test="REM_GD != null" >
+        REM_GD,
+      </if>
+      <if test="OGID != null" >
+        OGID,
+      </if>
+      <if test="VLFL != null" >
+        VLFL,
+      </if>
+      <if test="ATID != null" >
+        ATID,
+      </if>
+      <if test="SDFL != null" >
+        SDFL,
+      </if>
+      <if test="RMA != null" >
+        RMA,
+      </if>
+      <if test="MDPS != null" >
+        MDPS,
+      </if>
+      <if test="MDDT != null" >
+        MDDT,
+      </if>
+      <if test="STINDEX != null" >
+        STINDEX,
+      </if>
+      <if test="STAREA != null" >
+        STAREA,
+      </if>
+      <if test="STLEVEL != null" >
+        STLEVEL,
+      </if>
+      <if test="CODE != null" >
+        CODE,
+      </if>
+      <if test="STPQ != null" >
+        STPQ,
+      </if>
+      <if test="STZG != null" >
+        STZG,
+      </if>
+      <if test="STXZQ != null" >
+        STXZQ,
+      </if>
+      <if test="STHDAY != null" >
+        STHDAY,
+      </if>
+      <if test="STLEV != null" >
+        STLEV,
+      </if>
+      <if test="CZLEV != null" >
+        CZLEV,
+      </if>
+      <if test="CACD != null" >
+        CACD,
+      </if>
+      <if test="AREACD != null" >
+        AREACD,
+      </if>
+      <if test="TIPS != null" >
+        TIPS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        #{STCD,jdbcType=VARCHAR},
+      </if>
+      <if test="STNM != null" >
+        #{STNM,jdbcType=VARCHAR},
+      </if>
+      <if test="RVNM != null" >
+        #{RVNM,jdbcType=VARCHAR},
+      </if>
+      <if test="HNNM != null" >
+        #{HNNM,jdbcType=VARCHAR},
+      </if>
+      <if test="BSNM != null" >
+        #{BSNM,jdbcType=VARCHAR},
+      </if>
+      <if test="LGTD != null" >
+        #{LGTD,jdbcType=DECIMAL},
+      </if>
+      <if test="LTTD != null" >
+        #{LTTD,jdbcType=DECIMAL},
+      </if>
+      <if test="STLC != null" >
+        #{STLC,jdbcType=VARCHAR},
+      </if>
+      <if test="ADDVCD != null" >
+        #{ADDVCD,jdbcType=VARCHAR},
+      </if>
+      <if test="DTMNM != null" >
+        #{DTMNM,jdbcType=VARCHAR},
+      </if>
+      <if test="DTMEL != null" >
+        #{DTMEL,jdbcType=DECIMAL},
+      </if>
+      <if test="DTPR != null" >
+        #{DTPR,jdbcType=DECIMAL},
+      </if>
+      <if test="STTP != null" >
+        #{STTP,jdbcType=VARCHAR},
+      </if>
+      <if test="FRGRD != null" >
+        #{FRGRD,jdbcType=VARCHAR},
+      </if>
+      <if test="ESSTYM != null" >
+        #{ESSTYM,jdbcType=VARCHAR},
+      </if>
+      <if test="BGFRYM != null" >
+        #{BGFRYM,jdbcType=VARCHAR},
+      </if>
+      <if test="ATCUNIT != null" >
+        #{ATCUNIT,jdbcType=VARCHAR},
+      </if>
+      <if test="ADMAUTH != null" >
+        #{ADMAUTH,jdbcType=VARCHAR},
+      </if>
+      <if test="LOCALITY != null" >
+        #{LOCALITY,jdbcType=VARCHAR},
+      </if>
+      <if test="STBK != null" >
+        #{STBK,jdbcType=VARCHAR},
+      </if>
+      <if test="STAZT != null" >
+        #{STAZT,jdbcType=DECIMAL},
+      </if>
+      <if test="DSTRVM != null" >
+        #{DSTRVM,jdbcType=DECIMAL},
+      </if>
+      <if test="DRNA != null" >
+        #{DRNA,jdbcType=DECIMAL},
+      </if>
+      <if test="PHCD != null" >
+        #{PHCD,jdbcType=VARCHAR},
+      </if>
+      <if test="USFL != null" >
+        #{USFL,jdbcType=VARCHAR},
+      </if>
+      <if test="COMMENTS != null" >
+        #{COMMENTS,jdbcType=VARCHAR},
+      </if>
+      <if test="MODITIME != null" >
+        #{MODITIME,jdbcType=TIMESTAMP},
+      </if>
+      <if test="MDBZ != null" >
+        #{MDBZ,jdbcType=DECIMAL},
+      </if>
+      <if test="MDPR != null" >
+        #{MDPR,jdbcType=DECIMAL},
+      </if>
+      <if test="DFRTMS != null" >
+        #{DFRTMS,jdbcType=DECIMAL},
+      </if>
+      <if test="FRITM != null" >
+        #{FRITM,jdbcType=VARCHAR},
+      </if>
+      <if test="EDFRYM != null" >
+        #{EDFRYM,jdbcType=VARCHAR},
+      </if>
+      <if test="REM_GD != null" >
+        #{REM_GD,jdbcType=VARCHAR},
+      </if>
+      <if test="OGID != null" >
+        #{OGID,jdbcType=VARCHAR},
+      </if>
+      <if test="VLFL != null" >
+        #{VLFL,jdbcType=DECIMAL},
+      </if>
+      <if test="ATID != null" >
+        #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+      <if test="STINDEX != null" >
+        #{STINDEX,jdbcType=DECIMAL},
+      </if>
+      <if test="STAREA != null" >
+        #{STAREA,jdbcType=VARCHAR},
+      </if>
+      <if test="STLEVEL != null" >
+        #{STLEVEL,jdbcType=VARCHAR},
+      </if>
+      <if test="CODE != null" >
+        #{CODE,jdbcType=VARCHAR},
+      </if>
+      <if test="STPQ != null" >
+        #{STPQ,jdbcType=VARCHAR},
+      </if>
+      <if test="STZG != null" >
+        #{STZG,jdbcType=VARCHAR},
+      </if>
+      <if test="STXZQ != null" >
+        #{STXZQ,jdbcType=VARCHAR},
+      </if>
+      <if test="STHDAY != null" >
+        #{STHDAY,jdbcType=DECIMAL},
+      </if>
+      <if test="STLEV != null" >
+        #{STLEV,jdbcType=DECIMAL},
+      </if>
+      <if test="CZLEV != null" >
+        #{CZLEV,jdbcType=DECIMAL},
+      </if>
+      <if test="CACD != null" >
+        #{CACD,jdbcType=VARCHAR},
+      </if>
+      <if test="AREACD != null" >
+        #{AREACD,jdbcType=VARCHAR},
+      </if>
+      <if test="TIPS != null" >
+        #{TIPS,jdbcType=CLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseST.StStbprpB" >
+    update NHBZ.ST_STBPRP_B
+    <set >
+      <if test="STNM != null" >
+        STNM = #{STNM,jdbcType=VARCHAR},
+      </if>
+      <if test="RVNM != null" >
+        RVNM = #{RVNM,jdbcType=VARCHAR},
+      </if>
+      <if test="HNNM != null" >
+        HNNM = #{HNNM,jdbcType=VARCHAR},
+      </if>
+      <if test="BSNM != null" >
+        BSNM = #{BSNM,jdbcType=VARCHAR},
+      </if>
+      <if test="LGTD != null" >
+        LGTD = #{LGTD,jdbcType=DECIMAL},
+      </if>
+      <if test="LTTD != null" >
+        LTTD = #{LTTD,jdbcType=DECIMAL},
+      </if>
+      <if test="STLC != null" >
+        STLC = #{STLC,jdbcType=VARCHAR},
+      </if>
+      <if test="ADDVCD != null" >
+        ADDVCD = #{ADDVCD,jdbcType=VARCHAR},
+      </if>
+      <if test="DTMNM != null" >
+        DTMNM = #{DTMNM,jdbcType=VARCHAR},
+      </if>
+      <if test="DTMEL != null" >
+        DTMEL = #{DTMEL,jdbcType=DECIMAL},
+      </if>
+      <if test="DTPR != null" >
+        DTPR = #{DTPR,jdbcType=DECIMAL},
+      </if>
+      <if test="STTP != null" >
+        STTP = #{STTP,jdbcType=VARCHAR},
+      </if>
+      <if test="FRGRD != null" >
+        FRGRD = #{FRGRD,jdbcType=VARCHAR},
+      </if>
+      <if test="ESSTYM != null" >
+        ESSTYM = #{ESSTYM,jdbcType=VARCHAR},
+      </if>
+      <if test="BGFRYM != null" >
+        BGFRYM = #{BGFRYM,jdbcType=VARCHAR},
+      </if>
+      <if test="ATCUNIT != null" >
+        ATCUNIT = #{ATCUNIT,jdbcType=VARCHAR},
+      </if>
+      <if test="ADMAUTH != null" >
+        ADMAUTH = #{ADMAUTH,jdbcType=VARCHAR},
+      </if>
+      <if test="LOCALITY != null" >
+        LOCALITY = #{LOCALITY,jdbcType=VARCHAR},
+      </if>
+      <if test="STBK != null" >
+        STBK = #{STBK,jdbcType=VARCHAR},
+      </if>
+      <if test="STAZT != null" >
+        STAZT = #{STAZT,jdbcType=DECIMAL},
+      </if>
+      <if test="DSTRVM != null" >
+        DSTRVM = #{DSTRVM,jdbcType=DECIMAL},
+      </if>
+      <if test="DRNA != null" >
+        DRNA = #{DRNA,jdbcType=DECIMAL},
+      </if>
+      <if test="PHCD != null" >
+        PHCD = #{PHCD,jdbcType=VARCHAR},
+      </if>
+      <if test="USFL != null" >
+        USFL = #{USFL,jdbcType=VARCHAR},
+      </if>
+      <if test="COMMENTS != null" >
+        COMMENTS = #{COMMENTS,jdbcType=VARCHAR},
+      </if>
+      <if test="MODITIME != null" >
+        MODITIME = #{MODITIME,jdbcType=TIMESTAMP},
+      </if>
+      <if test="MDBZ != null" >
+        MDBZ = #{MDBZ,jdbcType=DECIMAL},
+      </if>
+      <if test="MDPR != null" >
+        MDPR = #{MDPR,jdbcType=DECIMAL},
+      </if>
+      <if test="DFRTMS != null" >
+        DFRTMS = #{DFRTMS,jdbcType=DECIMAL},
+      </if>
+      <if test="FRITM != null" >
+        FRITM = #{FRITM,jdbcType=VARCHAR},
+      </if>
+      <if test="EDFRYM != null" >
+        EDFRYM = #{EDFRYM,jdbcType=VARCHAR},
+      </if>
+      <if test="REM_GD != null" >
+        REM_GD = #{REM_GD,jdbcType=VARCHAR},
+      </if>
+      <if test="OGID != null" >
+        OGID = #{OGID,jdbcType=VARCHAR},
+      </if>
+      <if test="VLFL != null" >
+        VLFL = #{VLFL,jdbcType=DECIMAL},
+      </if>
+      <if test="ATID != null" >
+        ATID = #{ATID,jdbcType=VARCHAR},
+      </if>
+      <if test="SDFL != null" >
+        SDFL = #{SDFL,jdbcType=VARCHAR},
+      </if>
+      <if test="RMA != null" >
+        RMA = #{RMA,jdbcType=VARCHAR},
+      </if>
+      <if test="MDPS != null" >
+        MDPS = #{MDPS,jdbcType=VARCHAR},
+      </if>
+      <if test="MDDT != null" >
+        MDDT = #{MDDT,jdbcType=TIMESTAMP},
+      </if>
+      <if test="STINDEX != null" >
+        STINDEX = #{STINDEX,jdbcType=DECIMAL},
+      </if>
+      <if test="STAREA != null" >
+        STAREA = #{STAREA,jdbcType=VARCHAR},
+      </if>
+      <if test="STLEVEL != null" >
+        STLEVEL = #{STLEVEL,jdbcType=VARCHAR},
+      </if>
+      <if test="CODE != null" >
+        CODE = #{CODE,jdbcType=VARCHAR},
+      </if>
+      <if test="STPQ != null" >
+        STPQ = #{STPQ,jdbcType=VARCHAR},
+      </if>
+      <if test="STZG != null" >
+        STZG = #{STZG,jdbcType=VARCHAR},
+      </if>
+      <if test="STXZQ != null" >
+        STXZQ = #{STXZQ,jdbcType=VARCHAR},
+      </if>
+      <if test="STHDAY != null" >
+        STHDAY = #{STHDAY,jdbcType=DECIMAL},
+      </if>
+      <if test="STLEV != null" >
+        STLEV = #{STLEV,jdbcType=DECIMAL},
+      </if>
+      <if test="CZLEV != null" >
+        CZLEV = #{CZLEV,jdbcType=DECIMAL},
+      </if>
+      <if test="CACD != null" >
+        CACD = #{CACD,jdbcType=VARCHAR},
+      </if>
+      <if test="AREACD != null" >
+        AREACD = #{AREACD,jdbcType=VARCHAR},
+      </if>
+      <if test="TIPS != null" >
+        TIPS = #{TIPS,jdbcType=CLOB},
+      </if>
+    </set>
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.sen.design.entity.DseST.StStbprpB" >
+    update NHBZ.ST_STBPRP_B
+    set STNM = #{STNM,jdbcType=VARCHAR},
+      RVNM = #{RVNM,jdbcType=VARCHAR},
+      HNNM = #{HNNM,jdbcType=VARCHAR},
+      BSNM = #{BSNM,jdbcType=VARCHAR},
+      LGTD = #{LGTD,jdbcType=DECIMAL},
+      LTTD = #{LTTD,jdbcType=DECIMAL},
+      STLC = #{STLC,jdbcType=VARCHAR},
+      ADDVCD = #{ADDVCD,jdbcType=VARCHAR},
+      DTMNM = #{DTMNM,jdbcType=VARCHAR},
+      DTMEL = #{DTMEL,jdbcType=DECIMAL},
+      DTPR = #{DTPR,jdbcType=DECIMAL},
+      STTP = #{STTP,jdbcType=VARCHAR},
+      FRGRD = #{FRGRD,jdbcType=VARCHAR},
+      ESSTYM = #{ESSTYM,jdbcType=VARCHAR},
+      BGFRYM = #{BGFRYM,jdbcType=VARCHAR},
+      ATCUNIT = #{ATCUNIT,jdbcType=VARCHAR},
+      ADMAUTH = #{ADMAUTH,jdbcType=VARCHAR},
+      LOCALITY = #{LOCALITY,jdbcType=VARCHAR},
+      STBK = #{STBK,jdbcType=VARCHAR},
+      STAZT = #{STAZT,jdbcType=DECIMAL},
+      DSTRVM = #{DSTRVM,jdbcType=DECIMAL},
+      DRNA = #{DRNA,jdbcType=DECIMAL},
+      PHCD = #{PHCD,jdbcType=VARCHAR},
+      USFL = #{USFL,jdbcType=VARCHAR},
+      COMMENTS = #{COMMENTS,jdbcType=VARCHAR},
+      MODITIME = #{MODITIME,jdbcType=TIMESTAMP},
+      MDBZ = #{MDBZ,jdbcType=DECIMAL},
+      MDPR = #{MDPR,jdbcType=DECIMAL},
+      DFRTMS = #{DFRTMS,jdbcType=DECIMAL},
+      FRITM = #{FRITM,jdbcType=VARCHAR},
+      EDFRYM = #{EDFRYM,jdbcType=VARCHAR},
+      REM_GD = #{REM_GD,jdbcType=VARCHAR},
+      OGID = #{OGID,jdbcType=VARCHAR},
+      VLFL = #{VLFL,jdbcType=DECIMAL},
+      ATID = #{ATID,jdbcType=VARCHAR},
+      SDFL = #{SDFL,jdbcType=VARCHAR},
+      RMA = #{RMA,jdbcType=VARCHAR},
+      MDPS = #{MDPS,jdbcType=VARCHAR},
+      MDDT = #{MDDT,jdbcType=TIMESTAMP},
+      STINDEX = #{STINDEX,jdbcType=DECIMAL},
+      STAREA = #{STAREA,jdbcType=VARCHAR},
+      STLEVEL = #{STLEVEL,jdbcType=VARCHAR},
+      CODE = #{CODE,jdbcType=VARCHAR},
+      STPQ = #{STPQ,jdbcType=VARCHAR},
+      STZG = #{STZG,jdbcType=VARCHAR},
+      STXZQ = #{STXZQ,jdbcType=VARCHAR},
+      STHDAY = #{STHDAY,jdbcType=DECIMAL},
+      STLEV = #{STLEV,jdbcType=DECIMAL},
+      CZLEV = #{CZLEV,jdbcType=DECIMAL},
+      CACD = #{CACD,jdbcType=VARCHAR},
+      AREACD = #{AREACD,jdbcType=VARCHAR},
+      TIPS = #{TIPS,jdbcType=CLOB}
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseST.StStbprpB" >
+    update NHBZ.ST_STBPRP_B
+    set STNM = #{STNM,jdbcType=VARCHAR},
+      RVNM = #{RVNM,jdbcType=VARCHAR},
+      HNNM = #{HNNM,jdbcType=VARCHAR},
+      BSNM = #{BSNM,jdbcType=VARCHAR},
+      LGTD = #{LGTD,jdbcType=DECIMAL},
+      LTTD = #{LTTD,jdbcType=DECIMAL},
+      STLC = #{STLC,jdbcType=VARCHAR},
+      ADDVCD = #{ADDVCD,jdbcType=VARCHAR},
+      DTMNM = #{DTMNM,jdbcType=VARCHAR},
+      DTMEL = #{DTMEL,jdbcType=DECIMAL},
+      DTPR = #{DTPR,jdbcType=DECIMAL},
+      STTP = #{STTP,jdbcType=VARCHAR},
+      FRGRD = #{FRGRD,jdbcType=VARCHAR},
+      ESSTYM = #{ESSTYM,jdbcType=VARCHAR},
+      BGFRYM = #{BGFRYM,jdbcType=VARCHAR},
+      ATCUNIT = #{ATCUNIT,jdbcType=VARCHAR},
+      ADMAUTH = #{ADMAUTH,jdbcType=VARCHAR},
+      LOCALITY = #{LOCALITY,jdbcType=VARCHAR},
+      STBK = #{STBK,jdbcType=VARCHAR},
+      STAZT = #{STAZT,jdbcType=DECIMAL},
+      DSTRVM = #{DSTRVM,jdbcType=DECIMAL},
+      DRNA = #{DRNA,jdbcType=DECIMAL},
+      PHCD = #{PHCD,jdbcType=VARCHAR},
+      USFL = #{USFL,jdbcType=VARCHAR},
+      COMMENTS = #{COMMENTS,jdbcType=VARCHAR},
+      MODITIME = #{MODITIME,jdbcType=TIMESTAMP},
+      MDBZ = #{MDBZ,jdbcType=DECIMAL},
+      MDPR = #{MDPR,jdbcType=DECIMAL},
+      DFRTMS = #{DFRTMS,jdbcType=DECIMAL},
+      FRITM = #{FRITM,jdbcType=VARCHAR},
+      EDFRYM = #{EDFRYM,jdbcType=VARCHAR},
+      REM_GD = #{REM_GD,jdbcType=VARCHAR},
+      OGID = #{OGID,jdbcType=VARCHAR},
+      VLFL = #{VLFL,jdbcType=DECIMAL},
+      ATID = #{ATID,jdbcType=VARCHAR},
+      SDFL = #{SDFL,jdbcType=VARCHAR},
+      RMA = #{RMA,jdbcType=VARCHAR},
+      MDPS = #{MDPS,jdbcType=VARCHAR},
+      MDDT = #{MDDT,jdbcType=TIMESTAMP},
+      STINDEX = #{STINDEX,jdbcType=DECIMAL},
+      STAREA = #{STAREA,jdbcType=VARCHAR},
+      STLEVEL = #{STLEVEL,jdbcType=VARCHAR},
+      CODE = #{CODE,jdbcType=VARCHAR},
+      STPQ = #{STPQ,jdbcType=VARCHAR},
+      STZG = #{STZG,jdbcType=VARCHAR},
+      STXZQ = #{STXZQ,jdbcType=VARCHAR},
+      STHDAY = #{STHDAY,jdbcType=DECIMAL},
+      STLEV = #{STLEV,jdbcType=DECIMAL},
+      CZLEV = #{CZLEV,jdbcType=DECIMAL},
+      CACD = #{CACD,jdbcType=VARCHAR},
+      AREACD = #{AREACD,jdbcType=VARCHAR}
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </update>
+</mapper>

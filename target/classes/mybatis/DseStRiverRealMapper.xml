@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.design.dao.DseST.DseStRiverRealMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.design.entity.DseST.DseStRiverReal" >
+    <constructor >
+      <idArg column="STCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TM" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="Z" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="Q" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XSA" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XSAVV" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XSMXV" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="FLWCHRCD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WPTN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MSQMT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MSAMT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MSVMT" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STCD, TM, Z, Q, XSA, XSAVV, XSMXV, FLWCHRCD, WPTN, MSQMT, MSAMT, MSVMT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_ST_RIVER_REAL
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByStcdTime" resultMap="BaseResultMap">
+    SELECT   <include refid="Base_Column_List" />
+    FROM NHBZ.DSE_ST_RIVER_REAL
+    where STCD = #{STCD,jdbcType=VARCHAR}
+    <if test="startTM != null and endTM != null">
+      and TM &gt;= #{startTM,jdbcType=TIMESTAMP} and TM &lt;= #{endTM,jdbcType=TIMESTAMP}
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from NHBZ.DSE_ST_RIVER_REAL
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sen.design.entity.DseST.DseStRiverReal" >
+    insert into NHBZ.DSE_ST_RIVER_REAL (STCD, TM, Z, 
+      Q, XSA, XSAVV, XSMXV, 
+      FLWCHRCD, WPTN, MSQMT, 
+      MSAMT, MSVMT)
+    values (#{STCD,jdbcType=VARCHAR}, #{TM,jdbcType=TIMESTAMP}, #{z,jdbcType=DECIMAL}, 
+      #{q,jdbcType=DECIMAL}, #{XSA,jdbcType=DECIMAL}, #{XSAVV,jdbcType=DECIMAL}, #{XSMXV,jdbcType=DECIMAL}, 
+      #{FLWCHRCD,jdbcType=VARCHAR}, #{WPTN,jdbcType=VARCHAR}, #{MSQMT,jdbcType=VARCHAR}, 
+      #{MSAMT,jdbcType=VARCHAR}, #{MSVMT,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.design.entity.DseST.DseStRiverReal" >
+    insert into NHBZ.DSE_ST_RIVER_REAL
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        STCD,
+      </if>
+      <if test="TM != null" >
+        TM,
+      </if>
+      <if test="z != null" >
+        Z,
+      </if>
+      <if test="q != null" >
+        Q,
+      </if>
+      <if test="XSA != null" >
+        XSA,
+      </if>
+      <if test="XSAVV != null" >
+        XSAVV,
+      </if>
+      <if test="XSMXV != null" >
+        XSMXV,
+      </if>
+      <if test="FLWCHRCD != null" >
+        FLWCHRCD,
+      </if>
+      <if test="WPTN != null" >
+        WPTN,
+      </if>
+      <if test="MSQMT != null" >
+        MSQMT,
+      </if>
+      <if test="MSAMT != null" >
+        MSAMT,
+      </if>
+      <if test="MSVMT != null" >
+        MSVMT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="STCD != null" >
+        #{STCD,jdbcType=VARCHAR},
+      </if>
+      <if test="TM != null" >
+        #{TM,jdbcType=TIMESTAMP},
+      </if>
+      <if test="z != null" >
+        #{z,jdbcType=DECIMAL},
+      </if>
+      <if test="q != null" >
+        #{q,jdbcType=DECIMAL},
+      </if>
+      <if test="XSA != null" >
+        #{XSA,jdbcType=DECIMAL},
+      </if>
+      <if test="XSAVV != null" >
+        #{XSAVV,jdbcType=DECIMAL},
+      </if>
+      <if test="XSMXV != null" >
+        #{XSMXV,jdbcType=DECIMAL},
+      </if>
+      <if test="FLWCHRCD != null" >
+        #{FLWCHRCD,jdbcType=VARCHAR},
+      </if>
+      <if test="WPTN != null" >
+        #{WPTN,jdbcType=VARCHAR},
+      </if>
+      <if test="MSQMT != null" >
+        #{MSQMT,jdbcType=VARCHAR},
+      </if>
+      <if test="MSAMT != null" >
+        #{MSAMT,jdbcType=VARCHAR},
+      </if>
+      <if test="MSVMT != null" >
+        #{MSVMT,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.design.entity.DseST.DseStRiverReal" >
+    update NHBZ.DSE_ST_RIVER_REAL
+    <set >
+      <if test="TM != null" >
+        TM = #{TM,jdbcType=TIMESTAMP},
+      </if>
+      <if test="z != null" >
+        Z = #{z,jdbcType=DECIMAL},
+      </if>
+      <if test="q != null" >
+        Q = #{q,jdbcType=DECIMAL},
+      </if>
+      <if test="XSA != null" >
+        XSA = #{XSA,jdbcType=DECIMAL},
+      </if>
+      <if test="XSAVV != null" >
+        XSAVV = #{XSAVV,jdbcType=DECIMAL},
+      </if>
+      <if test="XSMXV != null" >
+        XSMXV = #{XSMXV,jdbcType=DECIMAL},
+      </if>
+      <if test="FLWCHRCD != null" >
+        FLWCHRCD = #{FLWCHRCD,jdbcType=VARCHAR},
+      </if>
+      <if test="WPTN != null" >
+        WPTN = #{WPTN,jdbcType=VARCHAR},
+      </if>
+      <if test="MSQMT != null" >
+        MSQMT = #{MSQMT,jdbcType=VARCHAR},
+      </if>
+      <if test="MSAMT != null" >
+        MSAMT = #{MSAMT,jdbcType=VARCHAR},
+      </if>
+      <if test="MSVMT != null" >
+        MSVMT = #{MSVMT,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.design.entity.DseST.DseStRiverReal" >
+    update NHBZ.DSE_ST_RIVER_REAL
+    set TM = #{TM,jdbcType=TIMESTAMP},
+      Z = #{z,jdbcType=DECIMAL},
+      Q = #{q,jdbcType=DECIMAL},
+      XSA = #{XSA,jdbcType=DECIMAL},
+      XSAVV = #{XSAVV,jdbcType=DECIMAL},
+      XSMXV = #{XSMXV,jdbcType=DECIMAL},
+      FLWCHRCD = #{FLWCHRCD,jdbcType=VARCHAR},
+      WPTN = #{WPTN,jdbcType=VARCHAR},
+      MSQMT = #{MSQMT,jdbcType=VARCHAR},
+      MSAMT = #{MSAMT,jdbcType=VARCHAR},
+      MSVMT = #{MSVMT,jdbcType=VARCHAR}
+    where STCD = #{STCD,jdbcType=VARCHAR}
+  </update>
+</mapper>

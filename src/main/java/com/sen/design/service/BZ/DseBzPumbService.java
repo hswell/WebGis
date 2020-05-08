@@ -1,4 +1,4 @@
-package com.sen.design.service;
+package com.sen.design.service.BZ;
 
 import com.sen.design.dao.DseBz.DseBzPumbMapper;
 import com.sen.design.entity.DseBz.DseBzPumb;

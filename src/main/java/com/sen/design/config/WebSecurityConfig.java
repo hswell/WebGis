@@ -39,13 +39,12 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
         // TODO Auto-generated method stub
         //super.configure(http);
         http.authorizeRequests().
-                antMatchers("/static/**").permitAll().anyRequest().authenticated().
+                antMatchers("/static/**","/templates/register","/login").permitAll().anyRequest().authenticated().
                 and().formLogin().loginPage("/login").permitAll().successHandler(loginSuccessHandler()).
                 and().logout().permitAll().invalidateHttpSession(true).
                 deleteCookies("JSESSIONID").logoutSuccessHandler(logoutSuccessHandler()).
                 and().sessionManagement().maximumSessions(10).expiredUrl("/login");
         http.csrf().disable();
-
     }
 
 

@@ -1,12 +1,14 @@
-package com.sen.design.service;
+package com.sen.design.service.BZ;
 
 import com.sen.design.dao.DseBz.DseBzRuninfoRMapper;
 import com.sen.design.dao.DseBz.DseBzRunstateRMapper;
+import com.sen.design.dao.DseST.StStbprpBMapper;
 import com.sen.design.dao.TB.DseTb0001RemarkBMapper;
 import com.sen.design.dao.TB.Tb0001Prnmsr044Mapper;
 import com.sen.design.entity.DseBz.DseBzRunState;
 import com.sen.design.entity.DseBz.DseBzRuninfoR;
 import com.sen.design.entity.DseBz.DseBzRunstateR;
+import com.sen.design.entity.DseST.StStbprpB;
 import com.sen.design.entity.TB.DseTb0001RemarkB;
 import com.sen.design.entity.TB.Tb0001Prnmsr044;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,8 @@ public class BZRelationQuery {
     DseBzRuninfoRMapper dseBzRuninfoRMapper;
     @Autowired
     DseBzRunstateRMapper dseBzRunstateRMapper;
+    @Autowired
+    StStbprpBMapper stStbprpBMapper;
     public List<Tb0001Prnmsr044> tbQueryList() {
         //查询所有信息
         return tb0001Prnmsr044Mapper.queryList();
@@ -35,43 +39,71 @@ public class BZRelationQuery {
         return dseTb0001RemarkBMapper.queryList();
     }
     public List<String> getBZName(){
-        List<String> allSTCD = dseBzRuninfoRMapper.getAllSTCD();
-        //根据STCD对应ENNMCD查询
-        List<String> allEnnmcd=new ArrayList<>();
-
-        for (String l1:allSTCD
-             ) {
-            String ennmcd=dseTb0001RemarkBMapper.getEnnmcd(l1);
-            allEnnmcd.add(ennmcd);
+        List<String> all=stStbprpBMapper.getAllName();
+        if (all!=null){
+            return all;
         }
-        List<String> allname=new ArrayList<>();
-        for (String l1:allEnnmcd
-        ) {
-            String ennmcd=tb0001Prnmsr044Mapper.getEnnm(l1);
-            allname.add(ennmcd);
-        }
-        return  allname;
+        System.out.println("null");
+        return null;
     }
-    public String stcdQuery(String ENNM){
+
+    public List<String> getAllStcd(){
         //根据站名字查询对应STCD
-        String ENNMCD = null;
-        Tb0001Prnmsr044 tb0001Prnmsr044=tb0001Prnmsr044Mapper.selectByENNM(ENNM);
-        if (tb0001Prnmsr044!=null){
-            ENNMCD=tb0001Prnmsr044.getENNMCD();
-        }
-        DseTb0001RemarkB Dse=dseTb0001RemarkBMapper.selectByENNMCD(ENNMCD);
-        if (Dse!=null){
-            return Dse.getSTCD();
+        List<String> list=stStbprpBMapper.getAllSTCD();
+
+        if (list != null) {
+            return list;
         }
         return null;
     }
-    public DseBzRuninfoR latestAllm(String ENNM){
+    public String stcdQuery(String ENNM){
+        //根据站名字查询对应STCD
+            //根据站名字查询对应STCD
+        if (ENNM!=null) {
+            String STCD=null;
+             STCD = stStbprpBMapper.getSTCD(ENNM);
+            if (STCD != null) {
+                return STCD;
+            }
+        }
+            return null;
+
+    }
+    public String nameQuery(String stcd){
+        //根据STCD查询对应站名字
+        if (stcd!=null) {
+            String name=null;
+            name = tb0001Prnmsr044Mapper.getEnnm(stcd);
+            if (name != null) {
+                return name;
+            }
+        }
+        return stcd;
+
+    }
+    public List<DseBzRuninfoR> latestAllm(){
         //根据名字查询最近信息
-        if (ENNM!=null){
-            String STCD=stcdQuery(ENNM);
-            return dseBzRuninfoRMapper.selectLatestM(STCD);
+        List<String>list= getAllStcd();
+        List<DseBzRuninfoR> mesag=new ArrayList<>();
+        if (list!=null){
+            for (String STCD:list
+                 ) {
+                DseBzRuninfoR r=dseBzRuninfoRMapper.selectLatestM(STCD);
+                mesag.add(r);
+            }
+            return mesag;
         }
        return null;
+    }
+    public DseBzRuninfoR getTheAllbyName(String name){
+        //根据名字查询最近信息
+        String stcd=stcdQuery(name);
+        if (stcd!=null){
+          DseBzRuninfoR r=dseBzRuninfoRMapper.selectLatestM(stcd);
+
+            return r;
+        }
+        return null;
     }
     public List<DseBzRuninfoR> getTheAllByTM(String ENNM, Date statTime, Date endTime){
         //根据站名字查询历史运行信息
@@ -92,7 +124,6 @@ public class BZRelationQuery {
         for (DseBzRunstateR r:listR
              ) {
             DseBzRunState stata=new DseBzRunState();
-            stata.setFOREBAYZ(r.getFOREBAYZ());
             stata.setNSW(r.getNSW());
             stata.setSTATE(r.getSTATE());
             stata.setSTCD(r.getSTCD());
@@ -103,21 +134,14 @@ public class BZRelationQuery {
         return list;
     }
 
-    public  DseBzRunState getLatestRunState(String ENNM){
+    public  DseBzRunstateR getLatestRunState(String ENNM){
         //根据名字查询泵站开关机以及水位
         if (ENNM==null){
             return null;
         }
         String STCD=stcdQuery(ENNM);
         DseBzRunstateR dseBzRunstateR=dseBzRunstateRMapper.selectLatestM(STCD);
-        DseBzRunState stata=new DseBzRunState();
-        stata.setFOREBAYZ(dseBzRunstateR.getFOREBAYZ());
-        stata.setNSW(dseBzRunstateR.getNSW());
-        stata.setSTATE(dseBzRunstateR.getSTATE());
-        stata.setSTCD(dseBzRunstateR.getSTCD());
-        stata.setWSW(dseBzRunstateR.getWSW());
-        stata.setTM(dseBzRunstateR.getTM());
-        return stata;
+        return dseBzRunstateR;
     }
 
 

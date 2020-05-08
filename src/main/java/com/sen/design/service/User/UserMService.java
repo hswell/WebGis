@@ -22,6 +22,31 @@ public class UserMService implements UserDetailsService {
         }
         return sysUser;
     }
+    public boolean insert(SysUser sysUser){
+        if (sysUser==null){
+            return false;
+        }
+        SysUser exit=new SysUser();
+        exit=sysUserMapper.selectByName(sysUser.getUNAME());
+        if (exit!=null){
+            return false;
+        }
+        long i=5273;
+        sysUser.setUSERID(i++);
+        sysUser.setVALID("1");
+        sysUser.setISSYS("1");
+        sysUser.setUTYPE("3");
+        try {
+            sysUserMapper.insert(sysUser);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        SysUser mysysUser= sysUserMapper.selectByName(sysUser.getUNAME());
+        if (mysysUser!=null){
+            return true;
+        }
+        return false;
+    }
 
 
 }
