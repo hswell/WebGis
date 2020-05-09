@@ -4,7 +4,10 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Tb1502Meidsbi044 extends Tb1502Meidsbi044Key {
-    //    排水设计前池水位(m)
+//    实际装机总容量(兆瓦)
+//    机组台数(台)
+//    泵型
+//    排水设计前池水位(m)
 //    排水设计后池水位(m)
 //    泵池底板高程(m)
 //    设计排水流量(m3/s)
@@ -22,6 +25,7 @@ public class Tb1502Meidsbi044 extends Tb1502Meidsbi044Key {
 //            备用字段
 //    修改人
 //            修改日期
+
     private BigDecimal DSINCP;
 
     private BigDecimal ACINCP;

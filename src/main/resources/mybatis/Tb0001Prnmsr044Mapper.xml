@@ -29,6 +29,15 @@
     from NHBZ.TB0001_PRNMSR_044
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
   </select>
+  <select id="getAllSZN" resultType="java.lang.String" parameterType="java.lang.String" >
+    SELECT ENNM FROM NHBZ.TB0001_PRNMSR_044
+    WHERE ENTYCED='K'
+  </select>
+  <select id="getSZname" resultType="java.lang.String" parameterType="java.lang.String" >
+    SELECT ENNM FROM(SELECT * FROM "TB0001_PRNMSR_044"
+WHERE ENTYCED='K')
+ where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+  </select>
   <select id="selectByENNM" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select
     <include refid="Base_Column_List" />

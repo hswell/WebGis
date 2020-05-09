@@ -13,7 +13,7 @@ public interface DseStRiverRealMapper {
     int deleteByPrimaryKey(String STCD);
 
     int insert(DseStRiverReal record);
-
+    List<DseStRiverReal> selectAll();
     int insertSelective(DseStRiverReal record);
     List<DseStRiverReal> selectByStcdTime(@Param("STCD")String STCD, @Param("startTM") Date startTM, @Param("endTM") Date endTM);
     DseStRiverReal selectByPrimaryKey(String STCD);

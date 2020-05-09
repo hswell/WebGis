@@ -47,14 +47,14 @@
       <a href="/logout">注销</a>
       <h3></h3>
       <div class="btn-group btn-group-lg">
-          <button type="button" class="btn btn-default">地图服务</button>
-          <button type="button" class="btn btn-default">雨情信息</button>
-          <button type="button" class="btn btn-default">水情信息</button>
-          <button type="button" class="btn btn-default">泵站水位</button>
-          <button type="button" class="btn btn-default">泵站运行状态</button>
-          <button type="button" class="btn btn-default">泵站运行历史</button>
-          <button type="button" class="btn btn-default">机组开关机</button>
-          <button type="button" class="btn btn-default">水闸开关机</button>
+          <a href="index.html"><button type="button" class="btn btn-default">地图服务</button></a>
+          <a href="yuqing.html"><button type="button" class="btn btn-default">雨情信息</button></a>
+          <a href="shuiqing.html"><button type="button" class="btn btn-default">水情信息</button></a>
+          <a href="bzsw.html"><button type="button" class="btn btn-default">泵站水位</button></a>
+          <a href="bzzt.html"><button type="button" class="btn btn-default">泵站运行状态</button></a>
+          <a href="bzls.html"><button type="button" class="btn btn-default">泵站运行历史</button></a>
+          <a href="jzkg.html"><button type="button" class="btn btn-default">机组开关机</button></a>
+          <a href="szkg.html"><button type="button" class="btn btn-default">水闸开关机</button></a>
       </div>
        <div class="leftPart">
             <div >
@@ -87,13 +87,27 @@
       
 
       <div class="rightPart">
+          <h3>雨情信息查询</h3>
           <table class="table table-bordered" id='tabletest'>
+              <thead>
               <tr>
-                  <th>站台名字</th>
-                  <th>时间</th>
-                  <th>降雨量</th>
+                  <th>站点名字</th>
+                  <th>时间时间</th>
+                  <th>降雨量(单位/毫升)</th>
               </tr>
+              </thead>
+              <tbody id="tbody">
+              </tbody>
+
           </table>
+          <div class="page">
+
+              <a id="down" href="#" onClick="change1(--pageno)">上一页</a>　　
+              <span id="a3"></span><a id="up" href="#" onClick="change1(++pageno)">下一页</a>
+              <span class="ho">第<span id="a2"></span>/<span id="a1"></span>页</span>
+          </div>
+          <!--用来存放总页数，放置在body中-->
+          <div style="display:block" id="p"></div>
       </div>
 	</body>
 
@@ -125,7 +139,7 @@
             })
         });
         </script>
-
+    <script src="js/JsPager.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#b01").click(function(){
@@ -142,13 +156,30 @@
                         if (jsonData.length > 1) {
                             alert("查找到所有信息");
                             for(var i = 0; i < jsonData.length; i++)
-                            {   var d = new Date(jsonData[i].tm);
+                            {
+                                var d = new Date(jsonData[i].tm);
                                 var times=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
                                 var tr;
-                                tr='<td>'+jsonData[i].stcd+'</td>'+'<td>'+times+'</td>'+'<td>'+jsonData[i].drp+'</td>'
-                                $("#tabletest").append('<tr>'+tr+'</tr>')
+                                tbody.innerHTML+="<tr><td>"+jsonData[i].stcd+"</td>"+
+                                    "<td>"+times+"</td>"+
+                                    "<td>"+jsonData[i].drp+"</td>"+
                             }
                         };
+                        var a = document.getElementById("tbody").getElementsByTagName("tr");
+                        //alert(a.length);
+                        var zz =new Array(a.length);
+                        //alert(zz.length);
+                        for(var i=0;i<a.length;i++)
+                        { zz[i]=a[i].innerHTML } //div的字符串数组付给zz
+                        var pageno=1;               //当前页
+                        var pagesize=10;            //每页多少条信息
+                        if(zz.length%pagesize==0)
+                        {var  pageall =zz.length/pagesize }
+                        else
+                        {var  pageall =parseInt(zz.length/pagesize)+1}       //一共多少页
+                        $("#p").text(pageall);      //将pageall的值存放到div中，便于下次使用
+                        change(1,pageall,zz);
+
                         if (data.length ==0) {
                             alert("该时间段内站点无数据");};
                                              },

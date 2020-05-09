@@ -45,6 +45,11 @@
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
       and INFNDT = #{INFNDT,jdbcType=TIMESTAMP}
   </select>
+  <select id="selectBySTCD" resultMap="BaseResultMap" parameterType="com.sen.design.entity.DseBz.DseBzPumb" >
+    select *
+    from NHBZ.TB1502_MEIDSBI_044
+    where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="com.sen.design.entity.TB.Tb1502Meidsbi044Key" >
     delete from NHBZ.TB1502_MEIDSBI_044
     where ENNMCD = #{ENNMCD,jdbcType=VARCHAR}

@@ -3,6 +3,7 @@ package com.sen.design.controller.TB;
 import com.sen.design.config.DateVo;
 import com.sen.design.config.QSTM;
 import com.sen.design.entity.DseBz.*;
+import com.sen.design.entity.DseST.DseStRiverReal;
 import com.sen.design.entity.SYS.SysUser;
 import com.sen.design.entity.TB.Tb0001Prnmsr044;
 import com.sen.design.service.BZ.BZRelationQuery;
@@ -15,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -56,6 +58,13 @@ public class BZNameQ {
     public List<DseBzRuninfoR> getTheAll(){
         List<DseBzRuninfoR>  dseBzRuninfoR=bzRelationQuery.latestAllm();
         return dseBzRuninfoR;
+    }
+    @RequestMapping(value = "/getLatestAll")
+    //通过名字最近运行信息
+    public List<DseBZRuninforE> getLatestAll(){
+        List<DseBZRuninforE>  dseBZRuninforES=bzRelationQuery.getLatestAll();
+
+        return dseBZRuninforES;
     }
     @RequestMapping(value = "/getTheAllbyName/{name}", method = RequestMethod.GET)
     //通过名字最近运行信息
@@ -102,27 +111,27 @@ public class BZNameQ {
 
     @RequestMapping(value = "/getAllByTM")
     @ResponseBody
-    public List<DseBzRuninfoR> getAllByTM(QSTM qstm){
+    public List<DseBzRuninfoR> getAllByTM(QSTM qstm) throws ParseException {
         //根据时间段和站台名获取泵站运行信息
         System.out.println(qstm.getEndTM()+"  "+qstm.getStartTM()+"  "+qstm.getEndTM());
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        String startTM = sdf.format(qstm.getStartTM());
-        String endTM=sdf.format(qstm.getEndTM());
-        Date startTime=qstm.getStartTM();
-        Date endTime=qstm.getEndTM();
-        return bzRelationQuery.getTheAllByTM(qstm.getSTCD(),qstm.getStartTM(),qstm.getEndTM());
+
+        Date StartTM = sdf.parse(sdf.format(qstm.getStartTM()));
+        Date EndTM=sdf.parse(sdf.format(qstm.getEndTM()));
+        return bzRelationQuery.getTheAllByTM(qstm.getSTCD(),StartTM,EndTM);
     }
 
     @RequestMapping(value = "/getRunStata")
     @ResponseBody
-    public List<DseBzRunState> getRunStata(QSTM qstm){
+    public List<DseBzRunState> getRunStata(QSTM qstm) throws ParseException {
         //获取水位 开机状态
         System.out.println(qstm.getEndTM()+"  "+qstm.getStartTM()+"  "+qstm.getEndTM());
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        List<DseBzRunState> list=bzRelationQuery.getRunState(qstm.getSTCD(),qstm.getStartTM(),qstm.getEndTM());
+        Date StartTM = sdf.parse(sdf.format(qstm.getStartTM()));
+        Date EndTM=sdf.parse(sdf.format(qstm.getEndTM()));
+        List<DseBzRunState> list=bzRelationQuery.getRunState(qstm.getSTCD(),StartTM,EndTM);
         if (list==null){
             System.out.println("list is null ");
         }
@@ -140,13 +149,14 @@ public class BZNameQ {
     }
     @RequestMapping(value = "/getRunStataR")
     @ResponseBody
-    public List<DseBzRunstateR> getRunStataR(QSTM qstm){
+    public List<DseBzRunstateR> getRunStataR(QSTM qstm) throws ParseException {
         //获取水位 开机状态
         System.out.println(qstm.getEndTM()+"  "+qstm.getStartTM()+"  "+qstm.getEndTM());
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        List<DseBzRunstateR> list=bzRelationQuery.getRunStateByTM(qstm.getSTCD(),qstm.getStartTM(),qstm.getEndTM());
+        Date StartTM = sdf.parse(sdf.format(qstm.getStartTM()));
+        Date EndTM=sdf.parse(sdf.format(qstm.getEndTM()));
+        List<DseBzRunstateR> list=bzRelationQuery.getRunStateByTM(qstm.getSTCD(),StartTM,EndTM);
         if (list==null){
             System.out.println("list is null ");
         }
@@ -158,5 +168,15 @@ public class BZNameQ {
     public DseBzRunstateR getLatestRunState(@PathVariable("name") String name){
         DseBzRunstateR dseBzRunstate=bzRelationQuery.getLatestRunState(name);
         return dseBzRunstate;
+    }
+    @RequestMapping(value = "/getAllHByTM")
+    @ResponseBody
+    public List<DseBZRuninforH> getAllHByTM(QSTM qstm) throws ParseException {
+        ////根据站名字時間段查询水情信息
+        System.out.println(qstm.getSTCD()+" "+qstm.getStartTM()+"  "+qstm.getEndTM());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date StartTM = sdf.parse(sdf.format(qstm.getStartTM()));
+        Date EndTM=sdf.parse(sdf.format(qstm.getEndTM()));
+        return bzRelationQuery.getAllHByTM(qstm.getSTCD(),StartTM,EndTM);
     }
 }

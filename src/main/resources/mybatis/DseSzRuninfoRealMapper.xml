@@ -88,6 +88,12 @@
     from NHBZ.DSE_SZ_RUNINFO_REAL
     where STCD = #{STCD,jdbcType=VARCHAR}
   </select>
+  <select id="getAllSZ" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from NHBZ.DSE_SZ_RUNINFO_REAL
+    where rownum  &lt;=100
+  </select>
   <select id="getAllSTCD" resultType="String" parameterType="java.lang.String" >
     SELECT  DISTINCT(STCD)
     FROM NHBZ.DSE_SZ_RUNINFO_REAL

@@ -16,6 +16,7 @@ public interface DseBzRuninfoRMapper {
 
     int insertSelective(DseBzRuninfoR record);
     DseBzRuninfoR selectLatestM(String stcd);
+    List<DseBzRuninfoR> selectLatestL(String stcd);
     List<String> getAllSTCD();
     DseBzRuninfoR selectByPrimaryKey(DseBzRuninfoRKey key);
     List<DseBzRuninfoR> selectByStcdTime(@Param("STCD")String STCD, @Param("startTM") Date startTM, @Param("endTM") Date endTM);

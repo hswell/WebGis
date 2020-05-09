@@ -14,9 +14,10 @@ public interface Tb0001Prnmsr044Mapper {
     int insertSelective(Tb0001Prnmsr044 record);
     List<Tb0001Prnmsr044> queryList();
     String getEnnm(String  ENNMCD);
+    String getSZname(String  ENNMCD);
     Tb0001Prnmsr044 selectByPrimaryKey(String ENNMCD);
     Tb0001Prnmsr044 selectByENNM(String ENNM);
-
+    List<String> getAllSZN();
     int updateByPrimaryKeySelective(Tb0001Prnmsr044 record);
 
     int updateByPrimaryKey(Tb0001Prnmsr044 record);

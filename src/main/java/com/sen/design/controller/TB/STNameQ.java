@@ -3,6 +3,7 @@ package com.sen.design.controller.TB;
 import com.sen.design.config.QSTM;
 import com.sen.design.entity.DseST.DseStPptnE;
 import com.sen.design.entity.DseST.DseStPptnReal;
+import com.sen.design.entity.DseST.DseStRiverE;
 import com.sen.design.entity.DseST.DseStRiverReal;
 import com.sen.design.service.ST.STRelationQuery;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -50,5 +51,12 @@ public class STNameQ {
         ////根据站名字時間段查询水情信息
 
         return stRelationQuery.getallByTM();
+    }
+    @RequestMapping(value = "/getallrv")
+    @ResponseBody
+    public List<DseStRiverE> getallrv() throws ParseException {
+        ////根据站名字時間段查询水情信息
+
+        return stRelationQuery.getallRiver();
     }
 }

@@ -55,6 +55,7 @@
           <a href="bzls.html"><button type="button" class="btn btn-default">泵站运行历史</button></a>
           <a href="jzkg.html"><button type="button" class="btn btn-default">机组开关机</button></a>
           <a href="szkg.html"><button type="button" class="btn btn-default">水闸开关机</button></a>
+
       </div>
        <div class="leftPart">
             <div >
@@ -87,18 +88,19 @@
       
 
       <div class="rightPart">
-          <h3>雨情信息查询</h3>
+          <h3>泵站水位和开关机查询</h3>
           <table class="table table-bordered" id='tabletest'>
               <thead>
               <tr>
                   <th>站点名字</th>
                   <th>时间时间</th>
-                  <th>降雨量(单位/毫升)</th>
+                  <th>泵站状态1-开，0-关</th>
+                  <th>泵站内江水位(米)</th>
+                  <th>泵站外江水位(米)</th>
               </tr>
               </thead>
               <tbody id="tbody">
               </tbody>
-
           </table>
           <div class="page">
 
@@ -149,24 +151,27 @@
                 QSTM.endTM=document.getElementById('endTime').value;
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:8080/ST/getallTM",
-
+                    url: "http://localhost:8080/BZ/getRunStata",
+                    dataType: 'json',
+                    data:QSTM,
                     success: function(jsonData){
-
                         if (jsonData.length > 1) {
                             alert("查找到所有信息");
                             for(var i = 0; i < jsonData.length; i++)
-                            {
-                                var d = new Date(jsonData[i].tm);
+                            {   var d = new Date(jsonData[i].tm);
                                 var times=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
                                 var tr;
+                                tr='<td>'+jsonData[i].stcd+'</td>'+'<td>'+times+'</td>'+'<td>'+jsonData[i].state+'</td>'+'<td>'+jsonData[i].nsw+'</td>'+'<td>'+jsonData[i].wsw+'</td>'
                                 tbody.innerHTML+="<tr>" +
                                     "<td>"+jsonData[i].stcd+"</td>"+
                                     "<td>"+times+"</td>"+
-                                    "<td>"+jsonData[i].drp+"</td>" +
+                                    "<td>"+jsonData[i].state+"</td>"+
+                                    "<td>"+jsonData[i].nsw+"</td>" +
+                                    "<td>"+jsonData[i].wsw+"</td>" +
                                     "</tr>";
                             }
                         };
+
                         var a = document.getElementById("tbody").getElementsByTagName("tr");
                         //alert(a.length);
                         var zz =new Array(a.length);
@@ -182,11 +187,13 @@
                         $("#p").text(pageall);      //将pageall的值存放到div中，便于下次使用
                         change(1,pageall,zz);
 
+
+
                         if (data.length ==0) {
                             alert("该时间段内站点无数据");};
                                              },
                     error : function() {
-                        alert("异常");
+                        alert("异常，请输入正确的时间再选择站点");
                     }
 
                 });

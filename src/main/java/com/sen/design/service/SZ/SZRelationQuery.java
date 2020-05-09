@@ -46,53 +46,100 @@ public class SZRelationQuery {
         String ennm=tb0001Prnmsr044Mapper.getEnnm(ennmcd);
         return ennm;
     }
+    public String SZnameQuery(String stcd){
+        //根据STCD查询对应站名字
+        if (stcd!=null) {
+            String name=null;
+            name = tb0001Prnmsr044Mapper.getSZname(stcd);
+            if (name != null) {
+                return name;
+            }
+        }
+        return stcd;
+
+    }
     public List<String> getSzName(){
 
-        List<String> allSTCD = dseSzRuninfoRealMapper.getAllSTCD();
-        //根据STCD对应ENNMCD查询
-        List<String> allEnnmcd=new ArrayList<>();
 
-        for (String l1:allSTCD
-        ) {
-            String ennmcd=dseTb0001RemarkBMapper.getEnnmcd(l1);
-            allEnnmcd.add(ennmcd);
-        }
         List<String> allname=new ArrayList<>();
-        for (String l1:allEnnmcd
-        ) {
-            String ennmcd=tb0001Prnmsr044Mapper.getEnnm(l1);
-            if(ennmcd!=null){
-                allname.add(ennmcd);
-            }
+        allname=tb0001Prnmsr044Mapper.getAllSZN();
 
-        }
         return  allname;
     }
     public List<DseSzRuninfoReal> getSzRuninfoRealByTM(String ENNM, Date statTime, Date endTime){
         //根据站名字時間段查询水閘相關信
+        List<String>SzName= getSzName();
         String STCD=stcdQuery(ENNM);
 
         return dseSzRuninfoRealMapper.selectByStcdTime(STCD,statTime,endTime);
     }
-    public List<DseSzRunstateR> getSZRunStateByTM(String ENNM, Date statTime, Date endTime) throws IllegalAccessException {
+    public String SZCheck(String s1){
+        if (s1==null){
+            return "闸门关闭";
+        }
+        if(s1.equals("0")){
+            return "闸门上升";
+        }
+        if(s1.equals("1")){
+            return "闸门下降";
+        }if(s1.equals("2")){
+            return "闸门全关";
+        }if(s1.equals("3")){
+            return "闸门全开";
+        }if(s1.equals("4")){
+            return "闸门解锁";
+        }
+        if(s1.equals("4")){
+            return "闸门解位";
+        }
+        return "关闭";
+    }
+    public List<DseSzRunE> getAllSZinfo() {
+        //根据站名字時間段查询水閘運行狀態
+
+        List<DseSzRuninfoReal> list=dseSzRuninfoRealMapper.getAllSZ();
+        List<DseSzRunE> sz=new ArrayList<>();
+        for (DseSzRuninfoReal r:list
+        ) {
+            DseSzRunE s1=new DseSzRunE();
+            s1.setSTCD(SZnameQuery(r.getSTCD()));
+            s1.setTM(r.getTM());
+            s1.setN1(SZCheck(r.getRUNST1()));
+            s1.setN2(SZCheck(r.getRUNST2()));
+            s1.setN3(SZCheck(r.getRUNST3()));
+            s1.setN4(SZCheck(r.getRUNST4()));
+            s1.setN5(SZCheck(r.getN5()));
+            s1.setN6(SZCheck(r.getRUNST6()));
+            sz.add(s1);
+        }
+
+        if (sz!=null){
+            return sz;
+        }
+        return null;
+    }
+    public List<DseSzRunE> getSZRunStateByTM(String ENNM, Date statTime, Date endTime) throws IllegalAccessException {
         //根据站名字時間段查询水閘運行狀態
         String STCD=stcdQuery(ENNM);
-        List<DseSzRunstateR> sz=new ArrayList<>();
+        List<DseSzRunE> sz=new ArrayList<>();
 
         List<DseSzRuninfoReal> list=getSzRuninfoRealByTM(STCD,statTime,endTime);
 
         for (DseSzRuninfoReal r:list
         ) {
-            Class<? extends DseSzRuninfoReal> d=r.getClass();
-            Field[] fs=d.getDeclaredFields();
-            for (Field f:fs
-                 ) {
-                Object value = f.get(r);
-                DseSzRunstateR stata=(DseSzRunstateR)value;
-                sz.add(stata);
+            DseSzRunE s1=new DseSzRunE();
+            s1.setSTCD(SZnameQuery(r.getSTCD()));
+            s1.setTM(r.getTM());
+            s1.setN1(SZCheck(r.getRUNST1()));
+            s1.setN2(SZCheck(r.getRUNST2()));
+            s1.setN3(SZCheck(r.getRUNST3()));
+            s1.setN4(SZCheck(r.getRUNST4()));
+            s1.setN5(SZCheck(r.getN5()));
+            s1.setN6(SZCheck(r.getRUNST6()));
+            sz.add(s1);
             }
 
-        }if (sz!=null){
+        if (sz!=null){
             return sz;
         }
         return null;

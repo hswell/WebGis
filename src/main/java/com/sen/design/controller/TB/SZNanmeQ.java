@@ -6,6 +6,8 @@ import com.sen.design.entity.DseBz.DseBzPumb;
 import com.sen.design.entity.DseBz.DseBzPumbKey;
 import com.sen.design.entity.DseBz.DseBzRunState;
 import com.sen.design.entity.DseBz.DseBzRuninfoR;
+import com.sen.design.entity.DseST.DseStPptnE;
+import com.sen.design.entity.DseSz.DseSzRunE;
 import com.sen.design.entity.DseSz.DseSzRunstateR;
 import com.sen.design.service.BZ.DseBzPumbService;
 import com.sen.design.service.SZ.SZRelationQuery;
@@ -13,6 +15,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -74,14 +77,23 @@ public class SZNanmeQ {
         String stcd=szRelationQuery.getSzNameByBz(name);
         return stcd;
     }
+    @RequestMapping(value = "/getAllSZinfo")
+    @ResponseBody
+    public List<DseSzRunE> getAllSZinfo() throws ParseException {
+        ////根据站名字時間段查询水情信息
+
+        return szRelationQuery.getAllSZinfo();
+    }
     @RequestMapping(value = "/getSZStata")
     @ResponseBody
-    public  List<DseSzRunstateR> getSZStata(QSTM qstm) throws IllegalAccessException {
+    public  List<DseSzRunE> getSZStata(QSTM qstm) throws IllegalAccessException, ParseException {
         //获取水位 开机状态
         System.out.println(qstm.getEndTM()+"  "+qstm.getStartTM()+"  "+qstm.getEndTM());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date StartTM = sdf.parse(sdf.format(qstm.getStartTM()));
+        Date EndTM=sdf.parse(sdf.format(qstm.getEndTM()));
 
-
-        List<DseSzRunstateR> list=szRelationQuery.getSZRunStateByTM(qstm.getSTCD(),qstm.getStartTM(),qstm.getEndTM());
+        List<DseSzRunE> list=szRelationQuery.getSZRunStateByTM(qstm.getSTCD(),StartTM,EndTM);
         if (list==null){
             System.out.println("list is null ");
         }

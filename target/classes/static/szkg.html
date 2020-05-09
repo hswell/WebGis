@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <script src="js/JsPager.js" charset="utf-8" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/moment.js/2.22.1/moment-with-locales.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+</head>
+
+<style>
+    .leftPart{
+        float: left;
+        postion: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 500px;
+
+    }
+    #tabletest tr:nth-child(even) {
+        background: #80bdff;
+    }
+
+    #tabletest th {
+        background: #80bdff;
+    }
+
+    .rightPart{
+        margin-left: 300px;
+        height: 500px;
+
+    }
+</style>
+<script>
+    $.ajax({
+        type: "Get",
+        url: "http://localhost:8080/BZ/getUsername",
+        success: function(data){
+            $("#name").text(data);
+        }
+    })
+</script>
+
+<body>
+<h2>蔡甸区西湖</h2>
+<div id="name"></div>欢迎你
+<a href="/logout">注销</a>
+<h3></h3>
+<div class="btn-group btn-group-lg">
+    <a href="index.html"><button type="button" class="btn btn-default">地图服务</button></a>
+    <a href="yuqing.html"><button type="button" class="btn btn-default">雨情信息</button></a>
+    <a href="shuiqing.html"><button type="button" class="btn btn-default">水情信息</button></a>
+    <a href="bzsw.html"><button type="button" class="btn btn-default">泵站水位</button></a>
+    <a href="bzzt.html"><button type="button" class="btn btn-default">泵站运行状态</button></a>
+    <a href="bzls.html"><button type="button" class="btn btn-default">泵站运行历史</button></a>
+    <a href="jzkg.html"><button type="button" class="btn btn-default">机组开关机</button></a>
+    <a href="szkg.html"><button type="button" class="btn btn-default">水闸开关机</button></a>
+
+</div>
+<div class="leftPart">
+    <div >
+
+        <div class="col-sm-6">
+            <div class="form-group" style="text-align: center;">
+                <div class=" control-label">开始时间</div>
+                <input type="text" class="form-control form_datetime" id="startTime"  style="width:180px;">
+            </div>
+            <div class="form-group">
+                <div class=" control-label">结束时间</div>
+                <input type="text" class="form-control form_datetime" id="endTime"  style="width:180px;">
+            </div>
+            <div class="form-group">
+                <div class=" control-label">站点选择</div>
+                <select name="EmpPosId" id="EmpPosId">
+                    <option id="-1" value="请选择职位">请选择站点</option>
+                </select>
+                </select>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="form-group">
+            <button type="button" id="b01" class="btn btn-primary form-control" >查询</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="rightPart">
+    <h3>水闸闸门开关机历史记录查询</h3>
+    <table class="table table-bordered" id='tabletest'>
+        <thead>
+        <tr>
+            <th>站点名字</th>
+            <th>时间</th>
+            <th>闸门1</th>
+            <th>闸门2</th>
+            <th>闸门3</th>
+            <th>闸门4</th>
+            <th>闸门5</th>
+            <th>闸门6</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <div class="page">
+
+        <a id="down" href="#" onClick="change1(--pageno)">上一页</a>　　
+        <span id="a3"></span><a id="up" href="#" onClick="change1(++pageno)">下一页</a>
+        <span class="ho">第<span id="a2"></span>/<span id="a1"></span>页</span>
+    </div>
+    <!--用来存放总页数，放置在body中-->
+    <div style="display:block" id="p"></div>
+</div>
+</body>
+
+<script>
+    $("#startTime").datetimepicker({
+        format: 'YYYY-MM-DD HH:mm:ss',
+        locale: moment.locale('zh-CN'),
+        minDate: '2012/08/15',
+        maxDate: '2030/09/15',
+    });
+</script>
+<script>
+    $("#endTime").datetimepicker({
+        format: 'YYYY-MM-DD HH:mm:ss',
+        locale: moment.locale('zh-CN'),
+        minDate: '2012/08/15',
+        maxDate: '2030/09/15',
+    });
+
+
+</script>
+<script>
+    $(function () {
+        $.getJSON('http://localhost:8080/BZ/getBZName', function (list) {
+            //遍历赋值
+            for (var i=0;i<list.length;i++) {
+                $("#EmpPosId").append('<option id=' +i+ ' value=' + list[i] + '>' + list[i] + '</option>');
+            }
+        })
+    });
+</script>
+<script src="js/JsPager.js"></script>
+<script type="text/javascript">
+    $(document).ready(function paging(page){
+        $("#b01").click(function(){
+            var QSTM=new Object;
+            QSTM.STCD=document.getElementById("EmpPosId").value;
+            QSTM.startTM=document.getElementById('startTime').value;
+            QSTM.endTM=document.getElementById('endTime').value;
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:8080/SZ/getAllSZinfo",
+                dataType: 'json',
+                data:QSTM,
+                success: function(jsonData){
+                    if (jsonData.length > 1) {
+                        alert("查找到所有信息");
+                        for(var i = 0; i < jsonData.length; i++)
+                        {   var d = new Date(jsonData[i].tm);
+                            var times=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+                            tbody.innerHTML+="<tr>" +
+                                "<td>"+jsonData[i].stcd+"</td>"+
+                                "<td>"+times+"</td>"+
+                                "<td>"+jsonData[i].n1+"</td>"+
+                                "<td>"+jsonData[i].n2+"</td>" +
+                                "<td>"+jsonData[i].n3+"</td>" +
+                                "<td>"+jsonData[i].n4+"</td>" +
+                                "<td>"+jsonData[i].n5+"</td>" +
+                                "<td>"+jsonData[i].n6+"</td>" +
+
+                                "</tr>";
+                        }
+                    };
+
+                    var a = document.getElementById("tbody").getElementsByTagName("tr");
+                    //alert(a.length);
+                    var zz =new Array(a.length);
+                    //alert(zz.length);
+                    for(var i=0;i<a.length;i++)
+                    { zz[i]=a[i].innerHTML } //div的字符串数组付给zz
+                    var pageno=1;               //当前页
+                    var pagesize=10;            //每页多少条信息
+                    if(zz.length%pagesize==0)
+                    {var  pageall =zz.length/pagesize }
+                    else
+                    {var  pageall =parseInt(zz.length/pagesize)+1}       //一共多少页
+                    $("#p").text(pageall);      //将pageall的值存放到div中，便于下次使用
+                    change(1,pageall,zz);
+
+
+
+                    if (data.length ==0) {
+                        alert("该时间段内站点无数据");};
+                },
+                error : function() {
+                    alert("异常，请输入正确的时间再选择站点");
+                }
+
+            });
+        });
+    });
+</script>
+<script type="text/javascript">
+    window.onload = function(){ //页面所有元素加载完毕
+        var item  =  document.getElementById("tabletest");            //获取id为tb的元素(table)
+        var tbody =  item.getElementsByTagName("tbody")[0];    //获取表格的第一个tbody元素
+        var trs =   tbody.getElementsByTagName("tr");            //获取tbody元素下的所有tr元素
+        for(var i=0;i < trs.length;i++){//循环tr元素
+            if(i%2==0){        //取模. (取余数.比如 0%2=0 , 1%2=1 , 2%2=0 , 3%2=1)
+                trs[i].style.backgroundColor = "#888"; // 改变 符合条件的tr元素 的背景色.
+            }
+        }
+    }
+</script>
+</html>

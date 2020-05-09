@@ -7,6 +7,7 @@ import com.sen.design.dao.TB.Tb0001Prnmsr044Mapper;
 import com.sen.design.entity.DseBz.DseBzRuninfoR;
 import com.sen.design.entity.DseST.DseStPptnE;
 import com.sen.design.entity.DseST.DseStPptnReal;
+import com.sen.design.entity.DseST.DseStRiverE;
 import com.sen.design.entity.DseST.DseStRiverReal;
 import com.sen.design.service.BZ.BZRelationQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,7 @@ public class STRelationQuery {
         return stcd;
 
     }
+
     public List<DseStPptnE> getSTByTM(String ENNM, Date statTime, Date endTime){
         //根据站名字時間段查询水情信息
 
@@ -71,10 +73,52 @@ public class STRelationQuery {
         }
         return dseStPptnES;
     }
+    public List<DseStRiverE> getSTRVByTM(String ENNM, Date statTime, Date endTime){
+        //根据站名字時間段查询水情信息
+
+
+        String STCD=stcdQuery(ENNM);
+        List<DseStRiverE> dseStRiverES=new ArrayList<>();
+        List<DseStRiverReal>list=dseStRiverRealMapper.selectByStcdTime(STCD,statTime,endTime);
+        if (list!=null){
+            for (DseStRiverReal D1:list
+            ) {
+                DseStRiverE D2= new DseStRiverE();
+                D2.setQ(D1.getQ());
+                D2.setZ(D1.getZ());
+                D2.setSTCD(ENNM);
+                D2.setTM(D1.getTM());
+                dseStRiverES.add(D2);
+            }
+        }
+        return dseStRiverES;
+    }
+
+
     public List<DseStRiverReal> getRiverByTM(String ENNM, Date statTime, Date endTime){
         //根据站名字時間段查询河道信息
         String STCD=stcdQuery(ENNM);
         return dseStRiverRealMapper.selectByStcdTime(STCD,statTime,endTime);
+    }
+    public List<DseStRiverE> getallRiver(){
+        //根据站名字時間段查询水情信息
+
+
+
+        List<DseStRiverE> dseStRiverES=new ArrayList<>();
+        List<DseStRiverReal>list=dseStRiverRealMapper.selectAll();
+        if (list!=null){
+            for (DseStRiverReal D1:list
+            ) {
+                DseStRiverE D2= new DseStRiverE();
+                D2.setQ(D1.getQ());
+                D2.setZ(D1.getZ());
+                D2.setSTCD(nameQuery(D1.getSTCD()));
+                D2.setTM(D1.getTM());
+                dseStRiverES.add(D2);
+            }
+        }
+        return dseStRiverES;
     }
     public List<DseStPptnE> getallByTM(){
         List<DseStPptnE> dseStPptnES=new ArrayList<>();

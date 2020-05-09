@@ -26,6 +26,11 @@
     from NHBZ.DSE_ST_RIVER_REAL
     where STCD = #{STCD,jdbcType=VARCHAR}
   </select>
+  <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    SELECT *
+    from NHBZ.DSE_ST_RIVER_REAL
+    ORDER BY  TM DESC
+  </select>
   <select id="selectByStcdTime" resultMap="BaseResultMap">
     SELECT   <include refid="Base_Column_List" />
     FROM NHBZ.DSE_ST_RIVER_REAL

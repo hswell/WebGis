@@ -18,7 +18,7 @@ public interface DseSzRuninfoRealMapper {
     List<String> getAllSTCD();
     List<DseSzRuninfoReal> selectByStcdTime(@Param("STCD")String STCD, @Param("startTM") Date startTM, @Param("endTM") Date endTM);
     DseSzRuninfoReal selectByPrimaryKey(String STCD);
-
+    List<DseSzRuninfoReal> getAllSZ();
     int updateByPrimaryKeySelective(DseSzRuninfoReal record);
 
     int updateByPrimaryKey(DseSzRuninfoReal record);

@@ -28,7 +28,8 @@
           .rightPart{
               margin-left: 300px;
               height: 500px;
-
+              background: cadetblue;
+        
           }
         </style>
          <script>
@@ -56,44 +57,23 @@
           <a href="jzkg.html"><button type="button" class="btn btn-default">机组开关机</button></a>
           <a href="szkg.html"><button type="button" class="btn btn-default">水闸开关机</button></a>
       </div>
-       <div class="leftPart">
-            <div >
-
-                <div class="col-sm-6">
-                    <div class="form-group" style="text-align: center;">
-                        <div class=" control-label">开始时间</div>
-                        <input type="text" class="form-control form_datetime" id="startTime"  style="width:180px;">
-                    </div>
-                    <div class="form-group">
-                        <div class=" control-label">结束时间</div>
-                        <input type="text" class="form-control form_datetime" id="endTime"  style="width:180px;">
-                    </div>
-                    <div class="form-group">
-                        <div class=" control-label">站点选择</div>
-                        <select name="EmpPosId" id="EmpPosId">
-                            <option id="-1" value="请选择职位">请选择站点</option>
-                           </select> 
-                        </select>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="form-group">
-                    <button type="button" id="b01" class="btn btn-primary form-control" >查询</button>
-                </div>
-            </div>
-        </div>
-      
-
-      <div class="rightPart">
-          <h3>雨情信息查询</h3>
+      </div>
+       
+      <div >
+          <h3>所有泵站机组最近运行状态</h3>
+          <button type="button" id="b01" class="btn btn-info " >刷新信息</button>
           <table class="table table-bordered" id='tabletest'>
               <thead>
               <tr>
                   <th>站点名字</th>
-                  <th>时间时间</th>
-                  <th>降雨量(单位/毫升)</th>
+                  <th>时间</th>
+                  <th>机组编号</th>
+                  <th>机组状态</th>
+                  <th>泵站内江水位(米)</th>
+                  <th>泵站外江水位(米)</th>
+                  <th>装机容量(兆瓦)</th>
+                  <th>设计流量(m3/s)</th>
+                  <th>瞬时流量(m3/s)</th>
               </tr>
               </thead>
               <tbody id="tbody">
@@ -111,24 +91,7 @@
       </div>
 	</body>
 
-        <script>
-            $("#startTime").datetimepicker({
-                format: 'YYYY-MM-DD HH:mm:ss',
-                locale: moment.locale('zh-CN'),
-                minDate: '2012/08/15',
-                maxDate: '2030/09/15',
-            });
-        </script>
-    	<script>
-            $("#endTime").datetimepicker({
-                format: 'YYYY-MM-DD HH:mm:ss',
-                locale: moment.locale('zh-CN'),
-                minDate: '2012/08/15',
-                maxDate: '2030/09/15',
-            });
-
         
-        </script>
         <script>
             $(function () {
             $.getJSON('http://localhost:8080/BZ/getBZName', function (list) {
@@ -141,32 +104,30 @@
         </script>
     <script src="js/JsPager.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function paging(page){
             $("#b01").click(function(){
-                var QSTM=new Object;
-                QSTM.STCD=document.getElementById("EmpPosId").value;
-                QSTM.startTM=document.getElementById('startTime').value;
-                QSTM.endTM=document.getElementById('endTime').value;
                 $.ajax({
-                    type: "POST",
-                    url: "http://localhost:8080/ST/getallTM",
-
+                    type: "GET",
+                    url: "http://localhost:8080/BZ/getLatestAll",
                     success: function(jsonData){
-
                         if (jsonData.length > 1) {
                             alert("查找到所有信息");
                             for(var i = 0; i < jsonData.length; i++)
-                            {
-                                var d = new Date(jsonData[i].tm);
+                            {   var d = new Date(jsonData[i].tm);
                                 var times=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-                                var tr;
                                 tbody.innerHTML+="<tr>" +
                                     "<td>"+jsonData[i].stcd+"</td>"+
                                     "<td>"+times+"</td>"+
-                                    "<td>"+jsonData[i].drp+"</td>" +
+                                    "<td>"+jsonData[i].aircrewnm+"</td>"+
+                                    "<td>"+jsonData[i].aircrewstate+"</td>" +
+                                    "<td>"+jsonData[i].nsw+"</td>" +
+                                    "<td>"+jsonData[i].wsw+"</td>" +
+                                    "<td>"+jsonData[i].dsincp+"</td>" +
+                                    "<td>"+jsonData[i].avdrfl+"</td>" +
+                                    "<td>"+jsonData[i].instantaneousq+"</td>" +
                                     "</tr>";
                             }
-                        };
+                        }
                         var a = document.getElementById("tbody").getElementsByTagName("tr");
                         //alert(a.length);
                         var zz =new Array(a.length);
@@ -181,6 +142,7 @@
                         {var  pageall =parseInt(zz.length/pagesize)+1}       //一共多少页
                         $("#p").text(pageall);      //将pageall的值存放到div中，便于下次使用
                         change(1,pageall,zz);
+
 
                         if (data.length ==0) {
                             alert("该时间段内站点无数据");};

@@ -55,6 +55,15 @@
     order by TM desc)
     where rownum = 1
   </select>
+  <select id="selectLatestL" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from
+    (SELECT *
+    FROM NHBZ.DSE_BZ_RUNINFO_R
+    WHERE STCD = #{STCD,jdbcType=VARCHAR}
+    order by TM desc)
+    where rownum &lt; 8
+  </select>
+
 
   <select id="getAllSTCD" resultType="String" parameterType="java.lang.String" >
     SELECT  DISTINCT(STCD)

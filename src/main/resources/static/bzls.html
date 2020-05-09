@@ -6,7 +6,7 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-
+        <script src="js/JsPager.js" charset="utf-8" type="text/javascript"></script>
 		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://cdn.bootcss.com/moment.js/2.22.1/moment-with-locales.min.js"></script>
@@ -55,6 +55,7 @@
           <a href="bzls.html"><button type="button" class="btn btn-default">泵站运行历史</button></a>
           <a href="jzkg.html"><button type="button" class="btn btn-default">机组开关机</button></a>
           <a href="szkg.html"><button type="button" class="btn btn-default">水闸开关机</button></a>
+
       </div>
        <div class="leftPart">
             <div >
@@ -87,18 +88,21 @@
       
 
       <div class="rightPart">
-          <h3>雨情信息查询</h3>
+          <h3>泵站运行历史记录查询</h3>
           <table class="table table-bordered" id='tabletest'>
               <thead>
               <tr>
                   <th>站点名字</th>
-                  <th>时间时间</th>
-                  <th>降雨量(单位/毫升)</th>
+                  <th>时间</th>
+                  <th>机组编号</th>
+                  <th>机组状态</th>
+                  <th>装机容量(兆瓦)</th>
+                  <th>运行功率(KW)</th>
+                  <th>扬程单位(米)</th>
               </tr>
               </thead>
               <tbody id="tbody">
               </tbody>
-
           </table>
           <div class="page">
 
@@ -141,7 +145,7 @@
         </script>
     <script src="js/JsPager.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function paging(page){
             $("#b01").click(function(){
                 var QSTM=new Object;
                 QSTM.STCD=document.getElementById("EmpPosId").value;
@@ -149,24 +153,30 @@
                 QSTM.endTM=document.getElementById('endTime').value;
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:8080/ST/getallTM",
-
+                    url: "http://localhost:8080/BZ/getAllHByTM",
+                    dataType: 'json',
+                    data:QSTM,
                     success: function(jsonData){
-
                         if (jsonData.length > 1) {
                             alert("查找到所有信息");
                             for(var i = 0; i < jsonData.length; i++)
-                            {
-                                var d = new Date(jsonData[i].tm);
+                            {   var d = new Date(jsonData[i].tm);
                                 var times=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-                                var tr;
+                                var tr;  
+                                tr='<td>'+jsonData[i].stcd+'</td>'+'<td>'+times+'</td>'+'<td>'+jsonData[i].aircrewnm+'</td>'+'<td>'+jsonData[i].aircrewstate+'</td>'+'<td>'+jsonData[i].dsincp+'</td>'+'<td>'+jsonData[i].poweractive+'</td>'+'<td>'+jsonData[i].distance+'</td>'
                                 tbody.innerHTML+="<tr>" +
                                     "<td>"+jsonData[i].stcd+"</td>"+
                                     "<td>"+times+"</td>"+
-                                    "<td>"+jsonData[i].drp+"</td>" +
+                                    "<td>"+jsonData[i].aircrewnm+"</td>"+
+                                    "<td>"+jsonData[i].aircrewstate+"</td>" +
+                                    "<td>"+jsonData[i].dsincp+"</td>" +
+                                    "<td>"+jsonData[i].poweractive+"</td>" +
+                                    "<td>"+jsonData[i].distance+"</td>" +
+
                                     "</tr>";
                             }
                         };
+
                         var a = document.getElementById("tbody").getElementsByTagName("tr");
                         //alert(a.length);
                         var zz =new Array(a.length);
@@ -182,11 +192,13 @@
                         $("#p").text(pageall);      //将pageall的值存放到div中，便于下次使用
                         change(1,pageall,zz);
 
+
+
                         if (data.length ==0) {
                             alert("该时间段内站点无数据");};
                                              },
                     error : function() {
-                        alert("异常");
+                        alert("异常，请输入正确的时间再选择站点");
                     }
 
                 });
