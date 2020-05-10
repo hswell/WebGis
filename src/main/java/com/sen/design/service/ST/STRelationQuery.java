@@ -113,7 +113,7 @@ public class STRelationQuery {
                 DseStRiverE D2= new DseStRiverE();
                 D2.setQ(D1.getQ());
                 D2.setZ(D1.getZ());
-                D2.setSTCD(nameQuery(D1.getSTCD()));
+                D2.setSTCD("西湖泵站");
                 D2.setTM(D1.getTM());
                 dseStRiverES.add(D2);
             }
@@ -128,7 +128,7 @@ public class STRelationQuery {
             ) {
                 DseStPptnE D2=new DseStPptnE();
                 D2.setDRP(D1.getDRP());
-                D2.setSTCD(nameQuery(D1.getSTCD()));
+                D2.setSTCD("西湖泵站");
                 D2.setTM(D1.getTM());
                 dseStPptnES.add(D2);
             }

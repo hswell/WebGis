@@ -144,7 +144,6 @@
     SELECT  STCD
     FROM NHBZ.ST_STBPRP_B
     where STNM = #{STNM,jdbcType=VARCHAR}
-
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from NHBZ.ST_STBPRP_B

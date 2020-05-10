@@ -29,6 +29,7 @@
   <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String" >
     SELECT *
     from NHBZ.DSE_ST_RIVER_REAL
+    where rownum  &lt;=100
     ORDER BY  TM DESC
   </select>
   <select id="selectByStcdTime" resultMap="BaseResultMap">

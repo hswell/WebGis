@@ -89,26 +89,8 @@
 
 <div class="rightPart">
     <h3>机组开关机机查询</h3>
-    <table class="table table-bordered" id='tabletest'>
-        <thead>
-        <tr>
-            <th>站点名字</th>
-            <th>时间</th>
-            <th>内水位</th>
-            <th>外水位</th>
-        </tr>
-        </thead>
-        <tbody id="tbody">
-        </tbody>
-    </table>
-    <div class="page">
+    <div id="container" style="height: 100%"></div>
 
-        <a id="down" href="#" onClick="change1(--pageno)">上一页</a>　　
-        <span id="a3"></span><a id="up" href="#" onClick="change1(++pageno)">下一页</a>
-        <span class="ho">第<span id="a2"></span>/<span id="a1"></span>页</span>
-    </div>
-    <!--用来存放总页数，放置在body中-->
-    <div style="display:block" id="p"></div>
 </div>
 </body>
 
@@ -141,6 +123,7 @@
     });
 </script>
 <script src="js/JsPager.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $("#b01").click(function(){
@@ -156,38 +139,165 @@
                 success: function(jsonData){
                     if (jsonData.length > 1) {
                         alert("查找到所有信息");
+                        var x_data=new Array()
+
+                        var y_data=new Array()
+                        var y2_data=new Array()
+                        var y3_data=new Array()
+                        var y4_data=new Array()
+                        var y5_data=new Array()
+                        var y6_data=new Array()
+                        var y7_data=new Array()
+                        var y8_data=new Array()
+
+                        for (var i = 0; i < jsonData.length; i++){
+                            y_data[i]=new Array()
+                            y2_data[i]=new Array()
+                            y3_data[i]=new Array()
+                            y4_data[i]=new Array()
+                            y5_data[i]=new Array()
+                            y6_data[i]=new Array()
+                            y7_data[i]=new Array()
+                            y8_data[i]=new Array()
+                            for(var j = 0; j < 3; j++) {
+                                y_data[i][j] = 0; //0表示只有一个空的红圈
+                                y2_data[i][j] = 0;
+                                y3_data[i][j] = 0;
+                                y4_data[i][j] = 0;
+                                y5_data[i][j] = 0;
+                                y6_data[i][j] = 0;
+                                y7_data[i][j] = 0;
+                                y8_data[i][j] = 0;
+                            }
+                        }
                         for(var i = 0; i < jsonData.length; i++)
                         {   var d = new Date(jsonData[i].tm);
                             var times=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-                            var tr;
-                            tr='<td>'+jsonData[i].stcd+'</td>'+'<td>'+times+'</td>'+'<td>'+jsonData[i].state+'</td>'+'<td>'+jsonData[i].nsw+'</td>'+'<td>'+jsonData[i].wsw+'</td>'
-                            tbody.innerHTML+="<tr>" +
-                                "<td>"+jsonData[i].stcd+"</td>"+
-                                "<td>"+times+"</td>"+
-                                "<td>"+jsonData[i].nsw+"</td>" +
-                                "<td>"+jsonData[i].wsw+"</td>" +
-                                "</tr>";
+                            x_data[i]=times;
+                            y_data[i][0]=0;
+                            y_data[i][1]=times;
+                            y_data[i][2]=new Array();
+                            y2_data[i][2]=new Array();
+                            y3_data[i][2]=new Array();
+                            y4_data[i][2]=new Array();
+                            y5_data[i][2]=new Array();
+                            y6_data[i][2]=new Array();
+                            y7_data[i][2]=new Array();
+                            y8_data[i][2]=new Array();
+
+
+
+                            y_data[i][2]=jsonData[i].n1;
+
+                            y2_data[i][0]=1;
+                            y2_data[i][1]=times;
+                            y2_data[i][2]=jsonData[i].n2;
+
+                            y3_data[i][0]=2;
+                            y3_data[i][1]=times;
+                            y3_data[i][2]=jsonData[i].n3;
+
+                            y4_data[i][0]=3;
+                            y4_data[i][1]=times;
+                            y4_data[i][2]=jsonData[i].n4;
+
+                            y5_data[i][0]=4;
+                            y5_data[i][1]=times;
+                            y5_data[i][2]=jsonData[i].n5;
+
+                            y6_data[i][0]=5;
+                            y6_data[i][1]=times;
+                            y6_data[i][2]=jsonData[i].n6;
+
+                            y7_data[i][0]=6;
+                            y7_data[i][1]=times;
+                            y7_data[i][2]=jsonData[i].n7;
+
+                            y8_data[i][0]=7;
+                            y8_data[i][1]=times;
+                            y8_data[i][2]=jsonData[i].n8;
+
                         }
                     };
+                    let allData = y_data.concat(y2_data).concat(y3_data).concat(y4_data).concat(y5_data).concat(y6_data).concat(y7_data).concat(y8_data);
+                    alert(allData[4][6]);
+                    var dom = document.getElementById("container");
+                    var myChart = echarts.init(dom);
+                    var app = {};
+                    option = null;
 
-                    var a = document.getElementById("tbody").getElementsByTagName("tr");
-                    //alert(a.length);
-                    var zz =new Array(a.length);
-                    //alert(zz.length);
-                    for(var i=0;i<a.length;i++)
-                    { zz[i]=a[i].innerHTML } //div的字符串数组付给zz
-                    var pageno=1;               //当前页
-                    var pagesize=10;            //每页多少条信息
-                    if(zz.length%pagesize==0)
-                    {var  pageall =zz.length/pagesize }
-                    else
-                    {var  pageall =parseInt(zz.length/pagesize)+1}       //一共多少页
-                    $("#p").text(pageall);      //将pageall的值存放到div中，便于下次使用
-                    change(1,pageall,zz);
+                    var hours =x_data;
+                    var days = ['1#', '2#', '3#',
+                        '4#', '5#', '6#', '7#', '8#'];
+                    data = allData.map(function (item) {
+                        return [item[1], item[0], item[2]];
+                    });
+
+                    option = {
+                        title: {
+                            text: '泵站各个机组同一时间运行状态',
+                        },
+                        legend: {
+                            data: ['Punch Card'],
+                            left: 'right'
+                        },
+                        tooltip: {
+                            position: 'top',
+                            formatter: function (params) {
+                                return "正在运行";
+                            }
+                        },
+                        grid: {
+                            left: 2,
+                            bottom: 10,
+                            right: 10,
+                            containLabel: true
+                        },
+                        xAxis: {
+                            type: 'category',
+                            data: hours,
+                            boundaryGap: false,
+                            splitLine: {
+                                show: true,
+                                lineStyle: {
+                                    color: '#999',
+                                    type: 'dashed'
+                                }
+                            },
+                            axisLine: {
+                                show: false
+                            }
+                        },
+                        yAxis: {
+                            type: 'category',
+                            data: days,
+                            axisLine: {
+                                show: false
+                            }
+                        },
+                        series: [{
+                            name: 'Punch Card',
+                            type: 'scatter',
+                            symbolSize: function (val) {
+                                return val[2] * 4;
+                            },
+                            data: data,
+                            animationDelay: function (idx) {
+                                return idx * 5;
+                            },
+                            itemStyle:{
+                                color: '#f3d255',
+                            },
+                        }]
+                    };;
+                    if (option && typeof option === "object") {
+                        myChart.setOption(option, true);
+                    }
 
 
 
-                    if (data.length ==0) {
+
+                    if (jsonData.length ==0) {
                         alert("该时间段内站点无数据");};
                 },
                 error : function() {

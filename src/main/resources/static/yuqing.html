@@ -30,6 +30,13 @@
               height: 500px;
 
           }
+        #tabletest tr:nth-child(even) {
+            background: #80bdff;
+        }
+
+        #tabletest th {
+            background: #80bdff;
+        }
         </style>
          <script>
             $.ajax({
@@ -182,7 +189,7 @@
                         $("#p").text(pageall);      //将pageall的值存放到div中，便于下次使用
                         change(1,pageall,zz);
 
-                        if (data.length ==0) {
+                        if (jsonData.length ==0) {
                             alert("该时间段内站点无数据");};
                                              },
                     error : function() {

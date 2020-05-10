@@ -31,6 +31,13 @@
               background: cadetblue;
         
           }
+        #tabletest tr:nth-child(even) {
+            background: #80bdff;
+        }
+
+        #tabletest th {
+            background: #80bdff;
+        }
         </style>
          <script>
             $.ajax({
@@ -144,7 +151,7 @@
                         change(1,pageall,zz);
 
 
-                        if (data.length ==0) {
+                        if (jsonData.length ==0) {
                             alert("该时间段内站点无数据");};
                                              },
                     error : function() {

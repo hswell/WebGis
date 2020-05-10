@@ -2,59 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc7d88bb-8c21-4f04-82d1-8d9cabb40fe7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBZRuninforE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseBz/DseBZRuninforH.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseST/DseStRiverE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/DseSz/DseSzRunE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/bzls.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/bzsw.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/bzzt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/JsPager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/jzkg.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/shuiqing.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/szkg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/TB/BZNameQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/TB/BZNameQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/TB/STNameQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/TB/STNameQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/TB/SZNanmeQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/controller/TB/SZNanmeQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBz/DseBzRuninfoRMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseBz/DseBzRuninfoRMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseST/DseStRiverRealMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseST/DseStRiverRealMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSz/DseSzRuninfoRealMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/DseSz/DseSzRuninfoRealMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/TB/Tb0001Prnmsr044Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/TB/Tb0001Prnmsr044Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/TB/Tb1502Meidsbi044Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/dao/TB/Tb1502Meidsbi044Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/TB/Tb1502Meidsbi044.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/entity/TB/Tb1502Meidsbi044.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/BZ/BZRelationQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/BZ/BZRelationQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/ST/STRelationQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/ST/STRelationQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/design/service/SZ/SZRelationQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/design/service/SZ/SZRelationQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRuninfoRMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseBzRuninfoRMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseStPptnRealMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseStPptnRealMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseStRiverRealMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseStRiverRealMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRuninfoRealMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/DseSzRuninfoRealMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/Tb0001Prnmsr044Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/Tb0001Prnmsr044Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/Tb1502Meidsbi044Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/Tb1502Meidsbi044Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/StStbprpBMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/StStbprpBMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/bzls.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/bzls.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/bzsw.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/bzsw.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/bzzt.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/bzzt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/jzkg.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jzkg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/shuiqing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/shuiqing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/szkg.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/szkg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/yuqing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/yuqing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/controller/TB/BZNameQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/controller/TB/BZNameQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/controller/TB/STNameQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/controller/TB/STNameQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/controller/TB/SZNanmeQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/controller/TB/SZNanmeQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/DseBz/DseBzRuninfoRMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/DseBz/DseBzRuninfoRMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/DseST/DseStRiverRealMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/DseST/DseStRiverRealMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/DseSz/DseSzRuninfoRealMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/DseSz/DseSzRuninfoRealMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0001Prnmsr044Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb0001Prnmsr044Mapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb1502Meidsbi044Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/dao/TB/Tb1502Meidsbi044Mapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/entity/TB/Tb1502Meidsbi044.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/entity/TB/Tb1502Meidsbi044.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/service/BZ/BZRelationQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/service/BZ/BZRelationQuery.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/service/ST/STRelationQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/service/ST/STRelationQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sen/design/service/SZ/SZRelationQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sen/design/service/SZ/SZRelationQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/DseBzRuninfoRMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/DseBzRuninfoRMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/DseStPptnRealMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/DseStPptnRealMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mybatis/DseStRiverRealMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/DseStRiverRealMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/DseSzRuninfoRealMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/DseSzRuninfoRealMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/Tb0001Prnmsr044Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/Tb0001Prnmsr044Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/Tb1502Meidsbi044Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/Tb1502Meidsbi044Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/StStbprpBMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/StStbprpBMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bzls.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/bzls.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bzsw.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/bzsw.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bzzt.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/bzzt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/jzkg.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/jzkg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/shuiqing.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/shuiqing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/szkg.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/szkg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/yuqing.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/yuqing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,6 +274,8 @@
       <workItem from="1589003472528" duration="20430000" />
       <workItem from="1589025788541" duration="148000" />
       <workItem from="1589025963534" duration="8491000" />
+      <workItem from="1589034561611" duration="200000" />
+      <workItem from="1589095753291" duration="14781000" />
     </task>
     <task id="LOCAL-00001" summary="4月1日提交">
       <created>1585732789112</created>
@@ -382,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588942844201</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="5月9日提交 完成echats之外所有的东西了">
+      <created>1589034761868</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1589034761868</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +378,8 @@
     <MESSAGE value="4月10日提交 更新地图html（武汉地区无地标数据）" />
     <MESSAGE value="4月26日提交 百分之80查询" />
     <MESSAGE value="4月26日提交 登陆页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="4月26日提交 登陆页面" />
+    <MESSAGE value="5月9日提交 完成echats之外所有的东西了" />
+    <option name="LAST_COMMIT_MESSAGE" value="5月9日提交 完成echats之外所有的东西了" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="0" key="#Inspections" timestamp="1585720950842">
@@ -426,10 +406,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="436" y="98" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589032364918" />
-    <state x="276" y="0" key="CommitChangelistDialog2" timestamp="1589034661533">
+    <state x="276" y="0" key="CommitChangelistDialog2" timestamp="1589034760681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="276" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589034661533" />
+    <state x="276" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589034760681" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1585720591032">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -438,38 +418,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="641" y="151" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585732679732" />
-    <state width="1483" height="353" key="GridCell.Tab.0.bottom" timestamp="1589034525515">
+    <state width="1483" height="519" key="GridCell.Tab.0.bottom" timestamp="1589121633390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="353" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589034525515" />
-    <state width="1483" height="353" key="GridCell.Tab.0.center" timestamp="1589034525515">
+    <state width="1483" height="519" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589121633390" />
+    <state width="1483" height="519" key="GridCell.Tab.0.center" timestamp="1589121633390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="353" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589034525515" />
-    <state width="1483" height="353" key="GridCell.Tab.0.left" timestamp="1589034525515">
+    <state width="1483" height="519" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589121633390" />
+    <state width="1483" height="519" key="GridCell.Tab.0.left" timestamp="1589121633390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="353" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589034525515" />
-    <state width="1483" height="353" key="GridCell.Tab.0.right" timestamp="1589034525515">
+    <state width="1483" height="519" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589121633390" />
+    <state width="1483" height="519" key="GridCell.Tab.0.right" timestamp="1589121633390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="353" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589034525515" />
-    <state width="1483" height="353" key="GridCell.Tab.1.bottom" timestamp="1589034525515">
+    <state width="1483" height="519" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589121633390" />
+    <state width="1483" height="519" key="GridCell.Tab.1.bottom" timestamp="1589121633390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="353" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589034525515" />
-    <state width="1483" height="353" key="GridCell.Tab.1.center" timestamp="1589034525515">
+    <state width="1483" height="519" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589121633390" />
+    <state width="1483" height="519" key="GridCell.Tab.1.center" timestamp="1589121633390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="353" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589034525515" />
-    <state width="1483" height="353" key="GridCell.Tab.1.left" timestamp="1589034525515">
+    <state width="1483" height="519" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589121633390" />
+    <state width="1483" height="519" key="GridCell.Tab.1.left" timestamp="1589121633390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="353" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589034525515" />
-    <state width="1483" height="353" key="GridCell.Tab.1.right" timestamp="1589034525515">
+    <state width="1483" height="519" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589121633390" />
+    <state width="1483" height="519" key="GridCell.Tab.1.right" timestamp="1589121633390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="353" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589034525515" />
+    <state width="1483" height="519" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589121633390" />
     <state width="1483" height="24" key="GridCell.Tab.2.bottom" timestamp="1589018596026">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -502,10 +482,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1588589613288" />
-    <state x="470" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1589034583473">
+    <state x="470" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1589095764178">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="470" y="306" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589034583473" />
+    <state x="470" y="306" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589095764178" />
     <state x="240" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587814734292">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

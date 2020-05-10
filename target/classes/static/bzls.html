@@ -30,6 +30,13 @@
               height: 500px;
 
           }
+        #tabletest tr:nth-child(even) {
+            background: #80bdff;
+        }
+
+        #tabletest th {
+            background: #80bdff;
+        }
         </style>
          <script>
             $.ajax({
@@ -163,12 +170,17 @@
                             {   var d = new Date(jsonData[i].tm);
                                 var times=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
                                 var tr;  
-                                tr='<td>'+jsonData[i].stcd+'</td>'+'<td>'+times+'</td>'+'<td>'+jsonData[i].aircrewnm+'</td>'+'<td>'+jsonData[i].aircrewstate+'</td>'+'<td>'+jsonData[i].dsincp+'</td>'+'<td>'+jsonData[i].poweractive+'</td>'+'<td>'+jsonData[i].distance+'</td>'
+
+                                if (jsonData[i].aircrewstate==1){
+                                    tr="正在运行";
+                                }else {
+                                    tr="已关机";
+                                }
                                 tbody.innerHTML+="<tr>" +
                                     "<td>"+jsonData[i].stcd+"</td>"+
                                     "<td>"+times+"</td>"+
                                     "<td>"+jsonData[i].aircrewnm+"</td>"+
-                                    "<td>"+jsonData[i].aircrewstate+"</td>" +
+                                    "<td>"+tr+"</td>" +
                                     "<td>"+jsonData[i].dsincp+"</td>" +
                                     "<td>"+jsonData[i].poweractive+"</td>" +
                                     "<td>"+jsonData[i].distance+"</td>" +
@@ -194,7 +206,7 @@
 
 
 
-                        if (data.length ==0) {
+                        if (jsonData.length ==0) {
                             alert("该时间段内站点无数据");};
                                              },
                     error : function() {

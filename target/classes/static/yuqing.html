@@ -30,6 +30,13 @@
               height: 500px;
 
           }
+        #tabletest tr:nth-child(even) {
+            background: #80bdff;
+        }
+
+        #tabletest th {
+            background: #80bdff;
+        }
         </style>
          <script>
             $.ajax({
@@ -160,9 +167,11 @@
                                 var d = new Date(jsonData[i].tm);
                                 var times=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
                                 var tr;
-                                tbody.innerHTML+="<tr><td>"+jsonData[i].stcd+"</td>"+
+                                tbody.innerHTML+="<tr>" +
+                                    "<td>"+jsonData[i].stcd+"</td>"+
                                     "<td>"+times+"</td>"+
-                                    "<td>"+jsonData[i].drp+"</td>"+
+                                    "<td>"+jsonData[i].drp+"</td>" +
+                                    "</tr>";
                             }
                         };
                         var a = document.getElementById("tbody").getElementsByTagName("tr");
@@ -180,7 +189,7 @@
                         $("#p").text(pageall);      //将pageall的值存放到div中，便于下次使用
                         change(1,pageall,zz);
 
-                        if (data.length ==0) {
+                        if (jsonData.length ==0) {
                             alert("该时间段内站点无数据");};
                                              },
                     error : function() {
